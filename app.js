@@ -6,7 +6,7 @@ const User = require('./models/User');
 const passport = require('passport');
 require('./config/passport')(passport);
 const app = express();
-//comment
+
 mongoose
     .connect(db, { useNewUrlParser: true })
     .then(() => console.log("Connected to MongoDB successfully"))
