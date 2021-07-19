@@ -10,9 +10,21 @@ class TweetIndex extends React.Component{
   }
 
   render(){
-    const tweets = this.props.tweets.map(tweet => (
-      <li>
-        {tweet}
+    const tweets = this.props.tweets.map((tweet, idx) => (
+      <li key={`tweet-${idx}`}>
+        <ul>
+          <li>
+            <a href={tweet.user_url}>
+              {tweet.username}
+            </a>
+          </li>
+          <li><img src={tweet.profile_pic} /></li>
+          <li>
+            <a href={tweet.source}>
+              {tweet.text}
+            </a>
+          </li>
+        </ul>
       </li>
     ))
 

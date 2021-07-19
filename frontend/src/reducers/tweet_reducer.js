@@ -8,7 +8,10 @@ export default function(oldState = {}, action){
 
   switch(action.type){
     case RECEIVE_TWEETS:
-      return action.tweets;
+      Object.values(action.tweets).forEach(tweet => {
+        newState[tweet.id] = tweet;
+      });
+      return newState;
 
     default:
       return oldState;
