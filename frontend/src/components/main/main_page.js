@@ -6,51 +6,26 @@ class MainPage extends React.Component {
     render() {
         return (
         <div className='splash-container'>
-
-            <div className='under-nav'>
-                <section className='section'>
-                    <h1 className='splash-words'>PROJECT HAWKEYE</h1>
-                </section>
+            <div className='splash-header'>
+                <h1 className='header'>Project Hawkeye</h1>
+                <p className='p'>A Hawk's eye view on Twitter</p>
+                <button className='splash-sign-up'>Sign Up</button>
             </div>
-            {/* section 1  */}
-            <div className='section1'>
-                <div className='section1-box1'>
-                    <h1 className='section1-box1-header'>Search for Tweets by username</h1>
-                    <br/>
-                    <br/>
-                    <p className='section1-box1-p'>
-                      Tweets can be filtered based on an individual's Twitter username. 
-                      You can find more relevant tweets using custom or pre-built filters. 
-                    </p>
-                </div>
-
-                <div className='section1-box2'>
-                    JUST A PHOTO FOR NOW MIGHT CHANGE
+            <div className='splash-pic-container'>
+                <div className='splash-pic'></div>
+            </div>
+            <div>
+                <div className='splash-bottom-container'>
+                    <div className='splash1'></div>
+                    <div className='splash2'></div>
+                    <div className='splash3'></div>
                 </div>
             </div>
+            <div>
+                <div className='splash-footer'>
 
-            {/* section 2 */}
-            <div className='section2'>
-                <div className='section2-box1'>
-                Box2 PHOTO
-                </div>
-
-                <div className='section2-box2'>
-                    WORDS PARAGRAPH
                 </div>
             </div>
-
-            {/* section 3 */}
-            <div className='section3'>
-                <div className='section3-box1'>
-                    WORDS PARAGRAPH
-                </div>
-
-                <div className='section3-box2'>
-                Box3 PHOTO
-                </div>
-            </div>
-            
         </div>
         );
     }
