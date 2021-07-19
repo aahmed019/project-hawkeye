@@ -8,10 +8,9 @@ const userEndPointURL = "https://api.twitter.com/2/users/by?usernames="
 
 router.get('/', (req, res) => {
     async function getUsers() {
-
         //specify user name here
         const params = {
-            usernames: "raph_gabriel",
+            usernames: req.query.username,
             "user.fields": "username,name,profile_image_url"
         }
     
@@ -62,7 +61,7 @@ router.get('/', (req, res) => {
             // Make request
             const response = await getUsers();
             let tweets = await getTweets(response.data[0].id);
-            let word = '';
+            let word = req.query.filter;
             let results = {};
 
             for (let i = 0; i < tweets.data.length; i++) {

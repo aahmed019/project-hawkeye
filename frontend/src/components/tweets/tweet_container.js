@@ -3,8 +3,6 @@ import { fetchTweets } from '../../actions/tweet_actions';
 import TweetIndex from './tweet_index';
 
 const mapStateToProps = state => {
-  console.log(state);
-
   return {
     tweets: Object.values(state.entities.tweets)
   };
@@ -12,7 +10,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchTweets: () => dispatch(fetchTweets())
+    fetchTweets: (username, filter) => dispatch(fetchTweets(username, filter))
   }
 }
 

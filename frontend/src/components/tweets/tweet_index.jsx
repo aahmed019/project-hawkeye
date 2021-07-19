@@ -3,10 +3,21 @@ import React from 'react';
 class TweetIndex extends React.Component{
   constructor(props){
     super(props);
+    this.state = {
+      username: '',
+      filter: ''
+    }
+
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount(){
-    this.props.fetchTweets();
+  update(field){
+    return e => this.setState({ [field]: e.target.value })
+  }
+
+  handleSubmit(e){
+    e.preventDefault();
+    this.props.fetchTweets(this.state.username, this.state.filter);
   }
 
   render(){
@@ -30,6 +41,23 @@ class TweetIndex extends React.Component{
 
     return(
       <div>
+        <div>
+          <form onSubmit={this.handleSubmit}>
+            <h1>Username</h1>
+            <input 
+              type="text" 
+              onChange={this.update('username')}
+              value={this.state.username}/>
+            <h1>Filter</h1>
+            <input 
+              type="text" 
+              onChange={this.update('filter')}
+              value={this.state.filter}/>
+
+            <button>Filter</button>
+          </form>
+        </div>
+
         <ul>
           {tweets}
         </ul>

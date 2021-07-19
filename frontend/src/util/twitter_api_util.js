@@ -1,5 +1,9 @@
 import axios from 'axios';
 
-export const fetchTweets = (filters) => {
-    return axios.get('/api/tweets', filters)
+export const fetchTweets = (username, filter) => {
+    return axios.get('/api/tweets', 
+        {
+            params: { username, filter }
+        }
+    )
 };

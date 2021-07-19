@@ -8,9 +8,8 @@ const receiveTweets = tweets => ({
   tweets
 });
 
-export const fetchTweets = () => dispatch => (
-  TwitterAPIUtil.fetchTweets().then(res => {
-    console.log(res);
+export const fetchTweets = (username, filter) => dispatch => (
+  TwitterAPIUtil.fetchTweets(username, filter).then(res => {
     dispatch(receiveTweets(res.data))
   }, err => (
     dispatch(receiveErrors(err.response.data))
