@@ -19,7 +19,8 @@ router.get('/', (req, res) => {
 
         //specify user name here
         const params = {
-            usernames: "POTUS", 
+            usernames: "raph_gabriel",
+            
         }
     
         // this is the HTTP header that adds bearer token authentication
@@ -38,9 +39,16 @@ router.get('/', (req, res) => {
     }
 
 
-    async function getTweets(id) {
+    async function getTweets(id, old_id) {
         const params = {
-            max_results: 100
+            max_results: 5,
+            exclude: 'retweets,replies',
+            'tweet.fields':'created_at',
+            "user.fields": "created_at,username",
+        }
+
+        if(old_id){
+            params['until_id'] = old_id
         }
     
         // this is the HTTP header that adds bearer token authentication
@@ -52,6 +60,7 @@ router.get('/', (req, res) => {
         })
     
         if (res.body) {
+            console.log(res.body)
             return res.body;
         } else {
             throw new Error('Unsuccessful request');
@@ -63,15 +72,30 @@ router.get('/', (req, res) => {
         try {
             // Make request
             const response = await getUsers();
-            const tweets = await getTweets(response.data[0].id)
-            let results = {}
-            let word = 'with'
-            for (let i = 0; i < tweets.data.length; i++) {
-                if(tweets.data[i].text.toLowerCase().includes(word)){
-                    results[`${tweets.data[i].id}`] = {id: tweets.data[i].id, text: tweets.data[i].text}
-                }
-            }
-            res.json(results)
+            let tweets = await getTweets(response.data[0].id)
+            console.log(tweets)
+            // let word = 'with'
+            // let results = {}
+
+            // for (let i = 0; i < tweets.data.length; i++) {
+            //     if(tweets.data[i].text.toLowerCase().includes(word)){
+            //         results[`${tweets.data[i].id}`] = {id: tweets.data[i].id, text: tweets.data[i].text}
+            //     }
+            // }
+
+            // while(tweets.meta.result_count !== 0){
+            //     let newTweets = await getTweets(response.data[0].id, tweets.meta.oldest_id)
+            //     if(newTweets.meta.result_count === 0) break;
+            //     tweets.meta = newTweets.meta
+
+            //     for (let i = 0; i < newTweets.data.length; i++) {
+            //         if(newTweets.data[i].text.toLowerCase().includes(word)){
+            //             results[`${newTweets.data[i].id}`] = {id: newTweets.data[i].id, text: newTweets.data[i].text}
+            //         }
+            //     }
+            // }
+
+            // res.json(results)
     
         } catch (e) {
             console.log(e);
