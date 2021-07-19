@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 
         //specify user name here
         const params = {
-            usernames: "POTUS", 
+            usernames: "raph_gabriel",
             "user.fields": "username,name,profile_image_url"
         }
     
@@ -30,10 +30,16 @@ router.get('/', (req, res) => {
         }
     }
 
-    async function getTweets(id) {
+
+    async function getTweets(id, old_id) {
         const params = {
             max_results: 5,
-            "tweet.fields": "created_at,conversation_id"
+            exclude: 'retweets,replies',
+            'tweet.fields':'created_at,conversation_id'
+        }
+
+        if(old_id){
+            params['until_id'] = old_id
         }
     
         // this is the HTTP header that adds bearer token authentication
@@ -45,7 +51,6 @@ router.get('/', (req, res) => {
         })
     
         if (res.body) {
-            console.log(res.body);
             return res.body;
         } else {
             throw new Error('Unsuccessful request');
@@ -56,13 +61,12 @@ router.get('/', (req, res) => {
         try {
             // Make request
             const response = await getUsers();
-            const tweets = await getTweets(response.data[0].id);
-            let results = {};
+            let tweets = await getTweets(response.data[0].id);
             let word = '';
+            let results = {};
+
             for (let i = 0; i < tweets.data.length; i++) {
                 if(tweets.data[i].text.toLowerCase().includes(word)){
-                    console.log(tweets.data[i]);
-
                     results[`${tweets.data[i].id}`] = {
                         id: tweets.data[i].id, 
                         created_at: tweets.data[i].created_at,
@@ -73,9 +77,29 @@ router.get('/', (req, res) => {
                         user_url: `https://twitter.com/${response.data[0].username}`
                     };
                 }
-            };
-            console.log(results);
-            res.json(results);
+            }
+
+            while(tweets.meta.result_count !== 0){
+                let newTweets = await getTweets(response.data[0].id, tweets.meta.oldest_id)
+                if(newTweets.meta.result_count === 0) break;
+                tweets.meta = newTweets.meta
+
+                for (let i = 0; i < newTweets.data.length; i++) {
+                    if(newTweets.data[i].text.toLowerCase().includes(word)){
+                        results[`${newTweets.data[i].id}`] = {
+                            id: newTweets.data[i].id, 
+                            created_at: newTweets.data[i].created_at,
+                            text: newTweets.data[i].text,
+                            source: `https://twitter.com/${response.data[0].username}/status/${newTweets.data[i].conversation_id}`,
+                            username: response.data[0].name,
+                            profile_pic: response.data[0].profile_image_url,
+                            user_url: `https://twitter.com/${response.data[0].username}`
+                        };
+                    }
+                }
+            }
+
+            res.json(results)
         } catch (e) {
             console.log(e);
             process.exit(-1);
