@@ -22,10 +22,10 @@ class NavBar extends React.Component {
         );
         } else {
             return (
-                <div className='links'>
-                    <Link to={'/signup'}>Signup</Link>
-                    <Link to={'/login'}>Login</Link>
-                </div>
+                <nav className='links'>
+                    <li><Link to={'/signup'}>Signup</Link></li>
+                    <li><Link to={'/login'}>Login</Link></li>
+                </nav>
             );
         }
     }
@@ -33,8 +33,12 @@ class NavBar extends React.Component {
     render() {
         return (
             <div className='nav-bar'>
-                <h1>Hawkeye</h1>
-                { this.getLinks() }
+                
+                <h1><Link to='/' >Hawkeye</Link></h1>
+                <div className='nav-menu'>
+                    a
+                    { this.getLinks() }
+                </div>
             </div>
         );
     }

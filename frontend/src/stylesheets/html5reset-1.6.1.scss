@@ -59,9 +59,9 @@ a {
     vertical-align:baseline;
     background:transparent;
     text-decoration: none;
-    color: black;
+    color: inherit;
     &:visited {
-        color: black;
+        color: inherit;
     }
 }
 
