@@ -1,8 +1,13 @@
-//COLORS
-$babyblue: #C3E0E5;
-$darkblue: #274472;
-$bluegray: #5885Af;
-$midnightblue: #41729F;
+// //COLORS
+// $babyblue: #C3E0E5;
+// $darkblue: #274472;
+// $bluegray: #5885Af;
+// $midnightblue: #41729F;
+
+$lightpurple: #9388A2;
+$purple: #341948;
+$darkblue: #170B3B;
+$black: #0E050F;
 
 .nav-container {
   position: sticky;
@@ -13,7 +18,7 @@ $midnightblue: #41729F;
   box-shadow: 0px 5px 8px -10px rgba(0, 0, 0, 0.8);
   padding: 8px 10px;
   height: 60px;
-  background-color: #274472;
+  background-color: $purple;
   display: flex;
   justify-content: space-between;
   color: white;
@@ -23,7 +28,9 @@ $midnightblue: #41729F;
 
 .dropdown {
   position: relative;
-  
+  img {
+    filter: invert(1);
+  }
   &:hover {
     .dropdown-menu {
       display: block;
@@ -31,9 +38,7 @@ $midnightblue: #41729F;
   }
 }
 .dropdown-menu {
-  img {
-    filter: invert(1);
-  }
+  
   position: absolute;
   width: auto;
   perspective: 1000px;
@@ -41,7 +46,7 @@ $midnightblue: #41729F;
   left: -40px;
   display: none;
   float:left;
-  background-color: $midnightblue;
+  background-color: $black;
   padding: 5px;
   // transform: scaleY(0);
   animation: growDown 300ms ease-in-out forwards;

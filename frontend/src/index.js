@@ -7,7 +7,8 @@ import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 import { fetchTweets } from './util/twitter_util';
 import './stylesheets/html5reset-1.6.1.scss';
-import './stylesheets/nav-style.scss'
+import './stylesheets/nav-style.scss';
+import './stylesheets/auth-style.scss';
 document.addEventListener('DOMContentLoaded', () => {
     let store;
 
