@@ -1,0 +1,96 @@
+.splash-container{
+    height: 2000px;
+    width: 100%;
+    border: solid 1px red;
+    display: flex;
+    flex-direction: column;
+}
+
+.under-nav{
+    height: 50%;
+    width: 100%;
+    background-color: #274472;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.nav-header{
+    color: white;
+
+}
+
+.splash-words{
+    height: 70%;
+    width: 60%;
+    border: solid 1px red;
+}
+
+.section1{
+    height: 40%;
+    width: 100%;
+    border: solid 1px blue;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section1-box1{
+    width: 40%;
+    height: 100%;
+    border: solid 1px red;
+}
+
+.section1-box2{
+    border-radius: 22px;;
+    width: 40%;
+    height: 80%;
+    border: solid 1px red;
+}
+
+.section2{
+    height: 40%;
+    width: 100%;
+    border: solid 1px purple;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section2-box1{
+    width: 40%;
+    height: 80%;
+    border: solid 1px red;
+    border-radius: 22px;;
+}
+
+.section2-box2{
+    width: 40%;
+    height: 100%;
+    border: solid 1px red;
+}
+
+.section3{
+    height: 40%;
+    width: 100%;
+    border: solid 1px green;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section3-box1{
+    width: 40%;
+    height: 100%;
+    border: solid 1px red;
+}
+
+.section3-box2{
+    border-radius: 22px;;
+    width: 40%;
+    height: 80%;
+    border: solid 1px red;
+}
