@@ -22,19 +22,27 @@ class NavBar extends React.Component {
         );
         } else {
             return (
-                <div className='links'>
-                    <Link to={'/signup'}>Signup</Link>
-                    <Link to={'/login'}>Login</Link>
-                </div>
+                <li className='dropdown'>
+                    <img src="https://img.icons8.com/material-rounded/24/000000/menu--v1.png"/>
+                    <ul className='dropdown-menu'>
+                        <li className='menu-item'><Link to={'/signup'}>Sign Up</Link></li>
+                        <li className='menu-item'><Link to={'/login'}>Login</Link></li>
+
+                    </ul>
+                </li>
             );
         }
     }
 
     render() {
         return (
-            <div className='nav-bar'>
-                <h1>Hawkeye</h1>
-                { this.getLinks() }
+            <div className='nav-container'>
+                
+                <h1><Link to='/' >Hawkeye</Link></h1>
+                <ul className='nav-menu'>
+                    
+                    { this.getLinks() }
+                </ul>
             </div>
         );
     }

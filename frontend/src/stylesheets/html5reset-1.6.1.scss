@@ -41,7 +41,9 @@ footer,header,hgroup,menu,nav,section {
 nav ul {
     list-style:none;
 }
-
+ul {
+    list-style: none;
+}
 blockquote, q {
     quotes:none;
 }
@@ -59,9 +61,9 @@ a {
     vertical-align:baseline;
     background:transparent;
     text-decoration: none;
-    color: black;
+    color: inherit;
     &:visited {
-        color: black;
+        color: inherit;
     }
 }
 
