@@ -1,42 +1,78 @@
 const express = require('express');
 const router = express.Router();
-var Twitter = require('twitter');
+const needle = require('needle');
 require('dotenv').config();
 
-const regEx = /\"().+\"/;
-
-var client = new Twitter({
-    consumer_key: process.env.CONSUMER_KEY,
-    consumer_secret: process.env.CONSUMER_SECRET,
-    bearer_token: process.env.BEARER_TOKEN,
-});
+const token = process.env.BEARER_TOKEN;
+const userEndPointURL = "https://api.twitter.com/2/users/by?usernames="
 
 router.get('/', (req, res) => {
 
-    var params = {
-        q: 'POTUS',
-        exclude_replies: true,
-        incldue_rts: false,
-        count: 10
+    async function getUsers() {
+
+        //specify user name here
+        const params = {
+            usernames: "POTUS", 
+        }
+    
+        // this is the HTTP header that adds bearer token authentication
+        const res = await needle('get', userEndPointURL, params, {
+            headers: {
+                "User-Agent": "v2UserLookupJS",
+                "authorization": `Bearer ${token}`
+            }
+        })
+    
+        if (res.body) {
+            return res.body;
+        } else {
+            throw new Error('Unsuccessful request')
+        }
     }
 
-    return client.get('search/tweets', params, function(error, data, response) {
-        let tweets = data.statuses
-        let results = {}
 
-        for (let i = 0; i < tweets.length; i++) {            
-            results[i] = {
-                id: tweets[i].id,
-                created_at: tweets[i].created_at,
-                text: tweets[i].extended_tweet ? tweets[i].extended_tweet.full_text : tweets[i].text,
-                source: `https://twitter.com/${tweets[i].user.screen_name}/status/${tweets[i].id_str}`,
-                username: tweets[i].user.name,
-                profile_pic: tweets[i].user.profile_image_url_https,
-                user_url: `https://twitter.com/${tweets[i].user.screen_name}`
-            }
+    async function getTweets(id) {
+        const params = {
+            max_results: 100
         }
-        res.json(results);
-    })
+    
+        // this is the HTTP header that adds bearer token authentication
+        const res = await needle('get', `https://api.twitter.com/2/users/${id}/tweets`, params, {
+            headers: {
+                "User-Agent": "v2TweetLookupJS",
+                "authorization": `Bearer ${token}`
+            }
+        })
+    
+        if (res.body) {
+            return res.body;
+        } else {
+            throw new Error('Unsuccessful request');
+        }
+    }
+    
+    (async () => {
+    
+        try {
+            // Make request
+            const response = await getUsers();
+            const tweets = await getTweets(response.data[0].id)
+            let results = {}
+            let word = 'with'
+            for (let i = 0; i < tweets.data.length; i++) {
+                if(tweets.data[i].text.toLowerCase().includes(word)){
+                    results[`${tweets.data[i].id}`] = {id: tweets.data[i].id, text: tweets.data[i].text}
+                }
+            }
+            res.json(results)
+    
+        } catch (e) {
+            console.log(e);
+            process.exit(-1);
+        }
+        process.exit();
+    })();
+
 });
 
 
