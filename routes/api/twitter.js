@@ -29,10 +29,9 @@ router.get('/', (req, res) => {
         }
     }
 
-
     async function getTweets(id, old_id) {
         const params = {
-            max_results: 5,
+            max_results: 100,
             exclude: 'retweets,replies',
             'tweet.fields':'created_at,conversation_id'
         }
@@ -63,6 +62,7 @@ router.get('/', (req, res) => {
             let tweets = await getTweets(response.data[0].id);
             let word = req.query.filter;
             let results = {};
+            let max_results = 10;
 
             for (let i = 0; i < tweets.data.length; i++) {
                 if(tweets.data[i].text.toLowerCase().includes(word)){
@@ -78,7 +78,7 @@ router.get('/', (req, res) => {
                 }
             }
 
-            while(tweets.meta.result_count !== 0){
+            while(tweets.meta.result_count !== 0 && Object.keys(results).length <= max_results){
                 let newTweets = await getTweets(response.data[0].id, tweets.meta.oldest_id)
                 if(newTweets.meta.result_count === 0) break;
                 tweets.meta = newTweets.meta
@@ -103,9 +103,8 @@ router.get('/', (req, res) => {
             console.log(e);
             process.exit(-1);
         }
-        process.exit();
+        // process.exit();
     })();
-
 });
 
 
