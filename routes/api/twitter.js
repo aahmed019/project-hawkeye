@@ -40,7 +40,7 @@ router.get('/', (req, res) => {
 
     async function getTweets(id) {
         const params = {
-            max_results: 5
+            max_results: 100
         }
     
         // this is the HTTP header that adds bearer token authentication
@@ -64,9 +64,14 @@ router.get('/', (req, res) => {
             // Make request
             const response = await getUsers();
             const tweets = await getTweets(response.data[0].id)
-            console.dir(tweets, {
-                depth: null
-            });
+            let results = {}
+            let word = 'with'
+            for (let i = 0; i < tweets.data.length; i++) {
+                if(tweets.data[i].text.toLowerCase().includes(word)){
+                    results[`${tweets.data[i].id}`] = {id: tweets.data[i].id, text: tweets.data[i].text}
+                }
+            }
+            res.json(results)
     
         } catch (e) {
             console.log(e);
@@ -74,41 +79,6 @@ router.get('/', (req, res) => {
         }
         process.exit();
     })();
-
-
-
-
-
-    
-
-    // const { user } = await client.get('users/show', params, function(error, user, response){
-    //     if (!error) {
-    //         client.get(`2/users/${user.id_str}/tweets`, { }, function(error, data, response) {
-    //             console.log(data)
-    //             // let tweets = data.statuses
-    //             // let results = {}
-    //             // for (let i = 0; i < tweets.length; i++) {
-    //             //     results[i] = tweets[i].text
-    //             // }
-    //             // res.json(results);
-    //         })
-    //     }
-    //     else{
-    //         console.log(error)
-    //     }
-    // });
-
-    
-
-    // client.get('statuses/user_timeline', { screen_name: `POTUS`, q:'children',  count: 1, exclude_replies: true, include_rts: false}, function(error, data, response) {
-    //         console.log(data)
-    //         let tweets = data.statuses
-    //         let results = {}
-    //         for (let i = 0; i < tweets.length; i++) {
-    //             results[i] = tweets[i].text
-    //         }
-    //         res.json(results);
-    // })
 
 });
 
