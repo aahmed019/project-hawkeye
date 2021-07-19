@@ -8,19 +8,24 @@ class MainPage extends React.Component {
         <div className='splash-container'>
 
             <div className='under-nav'>
-                <div className='splash-words'>
-                    <h1 className='nav-header'>HEADER</h1>
-                    <h2 className='nav-paragraph'>PARAGRAPH</h2>
-                </div>
+                <section className='section'>
+                    <h1 className='splash-words'>PROJECT HAWKEYE</h1>
+                </section>
             </div>
             {/* section 1  */}
             <div className='section1'>
                 <div className='section1-box1'>
-                    WORDS PARAGRAPH
+                    <h1 className='section1-box1-header'>Search for Tweets by username</h1>
+                    <br/>
+                    <br/>
+                    <p className='section1-box1-p'>
+                      Tweets can be filtered based on an individual's Twitter username. 
+                      You can find more relevant tweets using custom or pre-built filters. 
+                    </p>
                 </div>
 
                 <div className='section1-box2'>
-                Box2 PHOTO
+                    JUST A PHOTO FOR NOW MIGHT CHANGE
                 </div>
             </div>
 
@@ -42,7 +47,7 @@ class MainPage extends React.Component {
                 </div>
 
                 <div className='section3-box2'>
-                Box2 PHOTO
+                Box3 PHOTO
                 </div>
             </div>
             
