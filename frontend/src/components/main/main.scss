@@ -9,13 +9,13 @@
     height:10%;
     width: 100%;
     justify-content: center;
-    display: flex;
+    // display: flex;
     margin-top: 80px;
 }
 
 .splash-header{
     height: 200px;
-    width: 60%;
+    // width: 60%;
     text-align: center;
 }
 
@@ -101,7 +101,7 @@
     background-size: 98% 98%;
     background-repeat: no-repeat;
     margin-bottom: 30px;
-}
+    }
 }
 
 .bottom-container-word{
@@ -217,7 +217,7 @@
 .meet-the-team{
     margin-top: 200px;
     text-align: center;
-    color: #7856ff;;
+    color: #7856ff;
     font-size: 50px;
 
 }
@@ -227,14 +227,16 @@
     width: 90%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 30px;
 
     .names{
-        height: 100%;
-        width: 20%;
-        // border: 1px solid red;
+        height: 400px;
+        width: 250px;
         border-radius: 22px;
         box-shadow:rgba(192, 189, 189, 0.35) 0px 1px 12px;
+        transition: 0.7s ease-out;
+        transform: translateY(5px);       
 
         p{
             color: white;
@@ -245,7 +247,9 @@
         }
 
         &:hover{
-        box-shadow:rgba(255, 255, 255, 0.8) 0px 1px 12px;     
+            transform: translateY(-5px);
+            box-shadow:rgba(255, 255, 255, 0.8) 0px 1px 12px;
+            transition: 0.5s ease-out;
         }
     }
 
@@ -263,6 +267,7 @@
         align-self: center;
         overflow: hidden;
         background-color: rgb(190, 190, 190);
+        margin: 10px;
 
         .ali-pic{
             width: 150px;
