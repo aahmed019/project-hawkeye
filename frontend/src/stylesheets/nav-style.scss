@@ -27,7 +27,7 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
   color: white;
   height: 45px;
   position: fixed;
-  left: 15%;
+  left: 13%;
   float: left;
   top: 8px;
   display: flex;
@@ -35,7 +35,7 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
   align-items: center;
   z-index: 100;
   border: 1px solid rgba(233, 233, 233, 0);
-  transition: all 500ms linear;
+  transition: border, box-shadow 500ms linear;
 }
 .nav-container.hasScrolled {
   border: 1px solid rgba(233, 233, 233, 1);
