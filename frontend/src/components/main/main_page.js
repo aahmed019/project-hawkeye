@@ -22,7 +22,12 @@ class MainPage extends React.Component {
                 <div className='splash-bottom-container'>
                     <div className='splash1'>
                         <div className='bottom-container-word'>
-
+                            <p><span>Search</span> for Tweets by username</p>
+                            <br/>
+                            <h1>
+                            Tweets can be filtered based on an individual's Twitter username. 
+                            You can find more relevant tweets using custom or pre-built filters. 
+                            </h1>
                         </div>
                         <div className='bottom-container-pic'>
 
@@ -33,12 +38,21 @@ class MainPage extends React.Component {
 
                         </div>
                         <div className='bottom-container-word2'>
-
+                            <p><span>Simple</span> way to save searches</p>
+                            <br/>
+                            <h1>
+                            Results can be saved into workspaces. Workspaces can be public or private.
+                            </h1>
                         </div>
                     </div>
                     <div className='splash3'>
                         <div className='bottom-container-word3'>
-
+                            <p><span>Easy</span> way to share results</p>
+                        <br/>
+                        <h1>
+                            Public and Private workspaces can be shared with others.
+                            Private workspaces will need a key to access it. 
+                        </h1>
                         </div>
                         <div className='bottom-container-pic3'>
 

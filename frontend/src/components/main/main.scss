@@ -2,7 +2,7 @@
     height: 2400px;
     width: 100%;
     padding-top: 20px;
-    background-color: black;
+    background-color: #1F1F24;
 }
 
 .splash-box{
@@ -69,7 +69,6 @@
 }
 
 .splash-bottom-box{
-    border: red 1px solid;
     height: 1000;
     width: 100%;
     display: flex;
@@ -80,7 +79,6 @@
 .splash-bottom-container{
     height: 1000px;
     width: 90%;
-    border: 1px solid yellow;
 }
 
 .splash1{
@@ -95,13 +93,31 @@
 
 .bottom-container-word{
     border: white 1px solid;
-    width: 45%;
+    width: 60%;
     height: 100%;
+    font-size: 50px;
+    color: white;
+
+    span{
+    color: #7856ff;
+    }
+
+    h1{
+    color: white;
+    font-size: 28px;
+    font-weight: lighter;
+    }
+
+    h2{
+    color: white;
+    font-size: 50px;
+    }
+
 }
 
 .bottom-container-pic{
     border: white 1px solid;
-    width: 45%;
+    width: 40%;
     height: 100%;
 }
 
@@ -119,6 +135,22 @@
     border: white 1px solid;
     width: 45%;
     height: 100%;
+    color: white;
+
+    span{
+    color: #f8bc3b;
+    font-size: 50px;
+    }
+
+    h1{
+    color: white;
+    font-size: 28px;
+    font-weight: lighter;
+    }
+
+    p{
+    font-size: 50px;   
+    }
 }
 
 .bottom-container-pic2{
@@ -139,20 +171,32 @@
 
 .bottom-container-word3{
     border: white 1px solid;
-    width: 45%;
+    width: 60%;
     height: 100%;
+    color: white;
+    font-size: 50px;
+
+    span{
+    color: #80e1d9;
+    font-size: 50px;
+    }
+
+    h1{
+    color: white;
+    font-size: 28px;
+    font-weight: lighter;        
+    }
 }
 
 .bottom-container-pic3{
     border: white 1px solid;
-    width: 45%;
+    width: 40%;
     height: 100%;
 }
 
 .splash-footer-box{
-    height: 300px;
+    height: 400px;
     width: 100%;
-    border: red 1px solid;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -163,5 +207,5 @@
     height: 300px;
     width: 90%;
     border: 1px solid purple;
-    margin-top: 100px;
+    margin-top: 50px;
 }
