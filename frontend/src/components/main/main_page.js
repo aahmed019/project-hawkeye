@@ -7,7 +7,7 @@ class MainPage extends React.Component {
     render() {
         return (
         <div style={{}}>
-            {/* <TweetContainer/> */}
+            <TweetContainer/>
             <div className='splash-container'>
                 <div className='splash-box'>
                     <div className='splash-header'>

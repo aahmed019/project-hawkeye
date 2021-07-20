@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const needle = require('needle');
 require('dotenv').config();
+const validateTwitterInput = require('../../validation/tweet-filter')
 
 const token = process.env.BEARER_TOKEN;
 const userEndPointURL = "https://api.twitter.com/2/users/by?usernames="
@@ -56,6 +57,8 @@ router.get('/', (req, res) => {
     }
     
     (async () => {
+        const { errors, isValid } = await validateTwitterInput(req.query);
+        if(!isValid) return res.status(400).json(errors);
         try {
             // Make request
             const response = await getUsers();
