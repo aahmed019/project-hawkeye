@@ -9,6 +9,12 @@ import { fetchTweets } from './util/twitter_api_util';
 import './stylesheets/html5reset-1.6.1.scss';
 import './stylesheets/nav-style.scss';
 import './stylesheets/auth-style.scss';
+import './stylesheets/main-index.scss';
+import './stylesheets/workspace.scss';
+import './stylesheets/main-index.scss';
+import './stylesheets/sidebar.scss';
+import './stylesheets/tweet-search.scss';
+
 document.addEventListener('DOMContentLoaded', () => {
     let store;
 

@@ -9,6 +9,7 @@ import MainPage from './main/main_page';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import Workspace from './workspace/workspace';
+import MainIndex from './index-page/main-index';
 const App = () => (
     <div className='app'>
         {/* <ProtectedRoute path="/" component={NavBarContainer} /> */}
@@ -26,11 +27,12 @@ const App = () => (
 );
 // ON LOGIN: REDIRECT TO WORKSPACE PAGE
 const defaultContainer = () => (
-    <div className='main-index'>
+    <div className='default-components'>
         {<NavBarContainer />}
         {/* <ProtectedRoute path="/" component={Workspace} /> */}
+        
         <Switch>
-            {/* <ProtectedRoute exact path="/" component={Workspace} /> */}
+            <ProtectedRoute path="/main-index" component={MainIndex} />
             <AuthRoute exact path="/" component={MainPage} />
             
         </Switch>
