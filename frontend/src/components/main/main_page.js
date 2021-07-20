@@ -1,5 +1,6 @@
 import React from 'react';
 import './main.scss'
+import { Link } from 'react-router-dom'
 
 class MainPage extends React.Component {
 
@@ -10,7 +11,7 @@ class MainPage extends React.Component {
                 <div className='splash-header'>
                     <h1 className='header'>Project Hawkeye</h1>
                     <p className='p'>A bird#'s eye view on Twitter</p>
-                    <button className='splash-sign-up'>Sign Up</button>
+                    <Link className='splash-sign-up'>Sign Up</Link>
                 </div>
             </div>
             <div className='pic-box'>
