@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const WorkspaceSchema = new Schema({
         // creator: { type: Schema.Types.ObjectId, ref: 'users'},
-        workspaceName: String,
+        title: String,
         tweets: [{
             username: String,
             profile_pic: String,
