@@ -20,17 +20,18 @@ $white: #fff;
   display: flex;
   background: $black;
   color: white;
-  height: 26px;
+  height: 45px;
   position: fixed;
   left: 20%;
   top: 8px;
   display: flex;
   justify-content: space-between;
   z-index: 100;
-  
+  transition: all 500ms linear;
 }
 .nav-container.hasScrolled {
-  border: 1px solid lightgray;
+
+  // border: 1px solid lightgray;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.8), 0 4px 12px rgba(0,0,0, 0.36), inset 0 0 0 0.5px rgba(237, 237, 237, 0.36);
 }
 // .nav-container {
