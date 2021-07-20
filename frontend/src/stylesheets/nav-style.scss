@@ -20,7 +20,7 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
 .nav-container {
   width: 70vw;
   border-radius: 10px;
-  padding: 15px;
+  padding: 20px;
   margin: 0 auto;
   display: flex;
   background: $black;
@@ -29,7 +29,7 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
   position: fixed;
   left: 13%;
   float: left;
-  top: 8px;
+  top: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
