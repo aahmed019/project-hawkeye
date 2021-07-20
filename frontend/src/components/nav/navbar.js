@@ -19,7 +19,7 @@ class NavBar extends React.Component {
 
   componentDidMount() {
     window.addEventListener('scroll', () => {
-        if (window.scrollY < 100) {
+        if (window.scrollY < 75) {
            
             this.setState({
                 active: false

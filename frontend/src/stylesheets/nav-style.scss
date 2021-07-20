@@ -25,8 +25,9 @@ $white: #fff;
   top: 5px;
   z-index: 100;
 }
-.nav-container.hasScroll {
-  border: 1px solid red;
+.nav-container.hasScrolled {
+  border: 1px solid lightgray;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.8), 0 4px 12px rgba(0,0,0, 0.36), inset 0 0 0 0.5px rgba(237, 237, 237, 0.36);
 }
 // .nav-container {
 //   position: sticky;
