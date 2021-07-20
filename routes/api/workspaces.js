@@ -34,12 +34,12 @@ router.post('/add', (req, res) => {
 
     Workspace.findByIdAndUpdate("60f706f6c1e2732279bddc29",
         { "$push": { "tweets": {
-            username: 'test3-username',
-            profile_pic: 'test3-pic',
-            user_url: 'test3-userUrl',
-            body: 'test3-body',
+            username: 'test4-username',
+            profile_pic: 'test4-pic',
+            user_url: 'test4-userUrl',
+            body: 'test4-body',
             date: Date.now(),
-            source: 'test3-source',
+            source: 'test4-source',
         } } },
         { "new": true, "upsert": true },
         function (err, managerparent) {
