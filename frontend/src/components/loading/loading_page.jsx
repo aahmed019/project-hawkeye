@@ -2,6 +2,8 @@ import React from 'react';
 
 class LoadingPage extends React.Component{
   render(){
+    if(this.props.loaded) return null;
+
     return(
       <div className="loading-page">
         <div className="components">
