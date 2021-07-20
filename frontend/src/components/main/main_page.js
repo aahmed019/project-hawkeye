@@ -10,7 +10,7 @@ class MainPage extends React.Component {
             <div className='splash-box'>
                 <div className='splash-header'>
                     <h1 className='header'>Project Hawkeye</h1>
-                    <p className='p'>A bird#'s eye view on Twitter</p>
+                    <p className='p'>A bird's eye view on Twitter</p>
                     <button className='splash-sign-up'>Sign Up</button>
                 </div>
             </div>
@@ -63,21 +63,38 @@ class MainPage extends React.Component {
             </div>
             <div className='splash-footer-box'>
                 <div className='splash-footer'>
-                    <div className='ali'>
-
-                    </div>
-
-                    <div className='jack'>
-
-                    </div>
-
-                    <div className='sohrob'>
-
-                    </div>
-
-                    <div className='vincent'>
-
-                    </div>
+                        <div className='names'>
+                            <div className='card'>
+                                <div className='profile-pic'></div>
+                                <div>
+                                    <p>Ali Ahmed</p>
+                                    <Link></Link>
+                                    <Link></Link>
+                                    <Link></Link>
+                                </div>
+                            </div>
+                        </div>   
+                        <div className='names'>
+                            <div className='profile-pic'></div>
+                            <p>Jack Liu</p>
+                            <Link></Link>
+                            <Link></Link>
+                            <Link></Link>
+                        </div>   
+                        <div className='names'>
+                            <div className='profile-pic'></div>
+                            <p>Sohrob Ibrahimi</p>
+                            <Link></Link>
+                            <Link></Link>
+                            <Link></Link>
+                        </div>
+                        <div className='names'>
+                            <div className='profile-pic'></div>
+                            <p>Vincent Anh</p>
+                            <Link></Link>
+                            <Link></Link>
+                            <Link></Link>
+                        </div>
                 </div>
             </div>
         </div>
