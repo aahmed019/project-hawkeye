@@ -72,7 +72,7 @@ class MainPage extends React.Component {
                                 </div>
                                     <p>Ali Ahmed</p>
                                     <div className='footer-links'>
-                                        <Link>LinkedIn</Link>
+                                        <Link redirect='https://www.linkedin.com/in/ali-ahmed-697693174/'>LinkedIn</Link>
                                         <Link>Github</Link>
                                         <Link>Personal Website</Link>
                                     </div>
