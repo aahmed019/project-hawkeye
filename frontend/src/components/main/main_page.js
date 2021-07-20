@@ -61,63 +61,62 @@ class MainPage extends React.Component {
                         </div>
                     </div>
                 </div>
-            </div>
-            <p className='meet-the-team'>Meet the team</p>
-            <div className='splash-footer-box'>
-                <div className='splash-footer'>
-                    
-                        <div className='names'>
-                            <div className='card'>
-                                <div className='profile-pic'>
-                                    <img className='ali-pic' src="https://cdn.discordapp.com/attachments/865354697799237634/867099352623218688/Ali.png" alt="ali ahmed" />
+                <p className='meet-the-team'>Meet the team</p>
+                <div className='splash-footer-box'>
+                    <div className='splash-footer'>
+                            <div className='names'>
+                                <div className='card'>
+                                    <div className='profile-pic'>
+                                        <img className='ali-pic' src="https://cdn.discordapp.com/attachments/865354697799237634/867099352623218688/Ali.png" alt="ali ahmed" />
+                                    </div>
                                 </div>
-                            </div>
-                                <p>Ali Ahmed</p>
-                                <div className='footer-links'>
-                                    <Link>LinkedIn</Link>
-                                    <Link>Github</Link>
-                                    <Link>Personal Website</Link>
+                                    <p>Ali Ahmed</p>
+                                    <div className='footer-links'>
+                                        <Link>LinkedIn</Link>
+                                        <Link>Github</Link>
+                                        <Link>Personal Website</Link>
+                                    </div>
+                                </div>   
+                            <div className='names'>
+                                <div className='card'>
+                                    <div className='profile-pic'>
+                                        <img className='jack-pic' src="https://cdn.discordapp.com/attachments/865354697799237634/867099349540274186/Jack.png" alt="jack liu" />
+                                    </div>
                                 </div>
-                            </div>   
-                        <div className='names'>
-                            <div className='card'>
-                                <div className='profile-pic'>
-                                    <img className='jack-pic' src="https://cdn.discordapp.com/attachments/865354697799237634/867099349540274186/Jack.png" alt="jack liu" />
+                                    <p>Jack Liu</p>
+                                    <div className='footer-links'>
+                                        <Link>LinkedIn</Link>
+                                        <Link>Github</Link>
+                                        <Link>Personal Website</Link>
+                                    </div>
+                                </div>   
+                            <div className='names'>
+                                <div className='card'>
+                                    <div className='profile-pic'>
+                                        <img className='sohrob-pic' src="https://cdn.discordapp.com/attachments/865354697799237634/867099349867954236/Screen_Shot_2021-07-20_at_1.05.17_PM-removebg-preview.png" alt="sohrob" />
+                                    </div>
                                 </div>
-                            </div>
-                                <p>Jack Liu</p>
-                                <div className='footer-links'>
-                                    <Link>LinkedIn</Link>
-                                    <Link>Github</Link>
-                                    <Link>Personal Website</Link>
+                                    <p>Sohrob Ibrahimi</p>
+                                    <div className='footer-links'>
+                                        <Link>LinkedIn</Link>
+                                        <Link>Github</Link>
+                                        <Link>Personal Website</Link>
+                                    </div>
                                 </div>
-                            </div>   
-                        <div className='names'>
-                            <div className='card'>
-                                <div className='profile-pic'>
-                                    <img className='sohrob-pic' src="https://cdn.discordapp.com/attachments/865354697799237634/867099349867954236/Screen_Shot_2021-07-20_at_1.05.17_PM-removebg-preview.png" alt="sohrob" />
+                            <div className='names'>
+                                <div className='card'>
+                                    <div className='profile-pic'>
+                                        <img className='vincent-pic' src="https://cdn.discordapp.com/attachments/865354697799237634/867102643117359104/Vincent.png" alt="Vincent" />
+                                    </div>
                                 </div>
-                            </div>
-                                <p>Sohrob Ibrahimi</p>
-                                <div className='footer-links'>
-                                    <Link>LinkedIn</Link>
-                                    <Link>Github</Link>
-                                    <Link>Personal Website</Link>
+                                    <p>Vincent Anh</p>
+                                    <div className='footer-links'>
+                                        <Link>LinkedIn</Link>
+                                        <Link>Github</Link>
+                                        <Link>Personal Website</Link>
+                                    </div>
                                 </div>
-                            </div>
-                        <div className='names'>
-                            <div className='card'>
-                                <div className='profile-pic'>
-                                    <img className='vincent-pic' src="https://cdn.discordapp.com/attachments/865354697799237634/867102643117359104/Vincent.png" alt="Vincent" />
-                                </div>
-                            </div>
-                                <p>Vincent Anh</p>
-                                <div className='footer-links'>
-                                    <Link>LinkedIn</Link>
-                                    <Link>Github</Link>
-                                    <Link>Personal Website</Link>
-                                </div>
-                            </div>
+                        </div>
                     </div>
                 </div>
         </div>

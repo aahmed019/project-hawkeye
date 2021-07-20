@@ -9,13 +9,13 @@
     height:10%;
     width: 100%;
     justify-content: center;
-    display: flex;
+    // display: flex;
     margin-top: 80px;
 }
 
 .splash-header{
     height: 200px;
-    width: 60%;
+    // width: 60%;
     text-align: center;
 }
 
@@ -73,7 +73,7 @@
 }
 
 .splash-bottom-box{
-    height: 1000;
+    height: 1000px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -101,6 +101,7 @@
     background-size: 98% 98%;
     background-repeat: no-repeat;
     margin-bottom: 30px;
+    }
 }
 
 .bottom-container-word{
@@ -226,11 +227,12 @@
     width: 90%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 30px;
 
     .names{
-        height: 100%;
-        width: 20%;
+        height: 400px;
+        width: 250px;
         border-radius: 22px;
         box-shadow:rgba(192, 189, 189, 0.35) 0px 1px 12px;
         transition: 0.7s ease-out;
