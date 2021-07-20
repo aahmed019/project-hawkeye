@@ -6,51 +6,65 @@ class MainPage extends React.Component {
     render() {
         return (
         <div className='splash-container'>
-
-            <div className='under-nav'>
-                <section className='section'>
-                    <h1 className='splash-words'>PROJECT HAWKEYE</h1>
-                </section>
-            </div>
-            {/* section 1  */}
-            <div className='section1'>
-                <div className='section1-box1'>
-                    <h1 className='section1-box1-header'>Search for Tweets by username</h1>
-                    <br/>
-                    <br/>
-                    <p className='section1-box1-p'>
-                      Tweets can be filtered based on an individual's Twitter username. 
-                      You can find more relevant tweets using custom or pre-built filters. 
-                    </p>
-                </div>
-
-                <div className='section1-box2'>
-                    JUST A PHOTO FOR NOW MIGHT CHANGE
+            <div className='splash-box'>
+                <div className='splash-header'>
+                    <h1 className='header'>Project Hawkeye</h1>
+                    <p className='p'>A Hawk's eye view on Twitter</p>
+                    <button className='splash-sign-up'>Sign Up</button>
                 </div>
             </div>
-
-            {/* section 2 */}
-            <div className='section2'>
-                <div className='section2-box1'>
-                Box2 PHOTO
-                </div>
-
-                <div className='section2-box2'>
-                    WORDS PARAGRAPH
+            <div className='pic-box'>
+                <div className='splash-pic-container'>
+                    <div className='splash-pic'></div>
                 </div>
             </div>
+            <div className='splash-bottom-box'>
+                <div className='splash-bottom-container'>
+                    <div className='splash1'>
+                        <div className='bottom-container-word'>
+                            <p><span>Search</span> for Tweets by username</p>
+                            <br/>
+                            <h1>
+                            Tweets can be filtered based on an individual's Twitter username. 
+                            You can find more relevant tweets using custom or pre-built filters. 
+                            </h1>
+                        </div>
+                        <div className='bottom-container-pic'>
 
-            {/* section 3 */}
-            <div className='section3'>
-                <div className='section3-box1'>
-                    WORDS PARAGRAPH
-                </div>
+                        </div>
+                    </div>
+                    <div className='splash2'>
+                        <div className='bottom-container-pic2'>
 
-                <div className='section3-box2'>
-                Box3 PHOTO
+                        </div>
+                        <div className='bottom-container-word2'>
+                            <p><span>Simple</span> way to save searches</p>
+                            <br/>
+                            <h1>
+                            Results can be saved into workspaces. Workspaces can be public or private.
+                            </h1>
+                        </div>
+                    </div>
+                    <div className='splash3'>
+                        <div className='bottom-container-word3'>
+                            <p><span>Easy</span> way to share results</p>
+                        <br/>
+                        <h1>
+                            Public and Private workspaces can be shared with others.
+                            Private workspaces will need a key to access it. 
+                        </h1>
+                        </div>
+                        <div className='bottom-container-pic3'>
+
+                        </div>
+                    </div>
                 </div>
             </div>
-            
+            <div className='splash-footer-box'>
+                <div className='splash-footer'>
+
+                </div>
+            </div>
         </div>
         );
     }
