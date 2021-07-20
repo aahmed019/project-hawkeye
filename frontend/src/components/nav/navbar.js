@@ -6,11 +6,31 @@ class NavBar extends React.Component {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
+    this.state = {
+        active: false
+    }
   }
-
+  
   logoutUser(e) {
       e.preventDefault();
       this.props.logout();
+      
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY < 100) {
+           
+            this.setState({
+                active: false
+            })
+        } else {
+            //  debugger;
+            this.setState({
+                active: true
+            })
+        }
+    })
   }
 
     getLinks() {
@@ -22,21 +42,19 @@ class NavBar extends React.Component {
         );
         } else {
             return (
-                <li className='dropdown'>
-                    <img src="https://img.icons8.com/material-rounded/24/000000/menu--v1.png"/>
-                    <ul className='dropdown-menu'>
-                        <li className='menu-item'><Link to={'/signup'}>Sign Up</Link></li>
-                        <li className='menu-item'><Link to={'/login'}>Login</Link></li>
-
-                    </ul>
-                </li>
+                <div className='links' >
+                    <Link to={'/signup'}>Sign Up</Link>
+                    <Link to={'/login'}>Login</Link>
+                </div>
+                    
+                
             );
         }
     }
 
     render() {
         return (
-            <div className='nav-container'>
+            <div className={this.state.active ? 'nav-container hasScrolled' : 'nav-container'}>
                 
                 <h1><Link to='/' >Hawkeye</Link></h1>
                 <ul className='nav-menu'>
