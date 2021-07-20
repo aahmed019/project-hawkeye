@@ -5,10 +5,10 @@ import configureStore from './store/store';
 import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
-import { fetchTweets } from './util/twitter_api_util';
 import './stylesheets/html5reset-1.6.1.scss';
 import './stylesheets/nav-style.scss';
 import './stylesheets/auth-style.scss';
+import { addToWorkspace, fetchWorkspaces, postWorkspace } from './util/workspace_api_util';
 document.addEventListener('DOMContentLoaded', () => {
     let store;
 
@@ -32,7 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
         store = configureStore({});
     }
     window.store = store
-    window.tweets = fetchTweets
+
+    window.pworkspace = postWorkspace
+    window.gworkspace = fetchWorkspaces
+    window.test = addToWorkspace
     const root = document.getElementById('root');
 
     ReactDOM.render(<Root store={store} />, root);
