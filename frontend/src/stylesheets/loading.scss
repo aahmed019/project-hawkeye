@@ -1,0 +1,21 @@
+.loading-page{
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 20;
+
+  align-items: center;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+
+  .components{
+    width: 100%;
+  }
+
+  .sine-wave{
+    width: 100%;
+  }
+}
