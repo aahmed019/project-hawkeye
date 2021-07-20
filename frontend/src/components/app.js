@@ -27,7 +27,7 @@ const App = () => (
 );
 // ON LOGIN: REDIRECT TO WORKSPACE PAGE
 const defaultContainer = () => (
-    <div className='default-components'>
+    <>
         {<NavBarContainer />}
         {/* <ProtectedRoute path="/" component={Workspace} /> */}
         
@@ -37,6 +37,6 @@ const defaultContainer = () => (
             
         </Switch>
         
-    </div>
+    </>
 )
 export default App;

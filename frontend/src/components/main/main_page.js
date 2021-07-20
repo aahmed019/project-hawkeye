@@ -61,28 +61,14 @@ class MainPage extends React.Component {
                         </div>
                     </div>
                 </div>
-            </div>
-            <p className='meet-the-team'>Meet the team</p>
-            <div className='splash-footer-box'>
-                <div className='splash-footer'>
-                    
-                        <div className='names'>
-                            <div className='card'>
-                                <div className='profile-pic'>
-                                    <img className='ali-pic' src="https://cdn.discordapp.com/attachments/865354697799237634/867099352623218688/Ali.png" alt="ali ahmed" />
-                                </div>
-                            </div>
-                                <p>Ali Ahmed</p>
-                                <div className='footer-links'>
-                                    <Link>LinkedIn</Link>
-                                    <Link>Github</Link>
-                                    <Link>Personal Website</Link>
-                                </div>
-                            </div>   
-                        <div className='names'>
-                            <div className='card'>
-                                <div className='profile-pic'>
-                                    <img className='jack-pic' src="https://cdn.discordapp.com/attachments/865354697799237634/867099349540274186/Jack.png" alt="jack liu" />
+                <p className='meet-the-team'>Meet the team</p>
+                <div className='splash-footer-box'>
+                    <div className='splash-footer'>
+                            <div className='names'>
+                                <div className='card'>
+                                    <div className='profile-pic'>
+                                        <img className='ali-pic' src="https://cdn.discordapp.com/attachments/865354697799237634/867099352623218688/Ali.png" alt="ali ahmed" />
+                                    </div>
                                 </div>
                                     <p>Ali Ahmed</p>
                                     <div className='footer-links'>
