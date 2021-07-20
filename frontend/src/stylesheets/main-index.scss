@@ -2,11 +2,14 @@ $purple: #7856FF;
 $black: #1f1f24;
 $white: #fff;
 .default-components {
+  position: absolute;
   height: 100%;
   width: 100vw;
   background-color: $black;
+  
 }
 
 .main-index-container {
-  
+  margin-top: 200px;
+  display: flex;
 }

@@ -61,7 +61,6 @@ class MainPage extends React.Component {
                         </div>
                     </div>
                 </div>
-<<<<<<< HEAD
             </div>
             <p className='meet-the-team'>Meet the team</p>
             <div className='splash-footer-box'>
@@ -84,16 +83,6 @@ class MainPage extends React.Component {
                             <div className='card'>
                                 <div className='profile-pic'>
                                     <img className='jack-pic' src="https://cdn.discordapp.com/attachments/865354697799237634/867099349540274186/Jack.png" alt="jack liu" />
-=======
-                <p className='meet-the-team'>Meet the team</p>
-                <div className='splash-footer-box'>
-                    <div className='splash-footer'>
-                            <div className='names'>
-                                <div className='card'>
-                                    <div className='profile-pic'>
-                                        <img className='ali-pic' src="https://cdn.discordapp.com/attachments/865354697799237634/867099352623218688/Ali.png" alt="ali ahmed" />
-                                    </div>
->>>>>>> bfa8f8c4fc8638139e0ad2c52e7bd5e0f0bce5d1
                                 </div>
                                     <p>Ali Ahmed</p>
                                     <div className='footer-links'>
