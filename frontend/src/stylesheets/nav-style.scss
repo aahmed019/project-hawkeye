@@ -49,7 +49,7 @@ $black: #0E050F;
   background-color: $black;
   padding: 5px;
   // transform: scaleY(0);
-  // animation: growDown 300ms ease-in-out forwards;
+  animation: growDown 300ms ease-in-out forwards;
   transform-origin: top center;
   box-shadow: 0 2px 4px rgba( 0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
@@ -63,16 +63,16 @@ $black: #0E050F;
     
   }
 }
-// @keyFrames growDown {
-//   0% {
-//     transform: scaleY(0);
-//   }
-//   80% {
-//     transform: scaleY(1.1);
-//   }
-//   100% {
-//     transform: scaleY(1);
-//   }
-// }
+@keyFrames growDown {
+  0% {
+    transform: scaleY(0);
+  }
+  80% {
+    transform: scaleY(1.1);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
 
 
