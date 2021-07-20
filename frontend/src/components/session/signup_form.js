@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -42,7 +42,7 @@ class SignupForm extends React.Component {
 
     renderErrors() {
         return(
-        <ul>
+        <ul className='errors'>
             {Object.keys(this.state.errors).map((error, i) => (
             <li key={`error-${i}`}>
                 {this.state.errors[error]}
@@ -54,32 +54,36 @@ class SignupForm extends React.Component {
 
     render() {
         return (
-        <div className="signup-form-container">
+        <div className="signup-form-container auth-form">
+            <div className="signup-form outer-div">
             <form onSubmit={this.handleSubmit}>
-            <div className="signup-form">
-                <br/>
+                <div className='form-div'>
+                <h1>Sign up for an account</h1>
+                
                 <input type="text"
                     value={this.state.email}
                     onChange={this.update('email')}
                     placeholder="Email"
                 />
-                <br/>
+                
                 <input type="password"
                     value={this.state.password}
                     onChange={this.update('password')}
                     placeholder="Password"
                 />
-                <br/>
+                
                 <input type="password"
                     value={this.state.password2}
                     onChange={this.update('password2')}
                     placeholder="Confirm Password"
                 />
-                <br/>
-                <input type="submit" value="Submit" />
+                
+                <input className='submit-btn' type="submit" value="Sign Up" />
                 {this.renderErrors()}
+            <span>Already have an account? <Link to='/login'>Log in</Link></span>
             </div>
             </form>
+            </div>
         </div>
         );
     }
