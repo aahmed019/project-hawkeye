@@ -210,9 +210,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 200px;
+    margin-top: 10px;
+    flex-direction: column;
 }
 
+.meet-the-team{
+    margin-top: 200px;
+    text-align: center;
+    color: #7856ff;;
+    font-size: 50px;
+
+}
 
 .splash-footer{
     height: 350px;

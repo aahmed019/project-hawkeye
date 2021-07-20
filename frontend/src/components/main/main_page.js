@@ -61,6 +61,7 @@ class MainPage extends React.Component {
                     </div>
                 </div>
             </div>
+            <p className='meet-the-team'>Meet the team</p>
             <div className='splash-footer-box'>
                 <div className='splash-footer'>
                     
