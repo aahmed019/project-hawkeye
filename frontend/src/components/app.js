@@ -28,7 +28,7 @@ const App = () => (
 const defaultContainer = () => (
     <div className='main-index'>
         {<NavBarContainer />}
-        <ProtectedRoute path="/" component={Workspace} />
+        {/* <ProtectedRoute path="/" component={Workspace} /> */}
         <Switch>
             {/* <ProtectedRoute exact path="/" component={Workspace} /> */}
             <AuthRoute exact path="/" component={MainPage} />
