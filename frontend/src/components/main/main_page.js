@@ -11,7 +11,7 @@ class MainPage extends React.Component {
                 <div className='splash-header'>
                     <h1 className='header'>Project Hawkeye</h1>
                     <p className='p'>A bird#'s eye view on Twitter</p>
-                    <Link className='splash-sign-up'>Sign Up</Link>
+                    <button className='splash-sign-up'>Sign Up</button>
                 </div>
             </div>
             <div className='pic-box'>
@@ -63,7 +63,21 @@ class MainPage extends React.Component {
             </div>
             <div className='splash-footer-box'>
                 <div className='splash-footer'>
+                    <div className='ali'>
 
+                    </div>
+
+                    <div className='jack'>
+
+                    </div>
+
+                    <div className='sohrob'>
+
+                    </div>
+
+                    <div className='vincent'>
+
+                    </div>
                 </div>
             </div>
         </div>
