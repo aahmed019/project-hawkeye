@@ -29,8 +29,8 @@ const defaultContainer = () => (
     <div className='main-index'>
         {<NavBarContainer />}
         <Switch>
+            {/* <ProtectedRoute exact path="/" component={Workspace} /> */}
             <AuthRoute exact path="/" component={MainPage} />
-            <ProtectedRoute path="/workspace" component={Workspace} />
         </Switch>
         
     </div>
