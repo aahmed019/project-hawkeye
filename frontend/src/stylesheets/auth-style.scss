@@ -60,6 +60,7 @@ $lightgray: rgb(235, 231, 231);s
     box-sizing: border-box;
     &:focus-visible {
       outline: none;
+      color: black;
     }
     margin-bottom: 15px;
   }

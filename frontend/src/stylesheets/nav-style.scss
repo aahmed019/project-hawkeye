@@ -35,7 +35,10 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
   align-items: center;
   z-index: 100;
   border: 1px solid rgba(233, 233, 233, 0);
-  transition: border, box-shadow 500ms linear;
+  transition: all 500ms linear;
+  h1 {
+    font-size: 20px;
+  }
 }
 .nav-container.hasScrolled {
   border: 1px solid rgba(233, 233, 233, 1);
@@ -70,7 +73,7 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
   padding: 10px;
   transition: all 0.5s ease-in-out;
   border-left: 1px solid rgba(233, 233, 233, 1);
-  .login {
+  .signup {
     margin-left: 15px;
   }
   span {
@@ -78,99 +81,33 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
     padding: 9px 20px;
     
     border-radius: 5px;
-    // padding-bottom: 3px;
+   
     box-sizing: content-box;
     &:hover {
       background-color: $dark-purple;
       cursor: pointer;
-      // text-decoration: underline;
+     
     }
   }
   
-  .middle.signup {
+  .middle.login {
     padding-bottom: 3px;
   }
-  // a:hover{
-  //   text-decoration: underline;
-  //   transform: scaleX(3);
-  // }
-
-  // a:after {
-  //   opacity: 1;
-  //   transform: scale(0);
-  //   transform-origin: center;
-  //   transition: opacity 300ms, transform 300ms;
-  // }
-  // a:hover::after, a:focus::after {
-  //   transform: scale(1);
-  // }
 }
-
-
-// .nav-container {
-//   position: sticky;
-//   top: 0;
-//   width: max-width;
-//   // border: 1px solid red;
-//   z-index: 100;
-//   box-shadow: 0px 5px 8px -10px rgba(0, 0, 0, 0.8);
-//   padding: 8px 10px;
-//   height: 60px;
-//   background-color: $purple;
-//   display: flex;
-//   justify-content: space-between;
-//   color: white;
-//   align-items: center;
+.logout-btn {
+  background-color: $purple;
+    padding: 9px 20px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    color: white;
+    box-sizing: content-box;
+    &:hover {
+      background-color: $dark-purple;
+      cursor: pointer;
+     
+    }
+}
   
-// }
-
-// .dropdown {
-//   position: relative;
-//   img {
-//     filter: invert(1);
-//   }
-//   &:hover {
-//     .dropdown-menu {
-//       display: block;
-//     }
-//   }
-// }
-// .dropdown-menu {
-  
-//   position: absolute;
-//   width: auto;
-//   perspective: 1000px;
-//   top: 100%;
-//   left: -40px;
-//   display: none;
-//   float:left;
-//   background-color: $black;
-//   padding: 5px;
-//   // transform: scaleY(0);
-//   animation: growDown 300ms ease-in-out forwards;
-//   transform-origin: top center;
-//   box-shadow: 0 2px 4px rgba( 0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
-//   border-radius: 5px;
-//   .menu-item {
-//     &:first-child {
-//       margin-bottom: 6px;
-//     }
-//     width: max-content;
-//     word-wrap: normal;
-//     // margin-bottom: 5
-    
-//   }
-// }
-// @keyFrames growDown {
-//   0% {
-//     transform: scaleY(0);
-//   }
-//   80% {
-//     transform: scaleY(1.1);
-//   }
-//   100% {
-//     transform: scaleY(1);
-//   }
-// }
 
 

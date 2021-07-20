@@ -18,11 +18,13 @@ const App = () => (
             
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
-            <AuthRoute component={defaultContainer} />
+            <ProtectedRoute component={defaultContainer} />
             {/* <Redirect to="/" /> */}
+            
         </Switch>
     </div>
 );
+// ON LOGIN: REDIRECT TO WORKSPACE PAGE
 const defaultContainer = () => (
     <>
         {<NavBarContainer />}
