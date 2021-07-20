@@ -1,0 +1,102 @@
+// //COLORS
+// $babyblue: #C3E0E5;
+// $darkblue: #274472;
+// $bluegray: #5885Af;
+// $midnightblue: #41729F;
+
+// $lightpurple: #9388A2;
+// $purple: #341948;
+// $darkblue: #170B3B;
+// $black: #0E050F;
+$purple: #7856FF;
+$black: #1f1f24;
+$white: #fff;
+
+.nav-container {
+  width: 60vw;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 0 auto;
+  display: flex;
+  background: $black;
+  color: white;
+  height: 26px;
+  position: fixed;
+  left: 20%;
+  top: 8px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+  
+}
+.nav-container.hasScrolled {
+  border: 1px solid lightgray;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.8), 0 4px 12px rgba(0,0,0, 0.36), inset 0 0 0 0.5px rgba(237, 237, 237, 0.36);
+}
+// .nav-container {
+//   position: sticky;
+//   top: 0;
+//   width: max-width;
+//   // border: 1px solid red;
+//   z-index: 100;
+//   box-shadow: 0px 5px 8px -10px rgba(0, 0, 0, 0.8);
+//   padding: 8px 10px;
+//   height: 60px;
+//   background-color: $purple;
+//   display: flex;
+//   justify-content: space-between;
+//   color: white;
+//   align-items: center;
+  
+// }
+
+// .dropdown {
+//   position: relative;
+//   img {
+//     filter: invert(1);
+//   }
+//   &:hover {
+//     .dropdown-menu {
+//       display: block;
+//     }
+//   }
+// }
+// .dropdown-menu {
+  
+//   position: absolute;
+//   width: auto;
+//   perspective: 1000px;
+//   top: 100%;
+//   left: -40px;
+//   display: none;
+//   float:left;
+//   background-color: $black;
+//   padding: 5px;
+//   // transform: scaleY(0);
+//   animation: growDown 300ms ease-in-out forwards;
+//   transform-origin: top center;
+//   box-shadow: 0 2px 4px rgba( 0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+//   border-radius: 5px;
+//   .menu-item {
+//     &:first-child {
+//       margin-bottom: 6px;
+//     }
+//     width: max-content;
+//     word-wrap: normal;
+//     // margin-bottom: 5
+    
+//   }
+// }
+// @keyFrames growDown {
+//   0% {
+//     transform: scaleY(0);
+//   }
+//   80% {
+//     transform: scaleY(1.1);
+//   }
+//   100% {
+//     transform: scaleY(1);
+//   }
+// }
+
+
