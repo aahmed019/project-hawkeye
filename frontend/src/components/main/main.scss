@@ -1,5 +1,5 @@
 .splash-container{
-    height: 2400px;
+    height: 2600px;
     width: 100%;
     padding-top: 20px;
     background-color: #1F1F24;
@@ -33,8 +33,8 @@
 
 .splash-sign-up{
     margin-top: 20px;
-    height: 40px;
-    width: 160px;
+    height: 50px;
+    width: 180px;
     border-radius: 8px;
     color: white;
     background-color: #7856ff;
@@ -85,7 +85,6 @@
 .splash1{
     height: 30%;
     width: 100%;
-    border: 1px solid red;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -93,7 +92,6 @@
 }
 
 .bottom-container-word{
-    border: white 1px solid;
     width: 60%;
     height: 100%;
     font-size: 50px;
@@ -117,15 +115,16 @@
 }
 
 .bottom-container-pic{
-    border: white 1px solid;
     width: 40%;
     height: 100%;
+    background: url('purple.png');
+    background-size: 98% 98%;
+    background-repeat: no-repeat;
 }
 
 .splash2{
     height: 30%;
     width: 100%;
-    border: 1px solid red;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -163,7 +162,6 @@
 .splash3{
     height: 30%;
     width: 100%;
-    border: 1px solid red;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -201,12 +199,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid red;
+    margin-top: 60px;
 }
 
 
 .splash-footer{
-    height: 300px;
+    height: 350px;
     width: 90%;
-    border: 1px solid purple;
-    margin-top: 50px;
+    border: 1px solid white;
 }

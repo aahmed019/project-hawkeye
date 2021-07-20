@@ -9,7 +9,7 @@ class MainPage extends React.Component {
             <div className='splash-box'>
                 <div className='splash-header'>
                     <h1 className='header'>Project Hawkeye</h1>
-                    <p className='p'>A Hawk's eye view on Twitter</p>
+                    <p className='p'>A bird#'s eye view on Twitter</p>
                     <button className='splash-sign-up'>Sign Up</button>
                 </div>
             </div>
