@@ -1,11 +1,15 @@
 .splash-container{
-    height: 2500px;
+    height: 2400px;
     width: 100%;
-    border: red 1px solid;
-    justify-content: center;
     padding-top: 20px;
     background-color: black;
-    flex-direction: row;
+}
+
+.splash-box{
+    height:10%;
+    width: 100%;
+    justify-content: center;
+    display: flex;
 }
 
 .splash-header{
@@ -15,7 +19,7 @@
 }
 
 .header{
-    margin-top: 50px;
+    margin-top: 40px;
     font-size: 60px;
     color: white; 
 }
@@ -41,33 +45,123 @@
     }
 }
 
-.splash-pic-container{
-
+.pic-box{
+    height: 600;
+    width: 100%;
+    justify-content: center;
+    display: flex;
 }
 
-.splash1{
-    
+.splash-pic-container{
+    height: 90%;
+    width: 90%;
+    margin-bottom: 80px;
 }
 
 .splash-pic{
     height: 600px;
-    width: 90%;
+    width: 100%;
     border-radius: 16px;
     background-color: white;
     border: none;
     box-shadow: (0,0,0,.25) 0px 1px 12px;
-    padding-left: 30px;
-    padding-right: 30px;
+    margin-top: 50px;
+}
+
+.splash-bottom-box{
+    border: red 1px solid;
+    height: 1000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .splash-bottom-container{
     height: 1000px;
     width: 90%;
-    border: 1px solid red;
+    border: 1px solid yellow;
 }
 
-.splash-footer{
-    height: 600px;
-    width: 90%;
+.splash1{
+    height: 30%;
+    width: 100%;
     border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.bottom-container-word{
+    border: white 1px solid;
+    width: 45%;
+    height: 100%;
+}
+
+.bottom-container-pic{
+    border: white 1px solid;
+    width: 45%;
+    height: 100%;
+}
+
+.splash2{
+    height: 30%;
+    width: 100%;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 40px;
+}
+
+.bottom-container-word2{
+    border: white 1px solid;
+    width: 45%;
+    height: 100%;
+}
+
+.bottom-container-pic2{
+    border: white 1px solid;
+    width: 45%;
+    height: 100%;
+}
+
+.splash3{
+    height: 30%;
+    width: 100%;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 40px;
+}
+
+.bottom-container-word3{
+    border: white 1px solid;
+    width: 45%;
+    height: 100%;
+}
+
+.bottom-container-pic3{
+    border: white 1px solid;
+    width: 45%;
+    height: 100%;
+}
+
+.splash-footer-box{
+    height: 300px;
+    width: 100%;
+    border: red 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.splash-footer{
+    height: 300px;
+    width: 90%;
+    border: 1px solid purple;
+    margin-top: 100px;
 }
