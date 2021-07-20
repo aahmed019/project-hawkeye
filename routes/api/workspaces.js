@@ -17,6 +17,7 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
+
     const newWorkspace = new Workspace({
         title: 'TEST 1 WORKSPACE',
         tweets: [
@@ -40,4 +41,6 @@ router.post('/', (req, res) => {
     });
     newWorkspace.save()
     
-})
+});
+
+module.exports = router;
