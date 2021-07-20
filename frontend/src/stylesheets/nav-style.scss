@@ -13,17 +13,21 @@ $black: #1f1f24;
 $white: #fff;
 
 .nav-container {
-  width: 80vw;
+  width: 60vw;
   border-radius: 10px;
-  // border: 1px solid red;
+  padding: 15px;
   margin: 0 auto;
   display: flex;
   background: $black;
   color: white;
-  height: 50px;
+  height: 26px;
   position: fixed;
-  top: 5px;
+  left: 20%;
+  top: 8px;
+  display: flex;
+  justify-content: space-between;
   z-index: 100;
+  
 }
 .nav-container.hasScrolled {
   border: 1px solid lightgray;
