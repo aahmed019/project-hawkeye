@@ -217,7 +217,6 @@
 .splash-footer{
     height: 350px;
     width: 90%;
-    border: 1px solid white;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -225,28 +224,65 @@
     .names{
         height: 100%;
         width: 20%;
-        border: 1px solid red;
+        // border: 1px solid red;
         border-radius: 22px;
+        box-shadow:rgba(192, 189, 189, 0.35) 0px 1px 12px;
 
         p{
             color: white;
             font-size: 25px;
             text-align: center;
         }
+
+        &:hover{
+        box-shadow:rgba(255, 255, 255, 0.8) 0px 1px 12px;     
+        }
     }
 
     .card{
         display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        margin-top: 8px;
     }
 
     .profile-pic{
         height: 150px;
         width: 150px;
-        border: 1px solid yellow;
         border-radius: 100px;
         align-self: center;
+        overflow: hidden;
+        background-color: rgb(190, 190, 190);
+
+        .ali-pic{
+            width: 150px;
+            height: 150px;
+            z-index: 1;
+        }
+
+        .jack-pic{
+            width: 140px;
+            height: 230px;
+            z-index: 1;
+            margin-left: 10px;
+            margin-top: -10px;
+        }
+
+        .sohrob-pic{
+            width: 220px;
+            height: 200px;
+            z-index: 1;
+            margin-left: -25px;
+            margin-top: -10px;
+        }
+
+        .vincent-pic{
+            width: 200px;
+            height: 190px;
+            z-index: 1;
+            margin-left: -25px;
+            margin-top: -20px;
+        }
     }
 
 }
