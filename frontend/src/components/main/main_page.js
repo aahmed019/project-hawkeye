@@ -63,54 +63,61 @@ class MainPage extends React.Component {
             </div>
             <div className='splash-footer-box'>
                 <div className='splash-footer'>
+                    
                         <div className='names'>
                             <div className='card'>
                                 <div className='profile-pic'>
                                     <img className='ali-pic' src="https://cdn.discordapp.com/attachments/865354697799237634/867099352623218688/Ali.png" alt="ali ahmed" />
                                 </div>
                             </div>
-                                <div>
-                                    <p>Ali Ahmed</p>
-                                    <Link></Link>
-                                    <Link></Link>
-                                    <Link></Link>
+                                <p>Ali Ahmed</p>
+                                <div className='footer-links'>
+                                    <Link>LinkedIn</Link>
+                                    <Link>Github</Link>
+                                    <Link>Personal Website</Link>
                                 </div>
-                        </div>   
+                            </div>   
                         <div className='names'>
                             <div className='card'>
                                 <div className='profile-pic'>
                                     <img className='jack-pic' src="https://cdn.discordapp.com/attachments/865354697799237634/867099349540274186/Jack.png" alt="jack liu" />
                                 </div>
                             </div>
-                            <p>Jack Liu</p>
-                            <Link></Link>
-                            <Link></Link>
-                            <Link></Link>
-                        </div>   
+                                <p>Jack Liu</p>
+                                <div className='footer-links'>
+                                    <Link>LinkedIn</Link>
+                                    <Link>Github</Link>
+                                    <Link>Personal Website</Link>
+                                </div>
+                            </div>   
                         <div className='names'>
                             <div className='card'>
                                 <div className='profile-pic'>
                                     <img className='sohrob-pic' src="https://cdn.discordapp.com/attachments/865354697799237634/867099349867954236/Screen_Shot_2021-07-20_at_1.05.17_PM-removebg-preview.png" alt="sohrob" />
                                 </div>
                             </div>
-                            <p>Sohrob Ibrahimi</p>
-                            <Link></Link>
-                            <Link></Link>
-                            <Link></Link>
-                        </div>
+                                <p>Sohrob Ibrahimi</p>
+                                <div className='footer-links'>
+                                    <Link>LinkedIn</Link>
+                                    <Link>Github</Link>
+                                    <Link>Personal Website</Link>
+                                </div>
+                            </div>
                         <div className='names'>
                             <div className='card'>
                                 <div className='profile-pic'>
                                     <img className='vincent-pic' src="https://cdn.discordapp.com/attachments/865354697799237634/867102643117359104/Vincent.png" alt="Vincent" />
                                 </div>
                             </div>
-                            <p>Vincent Anh</p>
-                            <Link></Link>
-                            <Link></Link>
-                            <Link></Link>
-                        </div>
+                                <p>Vincent Anh</p>
+                                <div className='footer-links'>
+                                    <Link>LinkedIn</Link>
+                                    <Link>Github</Link>
+                                    <Link>Personal Website</Link>
+                                </div>
+                            </div>
+                    </div>
                 </div>
-            </div>
         </div>
         );
     }
