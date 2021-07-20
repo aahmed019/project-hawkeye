@@ -1,14 +1,15 @@
 import React from 'react';
-import SineWave from './sine_wave';
 
 class LoadingPage extends React.Component{
   render(){
     return(
       <div className="loading-page">
         <div className="components">
-          <SineWave className="sine-wave" />
-          <div>
-            <h1>Hello</h1>
+          <div className="loading-icon-container">
+            <div className="loading-icon"></div>
+          </div>
+          <div className="heading">
+            <h1>Loading</h1>
           </div>
         </div>
       </div>
