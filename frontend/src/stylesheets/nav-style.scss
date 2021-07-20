@@ -11,6 +11,11 @@
 $purple: #7856FF;
 $black: #1f1f24;
 $white: #fff;
+$dark-purple: #7f62f2;
+
+$duration: .2s;
+$distance: 8px;
+$easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
 
 .nav-container {
   width: 70vw;
@@ -27,6 +32,7 @@ $white: #fff;
   top: 8px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   z-index: 100;
   border: 1px solid rgba(233, 233, 233, 0);
   transition: all 500ms linear;
@@ -35,6 +41,69 @@ $white: #fff;
   border: 1px solid rgba(233, 233, 233, 1);
   
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.8), 0 4px 12px rgba(0,0,0, 0.36), inset 0 0 0 0.5px rgba(237, 237, 237, 0.36);
+}
+
+.middle
+{
+    position: relative;
+}
+
+.middle:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #FFF;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.middle:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.links {
+  padding: 10px;
+  transition: all 0.5s ease-in-out;
+  border-left: 1px solid rgba(233, 233, 233, 1);
+  .login {
+    margin-left: 15px;
+  }
+  span {
+    background-color: $purple;
+    padding: 9px 20px;
+    
+    border-radius: 5px;
+    // padding-bottom: 3px;
+    box-sizing: content-box;
+    &:hover {
+      background-color: $dark-purple;
+      cursor: pointer;
+      // text-decoration: underline;
+    }
+  }
+  
+  .middle.signup {
+    padding-bottom: 3px;
+  }
+  // a:hover{
+  //   text-decoration: underline;
+  //   transform: scaleX(3);
+  // }
+
+  // a:after {
+  //   opacity: 1;
+  //   transform: scale(0);
+  //   transform-origin: center;
+  //   transition: opacity 300ms, transform 300ms;
+  // }
+  // a:hover::after, a:focus::after {
+  //   transform: scale(1);
+  // }
 }
 
 
