@@ -25,9 +25,14 @@ export const addComment = (workspace_id, comment) => {
 };
 
 export const updateComment = (workspace_id, comment) => {
-    return axios.patch('/api/workspaces/update-comment')
+    return axios.patch('/api/workspaces/update-comment', 
+    {
+        workspace_id,
+        comment
+    }
+    )
 }
 
 export const removeComment = (workspace_id, comment) => {
-    return axios.delete('/api/workspaces/add-comment')
+    return axios.delete('/api/workspaces/remove-comment')
 };

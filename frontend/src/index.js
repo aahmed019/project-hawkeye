@@ -8,7 +8,7 @@ import { logout } from './actions/session_actions';
 import './stylesheets/html5reset-1.6.1.scss';
 import './stylesheets/nav-style.scss';
 import './stylesheets/auth-style.scss';
-import { addTweet, fetchWorkspaces, postWorkspace, removeTweet } from './util/workspace_api_util';
+import { addComment, addTweet, fetchWorkspaces, postWorkspace, removeComment, removeTweet, updateComment } from './util/workspace_api_util';
 document.addEventListener('DOMContentLoaded', () => {
     let store;
 
@@ -37,6 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.gworkspace = fetchWorkspaces
     window.a = addTweet
     window.d = removeTweet
+
+    window.addComment = addComment
+    window.removeComment = removeComment
+    window.updateComment = updateComment
     const root = document.getElementById('root');
 
     ReactDOM.render(<Root store={store} />, root);

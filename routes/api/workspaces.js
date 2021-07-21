@@ -70,9 +70,9 @@ router.delete('/remove-tweet', (req, res) => {
 
 router.post('/add-comment', (req, res) => {
 
-    Workspace.findByIdAndUpdate("60f81f345b1d33050c7d652b",
+    Workspace.findByIdAndUpdate(req.body.workspace_id,
         { "$push": { "comments": {
-            body: 'Here in my garage',
+            body: req.body.comment,
         } } },
         { "new": true, "upsert": true },
         function (err, managerparent) {
@@ -83,11 +83,11 @@ router.post('/add-comment', (req, res) => {
 
 });
 
-router.post('/remove-comment', (req, res) => {
+router.delete('/remove-comment', (req, res) => {
 
-    Workspace.findByIdAndUpdate("60f81f345b1d33050c7d652b",
+    Workspace.findByIdAndUpdate(req.body.workspace_id,
         { "$pull": { "comments": {
-            body: 'Here in my garage',
+            body: req.body.comment,
         } } },
         { "new": true, "upsert": true },
         function (err, managerparent) {
@@ -95,6 +95,21 @@ router.post('/remove-comment', (req, res) => {
             res.json(managerparent);
         }
     );
+
+});
+
+router.patch('/update-comment', (req, res) => {
+    console.log(req.body)
+    // Workspace.findByIdAndUpdate(req.body.workspace_id,
+    //     { "$set": { [`comments.${req.body.comment_id}`] : {
+    //         body: req.body.comment,
+    //     } } },
+    //     { "new": true, "upsert": true },
+    //     function (err, managerparent) {
+    //         if (err) throw err;
+    //         res.json(managerparent);
+    //     }
+    // );
 
 });
 
