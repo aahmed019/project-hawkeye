@@ -73,7 +73,7 @@ class LoginForm extends React.Component {
                 />
                 
                 <input className='submit-btn' type="submit" value="Log in" />
-                <button className='demo-btn' onClick={() => this.props.login({email: 'demo@demo.com', password: '123test'})}>Demo Login</button>
+                <button className='demo-btn' onClick={() => this.props.login({email: 'demo@demo.com', password: 'password'})}>Demo Login</button>
                 {this.renderErrors()}
             <span>Don't have an account? <Link to='/signup'>Sign Up</Link></span>
             </div>
