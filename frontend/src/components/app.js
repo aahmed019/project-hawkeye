@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import { Switch } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import NavBarContainer from './nav/navbar_container';
 
 import MainPage from './main/main_page';
@@ -11,13 +11,23 @@ import SignupFormContainer from './session/signup_form_container';
 
 const App = () => (
     <div className='app'>
-        <NavBarContainer />
+        {/* <ProtectedRoute path="/" component={NavBarContainer} /> */}
+        {/* <AuthRoute exact path="/" component={NavBarContainer}/> */}
+        {/* <NavBarContainer /> */}
         <Switch>
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
-            <ProtectedRoute path="/" component={MainPage} />
+            <Route component={defaultContainer} />
+            {/* <Redirect to="/" /> */}
+            
         </Switch>
     </div>
 );
-
+// ON LOGIN: REDIRECT TO WORKSPACE PAGE
+const defaultContainer = () => (
+    <>
+        {<NavBarContainer />}
+        <AuthRoute exact path="/" component={MainPage} />
+    </>
+)
 export default App;
