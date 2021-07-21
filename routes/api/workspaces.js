@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    console.log(req.body.params.data)
+    // console.log(req.body.params.data)
     const {title} = req.body.params.data
     const {name, tweets} = req.body.params.data.folders
     // console.log(title)
@@ -34,7 +34,7 @@ router.post('/', (req, res) => {
     
 });
 
-router.post('/add', (req, res) => {
+router.post('/add-tweet', (req, res) => {
 
     Workspace.findByIdAndUpdate("60f777bb638ce546d91012c3",
         { "$push": { "folders.0.tweets": {
@@ -53,7 +53,7 @@ router.post('/add', (req, res) => {
 
 });
 
-router.delete('/remove', (req, res) => {
+router.delete('/remove-tweet', (req, res) => {
 
     Workspace.findByIdAndUpdate("60f777bb638ce546d91012c3",
         { "$pull": { "folders.0.tweets": {
@@ -67,5 +67,36 @@ router.delete('/remove', (req, res) => {
     );
 
 });
+
+router.post('/add-comment', (req, res) => {
+
+    Workspace.findByIdAndUpdate("60f81f345b1d33050c7d652b",
+        { "$push": { "comments": {
+            body: 'Here in my garage',
+        } } },
+        { "new": true, "upsert": true },
+        function (err, managerparent) {
+            if (err) throw err;
+            res.json(managerparent);
+        }
+    );
+
+});
+
+router.post('/remove-comment', (req, res) => {
+
+    Workspace.findByIdAndUpdate("60f81f345b1d33050c7d652b",
+        { "$pull": { "comments": {
+            body: 'Here in my garage',
+        } } },
+        { "new": true, "upsert": true },
+        function (err, managerparent) {
+            if (err) throw err;
+            res.json(managerparent);
+        }
+    );
+
+});
+
 
 module.exports = router;

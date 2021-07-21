@@ -12,10 +12,22 @@ export const postWorkspace = (data) =>{
     ).then(res => console.log(res))
 }
 
-export const addToWorkspace = () => {
-    return axios.post('/api/workspaces/add')
+export const addTweet = () => {
+    return axios.post('/api/workspaces/add-tweet')
 };
 
-export const removeFromWorkspace = () => {
-    return axios.delete('/api/workspaces/remove')
+export const removeTweet = () => {
+    return axios.delete('/api/workspaces/remove-tweet')
+};
+
+export const addComment = (workspace_id, comment) => {
+    return axios.post('/api/workspaces/add-comment')
+};
+
+export const updateComment = (workspace_id, comment) => {
+    return axios.patch('/api/workspaces/update-comment')
+}
+
+export const removeComment = (workspace_id, comment) => {
+    return axios.delete('/api/workspaces/add-comment')
 };
