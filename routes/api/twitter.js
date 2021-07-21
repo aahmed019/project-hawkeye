@@ -62,6 +62,7 @@ router.get('/', (req, res) => {
         try {
             // Make request
             const response = await getUsers();
+            console.log(response);
             let tweets = await getTweets(response.data[0].id);
             let word = req.query.filter;
             let results = {};

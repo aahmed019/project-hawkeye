@@ -74,8 +74,8 @@ class TweetIndex extends React.Component{
         </div>
 
         <ul className='tweets-feed-container'>
-          {/* {tweets} */}
-          <li className='tweet'>
+          {tweets}
+          {/* <li className='tweet'>
             <ul>
               <li className='tweet-head'>
                 <li className='tweet-img'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Joe_Biden_presidential_portrait.jpg/1200px-Joe_Biden_presidential_portrait.jpg' /></li>
@@ -314,7 +314,7 @@ class TweetIndex extends React.Component{
                 </a>
               </li>
             </ul>
-          </li>
+          </li> */}
         </ul>
       </div>
     );
