@@ -22,7 +22,9 @@ $lightgray: rgb(238, 230, 230);
   .tweets-container {
     // margin-top: 160px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    // flex-direction: column;
+    align-items: center;
     min-height: 100vh;
     // overflow-y: scroll;
     form {
@@ -138,7 +140,7 @@ $lightgray: rgb(238, 230, 230);
       }
 
       50% { 
-        transform: translatey(-20px);
+        transform: translatey(-40px);
       }
       100% {
         transform: translatey(0px);
@@ -147,7 +149,7 @@ $lightgray: rgb(238, 230, 230);
     transform: translateY(0px);
     animation: hover 4s ease-in-out infinite;
     text-align: center;
-    position: absolute;
+    // position: absolute;
     top: 5%;
     h1 {
       font-weight: 300;
@@ -181,10 +183,9 @@ $lightgray: rgb(238, 230, 230);
     transform: scale(1);
     animation: scaler 300ms ease-in-out infinite;
     text-align: center;
-    position: absolute;
     top: 50%;
     h1 {
       font-weight: 300;
-      font-size: 30px;
+      font-size: 25px;
     }
 }

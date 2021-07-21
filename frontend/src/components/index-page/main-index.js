@@ -3,7 +3,6 @@ import NavBarContainer from '../nav/navbar_container';
 import { Instructions } from './instructions';
 import DashBoard from './../dashboard/dashboard_container';
 import TweetSearch from '../tweet-search/tweet-search'
-
 class MainIndex extends React.Component {
 
   constructor(props) {
