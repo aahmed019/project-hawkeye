@@ -1,5 +1,5 @@
 .splash-container{
-    height: 2400px;
+    height: 2800px;
     width: 100%;
     padding-top: 20px;
     background-color: #1F1F24;
@@ -9,13 +9,13 @@
     height:10%;
     width: 100%;
     justify-content: center;
-    display: flex;
+    // display: flex;
     margin-top: 80px;
 }
 
 .splash-header{
     height: 200px;
-    width: 60%;
+    // width: 60%;
     text-align: center;
 }
 
@@ -32,9 +32,9 @@
 }
 
 .splash-sign-up{
-    margin-top: 20px;
-    height: 40px;
-    width: 160px;
+    margin-top: 50px;
+    height: 50px;
+    width: 180px;
     border-radius: 8px;
     color: white;
     background-color: #7856ff;
@@ -67,10 +67,13 @@
     border: none;
     box-shadow: (0,0,0,.25) 0px 1px 12px;
     margin-top: 50px;
+    background: url('giphy-1.gif');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 .splash-bottom-box{
-    height: 1000;
+    height: 1000px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -85,15 +88,23 @@
 .splash1{
     height: 30%;
     width: 100%;
-    border: 1px solid red;
     display: flex;
     justify-content: center;
     flex-direction: row;
     margin-top: 30px;
+    align-items: center;
+
+    .bottom-container-pic{
+    width: 360px;
+    height: 280px;
+    background: url('purple-1.png');
+    background-size: 98% 98%;
+    background-repeat: no-repeat;
+    margin-bottom: 30px;
+    }
 }
 
 .bottom-container-word{
-    border: white 1px solid;
     width: 60%;
     height: 100%;
     font-size: 50px;
@@ -116,83 +127,81 @@
 
 }
 
-.bottom-container-pic{
-    border: white 1px solid;
-    width: 40%;
-    height: 100%;
-}
-
 .splash2{
     height: 30%;
     width: 100%;
-    border: 1px solid red;
     display: flex;
     justify-content: center;
     flex-direction: row;
-    margin-top: 40px;
-}
+    margin-top: 100px;
+    align-items: center;
 
-.bottom-container-word2{
-    border: white 1px solid;
-    width: 45%;
-    height: 100%;
-    color: white;
+    .bottom-container-word2{
 
-    span{
-    color: #f8bc3b;
-    font-size: 50px;
+        width: 45%;
+        height: 100%;
+        color: white;
+
+        span{
+        color: #f8bc3b;
+        font-size: 50px;
+        }
+
+        h1{
+        color: white;
+        font-size: 28px;
+        font-weight: lighter;
+        }
+
+        p{
+        font-size: 50px;    
+        }
     }
 
-    h1{
-    color: white;
-    font-size: 28px;
-    font-weight: lighter;
-    }
-
-    p{
-    font-size: 50px;   
+    .bottom-container-pic2{
+        width: 360px;
+        height: 280px;
+        background: url('folder.gif');
+        background-repeat: no-repeat;
+        background-size: 98% 98%;
+        align-items: center;
     }
 }
 
-.bottom-container-pic2{
-    border: white 1px solid;
-    width: 45%;
-    height: 100%;
-}
 
 .splash3{
     height: 30%;
     width: 100%;
-    border: 1px solid red;
     display: flex;
     justify-content: center;
     flex-direction: row;
-    margin-top: 40px;
-}
+    margin-top: 80px;
 
-.bottom-container-word3{
-    border: white 1px solid;
-    width: 60%;
-    height: 100%;
-    color: white;
-    font-size: 50px;
+    .bottom-container-word3{
+        width: 60%;
+        height: 100%;
+        color: white;
+        font-size: 50px;
 
-    span{
-    color: #80e1d9;
-    font-size: 50px;
+        span{
+        color: #23ABF3;
+        font-size: 50px;
+        }
+
+        h1{
+        color: white;
+        font-size: 28px;
+        font-weight: lighter;        
+        }
     }
 
-    h1{
-    color: white;
-    font-size: 28px;
-    font-weight: lighter;        
+    .bottom-container-pic3{
+        width: 360px;
+        height: 280px;
+        background: url('comp.gif');
+        background-repeat: no-repeat;
+        background-size: 98% 98%;
     }
-}
-
-.bottom-container-pic3{
-    border: white 1px solid;
-    width: 40%;
-    height: 100%;
 }
 
 .splash-footer-box{
@@ -201,12 +210,105 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 10px;
+    flex-direction: column;
 }
 
+.meet-the-team{
+    margin-top: 200px;
+    text-align: center;
+    color: #7856ff;
+    font-size: 50px;
+
+}
 
 .splash-footer{
-    height: 300px;
+    height: 350px;
     width: 90%;
-    border: 1px solid purple;
-    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    .names{
+        height: 400px;
+        width: 250px;
+        border-radius: 22px;
+        box-shadow:rgba(192, 189, 189, 0.35) 0px 1px 12px;
+        transition: 0.7s ease-out;
+        transform: translateY(5px);       
+
+        p{
+            color: white;
+            font-size: 25px;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: lighter;
+        }
+
+        &:hover{
+            transform: translateY(-5px);
+            box-shadow:rgba(255, 255, 255, 0.8) 0px 1px 12px;
+            transition: 0.5s ease-out;
+        }
+    }
+
+    .card{
+        display: flex;
+        display: flex;
+        justify-content: center;
+        margin-top: 8px;
+    }
+
+    .profile-pic{
+        height: 150px;
+        width: 150px;
+        border-radius: 100px;
+        align-self: center;
+        overflow: hidden;
+        background-color: rgb(190, 190, 190);
+        margin: 10px;
+
+        .ali-pic{
+            width: 150px;
+            height: 150px;
+            z-index: 1;
+        }
+
+        .jack-pic{
+            width: 140px;
+            height: 230px;
+            z-index: 1;
+            margin-left: 10px;
+            margin-top: -10px;
+        }
+
+        .sohrob-pic{
+            width: 220px;
+            height: 200px;
+            z-index: 1;
+            margin-left: -25px;
+            margin-top: -10px;
+        }
+
+        .vincent-pic{
+            width: 200px;
+            height: 190px;
+            z-index: 1;
+            margin-left: -25px;
+            margin-top: -20px;
+        }
+    }
+
+    .footer-links{
+        color: rgb(249, 220, 220);
+        display: flex;
+        flex-direction: column;
+        height: 30%;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+
 }
