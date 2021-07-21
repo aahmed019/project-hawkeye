@@ -18,11 +18,8 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    // console.log(req.body.params.data)
     const {title} = req.body.params.data
     const {name, tweets} = req.body.params.data.folders
-    // console.log(title)
-    // console.log(tweets)
     const newWorkspace = new Workspace({
         title: title,
         folders:[{
@@ -36,13 +33,13 @@ router.post('/', (req, res) => {
 
 router.post('/add-tweet', (req, res) => {
 
-    Workspace.findByIdAndUpdate("60f777bb638ce546d91012c3",
-        { "$push": { "folders.0.tweets": {
-            username: 'test4-username',
-            profile_pic: 'test4-pic',
-            user_url: 'test4-userUrl',
-            body: 'test4-body',
-            source: 'test4-source',
+    Workspace.findByIdAndUpdate(req.body.workspace_id,
+        { "$push": { [`folders.${req.body.folder_id}.tweets`]: {
+            username: req.body.tweet.username,
+            profile_pic: req.body.tweet.profile_pic,
+            user_url: req.body.tweet.user_url,
+            body: req.body.tweet.body,
+            source: req.body.tweet.source,
         } } },
         { "new": true, "upsert": true },
         function (err, managerparent) {
@@ -54,22 +51,18 @@ router.post('/add-tweet', (req, res) => {
 });
 
 router.delete('/remove-tweet', (req, res) => {
-
-    Workspace.findByIdAndUpdate("60f777bb638ce546d91012c3",
-        { "$pull": { "folders.0.tweets": {
-            source: 'test4-source',
+    Workspace.findByIdAndUpdate("req.body.workspace_id",
+        { "$pull": { [`folders.${req.body.folder_id}.tweets`]: {
+            source: req.body.tweet.source,
         } } },
-        { "new": true, "upsert": true },
         function (err, managerparent) {
             if (err) throw err;
             res.json(managerparent);
         }
     );
-
 });
 
 router.post('/add-comment', (req, res) => {
-    // console.log(req.body)
     Workspace.findByIdAndUpdate(req.body.workspace_id,
         { "$push": { "comments": {
             body: req.body.comment,
@@ -84,7 +77,6 @@ router.post('/add-comment', (req, res) => {
 });
 
 router.delete('/remove-comment', (req, res) => {
-    // console.log(req.body)
     Workspace.findByIdAndUpdate(req.body.workspace_id,
         { "$pull": { "comments": {
             body: req.body.comment,
@@ -98,7 +90,7 @@ router.delete('/remove-comment', (req, res) => {
 });
 
 router.patch('/update-comment', (req, res) => {
-    console.log(req.body)
+    // console.log(req.body)
     Workspace.findByIdAndUpdate(req.body.workspace_id,
         { "$set": { [`comments.${req.body.comment.comment_id}`] : {
             body: req.body.comment.comment_body,
