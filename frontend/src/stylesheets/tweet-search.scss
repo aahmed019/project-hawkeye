@@ -1,3 +1,117 @@
-.main-index-tweets {
-  
+$purple: #7856FF;
+$black: #1f1f24;
+$white: #f6f6f6;
+$lightgray: rgb(238, 230, 230);
+
+.tweet-search {
+  width: 100%;
+  background-color: $black;
+  .search-form {
+    background-color: $black;
+    position: fixed;
+    // top: 0;
+    // float: right;
+    width: 60%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.8), 0 4px 12px rgba(0,0,0, 0.36), inset 0 0 0 0.5px rgba(237, 237, 237, 0.36);
+    z-index: 2;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .tweets-container {
+    // margin-top: 160px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    // overflow-y: scroll;
+    form {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      
+      .inputs-container {
+        width: 70%;
+        box-sizing: content-box;
+        h1 {
+        font-weight: 400;
+        color: white;
+        margin-bottom: 5px;
+      }
+        input {
+          box-sizing: border-box;
+          width: 100%;
+          border: none;
+          background-color: $white;
+          border-radius: 10px;
+          height: 30px;
+          margin-bottom: 10px;
+          padding: 5px 8px;
+          &:focus-visible {
+            outline: none;
+          }
+        }
+      }
+      .button-container {
+        margin-left: 15px;
+        width: 30%;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        button {
+          width: 100%;
+          background-color: $white;
+          height: 30px;
+          align-self: center;
+          border: none;
+          border-radius: 10px;
+          font-size: 14px;
+          font-weight: 400;
+          &:hover {
+            cursor: pointer;
+            background-color: $purple;
+            color: white;
+            
+          }
+        }
+      }
+      
+      
+    }
+  }
+  .tweets-feed-container {
+    margin-top: 160px;
+    padding: 15px;
+    
+    .tweet {
+      padding: 10px 15px;
+      background-color: #2c2c2e;
+      border-radius: 10px;
+      color: white;
+      transition: 0.3s ease-out;
+      transform: translateY(2px); 
+      margin: 13px auto;
+      &:hover{
+            transform: translateY(-2px);
+            box-shadow:rgba(255, 255, 255, 0.8) 0px 1px 8px;
+            transition: 0.3s ease-out;
+      }
+      .tweet-head {
+        margin-bottom: 12px;
+        img {
+          width: 25px;
+          height: 25px;
+          border-radius: 100px;
+
+        }
+        a {
+          font-weight: 100;
+          font-size: 11px;
+        }
+      }
+      .tweet-body {
+
+      }
+    }
+  }
 }
