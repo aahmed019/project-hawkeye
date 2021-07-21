@@ -1,0 +1,63 @@
+$purple: #7856FF;
+$black: #1f1f24;
+$white: #fff;
+.default-components {
+  position: absolute;
+  height: 100%;
+  width: 100vw;
+  background-color: $black;
+  
+}
+
+.main-index-container {
+  margin-top: 60px;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  .nav-container {
+    height: 60px;
+    border-radius: 0;
+    width: 100%;
+    margin: 0;
+    padding: 15px;
+    box-sizing: border-box;
+    left: 0;
+    top: 0;
+    background-color: $purple;
+    button {
+      background-color: $black;
+      &:hover {
+        background-color: rgb(24, 23, 23);
+      }
+    }
+  }
+}
+
+.main-index-sidebar {
+  width: 20%;
+  position: fixed;
+  left: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.main-index-tweets {
+  width: 60%;
+  height: 100%;
+  border: 1px solid blue;
+  margin: 0;
+  // margin-left: 20%;
+  position: fixed;
+  left: 20%;
+  box-sizing: border-box;
+  overflow: scroll;
+}
+
+.instructions {
+  position: fixed;
+  width: 20%;
+  right: 0;
+  height: 100%;
+  border: 1px solid red;
+  box-sizing: border-box;
+}

@@ -1,7 +1,7 @@
 $purple: #7856FF;
 $black: #1f1f24;
 $white: #fff;
-$lightgray: rgb(235, 231, 231);s
+$lightgray: rgb(235, 231, 231);
 // LOGIN
 
 //SIGN UP
@@ -64,9 +64,9 @@ $lightgray: rgb(235, 231, 231);s
     }
     margin-bottom: 15px;
   }
-  width: 100%;
-  display: flex;
-  justify-content: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   
     .form-div {
       display: flex;
@@ -100,9 +100,29 @@ $lightgray: rgb(235, 231, 231);s
 }
 .login-form-container {
   .outer-div {
-    height: 340px;
+    height: 380px;
     // height: auto;
     
+  }
+  .demo-btn {
+    width: 100%;
+    border: none;
+    height: 40px;
+    border-radius: 15px;
+    padding: 7px 9px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    background-color: $purple;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    &:hover {
+      background-color: #7f62f2;
+      cursor: pointer;
+    }
   }
 }
 

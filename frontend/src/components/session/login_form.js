@@ -16,11 +16,9 @@ class LoginForm extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.currentUser === true) {
-        this.props.history.push('/');
-        }
+        
 
-    this.setState({errors: nextProps.errors})
+        this.setState({errors: nextProps.errors})
     }
 
     update(field) {
@@ -37,7 +35,7 @@ class LoginForm extends React.Component {
         password: this.state.password
         };
 
-        this.props.login(user); 
+        this.props.login(user).then( () => this.props.history.push('/main-index')); 
     }
 
     renderErrors() {
@@ -75,6 +73,7 @@ class LoginForm extends React.Component {
                 />
                 
                 <input className='submit-btn' type="submit" value="Log in" />
+                <button className='demo-btn' onClick={() => this.props.login({email: 'demo@demo.com', password: 'password'})}>Demo Login</button>
                 {this.renderErrors()}
             <span>Don't have an account? <Link to='/signup'>Sign Up</Link></span>
             </div>
