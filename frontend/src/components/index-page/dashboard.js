@@ -30,7 +30,6 @@ class DashBoard extends React.Component {
   }
 
 
-
   render() {
 
     return (
@@ -40,7 +39,7 @@ class DashBoard extends React.Component {
             <button onClick={(e)=>this.toggleDropdown(e)} className='created-workspaces'>CREATED BY YOU</button>
             <div>
                 {this.state.openCreateDropDown ? (<div className='content'>
-                    <button className='created-Folders' onClick={(e)=>this.toggleDropdownTwo(e)} >WORKSPACE</button>
+                    <button className='created-Folders' onClick={(e)=>this.toggleDropdownTwo(e)}>WORKSPACE</button>
                         <div>
                             {this.state.openWorkspaceDropDown ? (
                             <div className='content'><div className='Folder'>CREATEFOLDER</div></div>) 
@@ -51,7 +50,7 @@ class DashBoard extends React.Component {
             </div>
           </div>
           <div className='create-container'>
-            <button className='create-workspace'>Create a Workspace</button>
+            <button className='create-workspace' >Create a Workspace</button>
           </div>
         </div>
     )
