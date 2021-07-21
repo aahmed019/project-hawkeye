@@ -14,7 +14,7 @@ class MainPage extends React.Component {
                 <div className='splash-header'>
                     <h1 className='header'>Project Hawkeye</h1>
                     <p className='p'>A bird's eye view on Twitter</p>
-                    <button className='splash-sign-up'>Sign Up</button>
+                    <button className='splash-sign-up'><Link to='/signup' >Sign Up</Link></button>
                 </div>
                 <div className='pic-box'>
                     <div className='splash-pic-container'>
