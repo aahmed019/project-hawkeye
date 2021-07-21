@@ -35,7 +35,7 @@ class LoginForm extends React.Component {
         password: this.state.password
         };
 
-        this.props.login(user).then( () => this.props.history.push('/main-index')); 
+        this.props.login(user)
     }
 
     renderErrors() {

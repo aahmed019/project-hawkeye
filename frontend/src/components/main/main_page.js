@@ -110,7 +110,7 @@ class MainPage extends React.Component {
                                         <img className='vincent-pic' src="https://cdn.discordapp.com/attachments/865354697799237634/867102643117359104/Vincent.png" alt="Vincent" />
                                     </div>
                                 </div>
-                                    <p>Vincent Anh</p>
+                                    <p>Vincent Ahn</p>
                                     <div className='footer-links'>
                                         <Link>LinkedIn</Link>
                                         <Link>Github</Link>
