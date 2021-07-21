@@ -44,7 +44,7 @@ $white: #fff;
 .main-index-tweets {
   width: 60%;
   height: 100%;
-  border: 1px solid blue;
+  // border: 1px solid blue;
   margin: 0;
   // margin-left: 20%;
   position: fixed;
@@ -55,9 +55,10 @@ $white: #fff;
 
 .instructions {
   position: fixed;
+  top: 230px;
   width: 20%;
   right: 0;
   height: 100%;
-  border: 1px solid red;
+  // border: 1px solid red;
   box-sizing: border-box;
 }

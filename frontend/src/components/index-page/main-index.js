@@ -4,6 +4,7 @@ import Draggable from 'react-draggable';
 import TweetSearch from '../tweet-search/tweet-search';
 import DashBoard from './dashboard';
 // import Draggable from 'react-draggable';
+import { Instructions } from './instructions';
 class MainIndex extends React.Component {
 
   constructor(props) {
@@ -27,23 +28,8 @@ class MainIndex extends React.Component {
 
 
         <div className='instructions'>
-          <div>
-            <h1>Instructions</h1>
-          </div>
-            <p>
-            Searching and filtering Tweets
-
-            Use twitter usernames and filter words to find tweets containing the words you want to appear in the tweet. 
-            Clicking on individual tweets will redirect you to one's actual tweet once the results are loaded. 
-            </p>
-
-            <p>
-            Creating workspaces and Folders
-
-            Workspaces can be customized on the side. 
-            Creating a workspace allows you to create custom folders for saving your tweet results. 
-            </p>
-        </div>
+         <Instructions />
+         </div>
       </div>
     )
   }
