@@ -43,7 +43,7 @@ class DashBoard extends React.Component {
                     <button className='created-Folders' onClick={(e)=>this.toggleDropdownTwo(e)} >WORKSPACE</button>
                         <div>
                             {this.state.openWorkspaceDropDown ? (
-                            <div className='content'><div className='Folder'>CREATE FOLDER</div></div>) 
+                            <div className='content'><div className='Folder'>CREATEFOLDER</div></div>) 
                             : ''}
                         </div>
                 </div>) 

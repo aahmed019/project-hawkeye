@@ -1,12 +1,7 @@
 import React from 'react';
 import NavBarContainer from '../nav/navbar_container';
-<<<<<<< HEAD
-import Draggable from 'react-draggable';
 import TweetSearch from '../tweet-search/tweet-search';
-=======
 import DashBoard from './dashboard';
-// import Draggable from 'react-draggable';
->>>>>>> 71bfc77ee16d110c7160cd90d087136fd59f03b4
 class MainIndex extends React.Component {
 
   constructor(props) {
