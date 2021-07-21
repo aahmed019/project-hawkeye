@@ -10,6 +10,44 @@ $white: #fff;
 }
 
 .main-index-container {
-  margin-top: 200px;
+  margin-top: 80px;
+  width: 100%;
   display: flex;
+  .nav-container {
+    height: 80px;
+    border-radius: 0;
+    width: 100%;
+    margin: 0;
+    padding: 15px;
+    box-sizing: border-box;
+    left: 0;
+    top: 0;
+  }
+}
+
+.main-index-sidebar {
+  width: 20%;
+  position: fixed;
+  left: 0;
+  height: 100%;
+  border: 1px solid red;
+  box-sizing: border-box;
+}
+
+.main-index-tweets {
+  width: 60%;
+  height: 100%;
+  border: 1px solid blue;
+  margin: 0;
+  margin-left: 20%;
+  box-sizing: border-box;
+}
+
+.instructions {
+  position: fixed;
+  width: 20%;
+  right: 0;
+  height: 100%;
+  border: 1px solid red;
+  box-sizing: border-box;
 }

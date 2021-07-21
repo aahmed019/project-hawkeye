@@ -28,7 +28,7 @@ const App = () => (
 // ON LOGIN: REDIRECT TO WORKSPACE PAGE
 const defaultContainer = () => (
     <>
-        {<NavBarContainer />}
+        {<AuthRoute exact path="/" component={NavBarContainer} />}
         {/* <ProtectedRoute path="/" component={Workspace} /> */}
         
         <Switch>
