@@ -21,6 +21,9 @@ class TweetIndex extends React.Component{
   }
 
   render(){
+    // CREATE TWEET ITEM 
+    // TWEETS APPEARING NICE
+    // 
     const tweets = this.props.tweets.map((tweet, idx) => (
       <li key={`tweet-${idx}`}>
         <ul>
