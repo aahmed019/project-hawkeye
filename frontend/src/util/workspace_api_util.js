@@ -2,14 +2,17 @@ import axios from 'axios';
 
 export const fetchWorkspaces = () => {
     return axios.get('/api/workspaces')
+        .then(res => console.log(res.data));
 };
 
 export const postWorkspace = (data) =>{
     return axios.post('/api/workspaces', 
         {
-            params: { data }
+            params: { 
+                title: "Workspace 1"
+            }
         }
-    ).then(res => console.log(res))
+    ).then(res => console.log(res.data));
 }
 
 export const addToWorkspace = () => {

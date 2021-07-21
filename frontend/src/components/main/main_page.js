@@ -1,4 +1,5 @@
 import React from 'react';
+import WorkspaceContainer from '../workspace/workspace_container';
 import TweetContainer from '../tweets/tweet_container';
 import './main.scss'
 
@@ -6,9 +7,10 @@ class MainPage extends React.Component {
 
     render() {
         return (
-        <div style={{}}>
-            <TweetContainer/>
-            <div className='splash-container'>
+        <div>
+            <WorkspaceContainer />
+            <TweetContainer />
+            {/* <div className='splash-container'>
                 <div className='splash-box'>
                     <div className='splash-header'>
                         <h1 className='header'>Project Hawkeye</h1>
@@ -68,7 +70,7 @@ class MainPage extends React.Component {
 
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
         );
     }

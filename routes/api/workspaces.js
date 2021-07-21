@@ -5,32 +5,65 @@ const passport = require('passport');
 const Workspace = require('../../models/Workspace');
 const db = require('../../config/keys').mongoURI;
 
-router.get('/', (req, res) => {
-    Workspace.find({}, function(err, workspaces) {
-        var workspaceMap = {};
+router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
+    console.log(req.user);
+
+    workspaceArray = [];
+    let work;
+
+    Workspace.find({ "_id": { "$in": req.user.workspaces } },
+        function(err, results){
+            if(err) throw err;
+            res.json(results);
+        }
+    )
+
+    // Workspace.find({})
+
+    // Workspace.find({}, function(err, workspaces) {
+    //     var workspaceMap = {};
     
-        workspaces.forEach(function(workspace) {
-            workspaceMap[workspace._id] = workspace;
-        });
+    //     workspaces.forEach(function(workspace) {
+    //         workspaceMap[workspace._id] = workspace;
+    //     });
     
-        console.log(workspaceMap);
-    });
+    //     console.log(workspaceMap);
+    // });
 })
 
-router.post('/', (req, res) => {
-    console.log(req.body.params.data)
-    const {title} = req.body.params.data
-    const {name, tweets} = req.body.params.data.folders
-    // console.log(title)
-    // console.log(tweets)
-    const newWorkspace = new Workspace({
-        title: title,
-        folders:[{
-            name: name,
-            tweets: tweets
-        }]
-    });
-    newWorkspace.save().then(payload => res.json(payload))
+router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
+    const {title} = req.body.params
+    const newWorkSpace = new Workspace({
+        creator: req.user._id,
+        title,
+        folders: []
+    })
+
+    newWorkSpace.save()
+        .then(payload => {
+            User.findByIdAndUpdate(req.user._id,
+                { "$push": { "workspaces": payload._id }},
+                { "new": true, "upsert": true },
+                function (err, managerparent) {
+                    if (err) throw err;
+                    res.json(managerparent);
+                }
+            );
+        });
+
+    // console.log(req.body.params.data)
+    // const {title} = req.body.params.data
+    // const {name, tweets} = req.body.params.data.folders
+    // // console.log(title)
+    // // console.log(tweets)
+    // const newWorkspace = new Workspace({
+    //     title: title,
+    //     folders:[{
+    //         name: name,
+    //         tweets: tweets
+    //     }]
+    // });
+    // newWorkspace.save().then(payload => res.json(payload))
     
 });
 
