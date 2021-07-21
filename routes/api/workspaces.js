@@ -38,10 +38,18 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
 
 router.delete('/', passport.authenticate('jwt', {session: false}), (req, res) => {
     Workspace.findByIdAndRemove(req.body.id,
-        function(err, results){
-            if (err) throw err;
-            res.json(results);
-        })
+        function(removeError, results){
+            if (removeError) throw removeError;
+
+            User.findByIdAndUpdate(req.user._id,
+                { "$pull": { "workspaces": results._id }},
+                { "new": true, "upsert": true },
+                function (updateError, _) {
+                    if (updateError) throw updateError;
+                    res.json(results);
+                }
+            );
+        });
 });
 
 router.post('/addfolder', (req, res) => {
