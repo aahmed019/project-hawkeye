@@ -6,29 +6,12 @@ const Workspace = require('../../models/Workspace');
 const db = require('../../config/keys').mongoURI;
 
 router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
-    console.log(req.user);
-
-    workspaceArray = [];
-    let work;
-
     Workspace.find({ "_id": { "$in": req.user.workspaces } },
         function(err, results){
             if(err) throw err;
             res.json(results);
         }
     )
-
-    // Workspace.find({})
-
-    // Workspace.find({}, function(err, workspaces) {
-    //     var workspaceMap = {};
-    
-    //     workspaces.forEach(function(workspace) {
-    //         workspaceMap[workspace._id] = workspace;
-    //     });
-    
-    //     console.log(workspaceMap);
-    // });
 })
 
 router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
@@ -44,43 +27,35 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
             User.findByIdAndUpdate(req.user._id,
                 { "$push": { "workspaces": payload._id }},
                 { "new": true, "upsert": true },
-                function (err, managerparent) {
+                function (err, results) {
                     if (err) throw err;
-                    res.json(managerparent);
+                    console.log(newWorkSpace);
+                    res.json(newWorkSpace);
                 }
             );
         });
-
-    // console.log(req.body.params.data)
-    // const {title} = req.body.params.data
-    // const {name, tweets} = req.body.params.data.folders
-    // // console.log(title)
-    // // console.log(tweets)
-    // const newWorkspace = new Workspace({
-    //     title: title,
-    //     folders:[{
-    //         name: name,
-    //         tweets: tweets
-    //     }]
-    // });
-    // newWorkspace.save().then(payload => res.json(payload))
-    
 });
 
-router.post('/add', (req, res) => {
+router.delete('/', passport.authenticate('jwt', {session: false}), (req, res) => {
+    Workspace.findByIdAndRemove(req.body.id,
+        function(err, results){
+            if (err) throw err;
+            res.json(results);
+        })
+});
 
-    Workspace.findByIdAndUpdate("60f777bb638ce546d91012c3",
-        { "$push": { "folders.0.tweets": {
-            username: 'test4-username',
-            profile_pic: 'test4-pic',
-            user_url: 'test4-userUrl',
-            body: 'test4-body',
-            source: 'test4-source',
+router.post('/addfolder', (req, res) => {
+    console.log(req.body.params)
+
+    Workspace.findByIdAndUpdate(req.body.params.workspaceId,
+        { "$push": { "folders": {
+            name: req.body.params.name,
+            tweets: []
         } } },
         { "new": true, "upsert": true },
-        function (err, managerparent) {
+        function (err, results) {
             if (err) throw err;
-            res.json(managerparent);
+            res.json(results);
         }
     );
 

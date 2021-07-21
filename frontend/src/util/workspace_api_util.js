@@ -1,22 +1,36 @@
 import axios from 'axios';
 
 export const fetchWorkspaces = () => {
-    return axios.get('/api/workspaces')
-        .then(res => console.log(res.data));
+    return axios.get('/api/workspaces');
 };
 
-export const postWorkspace = (data) =>{
+export const postWorkspace = title => {
     return axios.post('/api/workspaces', 
         {
             params: { 
-                title: "Workspace 1"
+                title
             }
         }
-    ).then(res => console.log(res.data));
+    );
 }
 
-export const addToWorkspace = () => {
-    return axios.post('/api/workspaces/add')
+export const deleteWorkspace = id => {
+    return axios.delete('/api/workspaces', {
+        data: {
+            id
+        }
+    });
+}
+
+export const postFolder = (workspaceId, name) => {
+    return axios.post('/api/workspaces/addfolder',
+        {
+            params: {
+                workspaceId,
+                name
+            }
+        }
+    );
 };
 
 export const removeFromWorkspace = () => {
