@@ -54,37 +54,44 @@ class SignupForm extends React.Component {
 
     render() {
         return (
-        <div className="signup-form-container auth-form">
-            <div className="signup-form outer-div">
-            <form onSubmit={this.handleSubmit}>
-                <div className='form-div'>
-                <h1>Sign up for an account</h1>
-                
-                <input type="text"
-                    value={this.state.email}
-                    onChange={this.update('email')}
-                    placeholder="Email"
-                />
-                
-                <input type="password"
-                    value={this.state.password}
-                    onChange={this.update('password')}
-                    placeholder="Password"
-                />
-                
-                <input type="password"
-                    value={this.state.password2}
-                    onChange={this.update('password2')}
-                    placeholder="Confirm Password"
-                />
-                
-                <input className='submit-btn' type="submit" value="Sign Up" />
-                {this.renderErrors()}
-            <span>Already have an account? <Link to='/login'>Log in</Link></span>
+            
+            <div>
+                <div className="auth-header">
+                <Link to='/'><h1>Project Hawkeye</h1></Link>
+                </div>
+            
+                <div className="signup-form-container auth-form">
+                    <div className="signup-form outer-div">
+                    <form onSubmit={this.handleSubmit}>
+                        <div className='form-div'>
+                        <h1>Sign up for an account</h1>
+                        
+                        <input type="text"
+                            value={this.state.email}
+                            onChange={this.update('email')}
+                            placeholder="Email"
+                        />
+                        
+                        <input type="password"
+                            value={this.state.password}
+                            onChange={this.update('password')}
+                            placeholder="Password"
+                        />
+                        
+                        <input type="password"
+                            value={this.state.password2}
+                            onChange={this.update('password2')}
+                            placeholder="Confirm Password"
+                        />
+                        
+                        <input className='submit-btn' type="submit" value="Sign Up" />
+                        {this.renderErrors()}
+                    <span>Already have an account? <Link to='/login'>Log in</Link></span>
+                    </div>
+                    </form>
+                    </div>
+                </div>
             </div>
-            </form>
-            </div>
-        </div>
         );
     }
 }

@@ -6,7 +6,7 @@ class DashBoard extends React.Component {
     super(props);
 
     this.state = {
-      openCreateDropDown : false ,
+      openCreateDropDown : false,
       openWorkspaceDropDown : false
     }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBarContainer from '../nav/navbar_container';
 import TweetSearch from '../tweet-search/tweet-search';
-import DashBoard from './dashboard';
+import DashBoard from './../dashboard/dashboard_container';
 class MainIndex extends React.Component {
 
   constructor(props) {

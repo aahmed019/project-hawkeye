@@ -3,7 +3,7 @@ const express = require("express");
 const db = require('./config/keys').mongoURI;
 const users = require("./routes/api/users");
 const twitter = require("./routes/api/twitter");
-const User = require('./models/User');
+const workspaces = require("./routes/api/workspaces")
 const passport = require('passport');
 require('./config/passport')(passport);
 const app = express();
@@ -27,6 +27,7 @@ app.use(express.json());
 
 app.use("/api/users", users);
 app.use("/api/tweets", twitter);
+app.use("/api/workspaces", workspaces);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
