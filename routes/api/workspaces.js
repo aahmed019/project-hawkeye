@@ -69,7 +69,7 @@ router.delete('/remove-tweet', (req, res) => {
 });
 
 router.post('/add-comment', (req, res) => {
-
+    // console.log(req.body)
     Workspace.findByIdAndUpdate(req.body.workspace_id,
         { "$push": { "comments": {
             body: req.body.comment,
@@ -84,12 +84,11 @@ router.post('/add-comment', (req, res) => {
 });
 
 router.delete('/remove-comment', (req, res) => {
-
+    // console.log(req.body)
     Workspace.findByIdAndUpdate(req.body.workspace_id,
         { "$pull": { "comments": {
             body: req.body.comment,
         } } },
-        { "new": true, "upsert": true },
         function (err, managerparent) {
             if (err) throw err;
             res.json(managerparent);
@@ -100,17 +99,16 @@ router.delete('/remove-comment', (req, res) => {
 
 router.patch('/update-comment', (req, res) => {
     console.log(req.body)
-    // Workspace.findByIdAndUpdate(req.body.workspace_id,
-    //     { "$set": { [`comments.${req.body.comment_id}`] : {
-    //         body: req.body.comment,
-    //     } } },
-    //     { "new": true, "upsert": true },
-    //     function (err, managerparent) {
-    //         if (err) throw err;
-    //         res.json(managerparent);
-    //     }
-    // );
-
+    Workspace.findByIdAndUpdate(req.body.workspace_id,
+        { "$set": { [`comments.${req.body.comment.comment_id}`] : {
+            body: req.body.comment.comment_body,
+        } } },
+        { "new": true, "upsert": true },
+        function (err, managerparent) {
+            if (err) throw err;
+            res.json(managerparent);
+        }
+    );
 });
 
 

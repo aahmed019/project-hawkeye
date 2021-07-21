@@ -21,7 +21,12 @@ export const removeTweet = () => {
 };
 
 export const addComment = (workspace_id, comment) => {
-    return axios.post('/api/workspaces/add-comment')
+    return axios.post('/api/workspaces/add-comment',
+    {
+        workspace_id,
+        comment
+    }
+    )
 };
 
 export const updateComment = (workspace_id, comment) => {
@@ -34,5 +39,12 @@ export const updateComment = (workspace_id, comment) => {
 }
 
 export const removeComment = (workspace_id, comment) => {
-    return axios.delete('/api/workspaces/remove-comment')
+   
+    return axios.delete('/api/workspaces/remove-comment', {
+        data:{
+                workspace_id,
+                comment
+            }
+    }
+    )
 };
