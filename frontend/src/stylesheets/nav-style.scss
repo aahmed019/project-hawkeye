@@ -1,0 +1,113 @@
+// //COLORS
+// $babyblue: #C3E0E5;
+// $darkblue: #274472;
+// $bluegray: #5885Af;
+// $midnightblue: #41729F;
+
+// $lightpurple: #9388A2;
+// $purple: #341948;
+// $darkblue: #170B3B;
+// $black: #0E050F;
+$purple: #7856FF;
+$black: #1f1f24;
+$white: #fff;
+$dark-purple: #7f62f2;
+
+$duration: .2s;
+$distance: 8px;
+$easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+
+.nav-container {
+  width: 70vw;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 0 auto;
+  display: flex;
+  background: $black;
+  color: white;
+  height: 45px;
+  position: fixed;
+  left: 13%;
+  float: left;
+  top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  border: 1px solid rgba(233, 233, 233, 0);
+  transition: all 500ms linear;
+  h1 {
+    font-size: 20px;
+  }
+}
+.nav-container.hasScrolled {
+  border: 1px solid rgba(233, 233, 233, 1);
+  
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.8), 0 4px 12px rgba(0,0,0, 0.36), inset 0 0 0 0.5px rgba(237, 237, 237, 0.36);
+}
+
+.middle
+{
+    position: relative;
+}
+
+.middle:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #FFF;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.middle:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.links {
+  padding: 10px;
+  transition: all 0.5s ease-in-out;
+  border-left: 1px solid rgba(233, 233, 233, 1);
+  .signup {
+    margin-left: 15px;
+  }
+  span {
+    background-color: $purple;
+    padding: 9px 20px;
+    
+    border-radius: 5px;
+   
+    box-sizing: content-box;
+    &:hover {
+      background-color: $dark-purple;
+      cursor: pointer;
+     
+    }
+  }
+  
+  .middle.login {
+    padding-bottom: 3px;
+  }
+}
+.logout-btn {
+  background-color: $purple;
+    padding: 9px 20px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    color: white;
+    box-sizing: content-box;
+    &:hover {
+      background-color: $dark-purple;
+      cursor: pointer;
+     
+    }
+}
+  
+
+

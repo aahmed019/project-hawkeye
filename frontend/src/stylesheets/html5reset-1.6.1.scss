@@ -6,6 +6,8 @@ Author: Richard Clark - http://richclarkdesign.com
 Twitter: @rich_clark
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -25,11 +27,14 @@ time, mark, audio, video {
     font-size:100%;
     vertical-align:baseline;
     background:transparent;
+    font-family: 'Roboto', sans-serif;
+
     /* display: none; */
 }
 
 body {
     line-height:1;
+    height: 100vh;
 }
 
 article,aside,details,figcaption,figure,
@@ -39,6 +44,10 @@ footer,header,hgroup,menu,nav,section {
 
 nav ul {
     list-style:none;
+}
+
+ul {
+    list-style: none;
 }
 
 blockquote, q {
@@ -57,6 +66,11 @@ a {
     font-size:100%;
     vertical-align:baseline;
     background:transparent;
+    text-decoration: none;
+    color: inherit;
+    &:visited {
+        color: inherit;
+    }
 }
 
 /* change colours to suit your needs */
