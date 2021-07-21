@@ -10,8 +10,12 @@ class MainIndex extends React.Component {
     return (
       <div className='main-index-container'>
         <div className='main-index-sidebar'>
-          <h1>Sidebar</h1>
+          <div className='workspace'>Workspace</div>
+  
         </div>
+
+
+
         <div className='main-index-tweets'>
           <h1>Search Tweet</h1>
         </div>
