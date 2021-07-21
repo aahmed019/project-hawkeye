@@ -1,0 +1,122 @@
+.main-index-sidebar{
+    background-color: #f6f6f6;
+}
+
+.workspace-header{
+    text-align: center;
+    color: black;
+    font-size: 25px;
+    padding: 20px;
+}
+
+.dropdown-sidebar{
+    height: 70%;
+    width: 100%;
+}
+
+.created-workspaces{
+    height: 6%;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 13px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:hover{
+        color: #7856FF;
+    }
+}
+
+.content{
+    cursor: pointer;
+    border-radius: 0 0 5px 5px;
+    font-size: 12px;
+    overflow: hidden;
+    transition: max-height 2s ease-out;
+    background-color: #f1f1f1;
+}
+
+.Folder{
+    height: 20px;;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 13px;
+    border-radius: 5px;
+    margin-left: 20px;
+    
+    &:hover{
+        color: #7856FF;
+    }
+}
+
+.created-Folders{
+    height: 50%;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 13px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:hover{
+        color: #7856FF;
+    }
+}
+
+.create-container{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .create-workspace{
+        border-radius: 12px;
+        height: 40px;
+        width: 90%;
+        font-size: 16px;
+        border: none;
+        background-color: white;
+        color: black;
+        box-shadow:rgba(146, 146, 146, 0.35) 0px 1px 12px;
+        cursor: pointer;
+    
+        &:hover{
+            background-color: #7856FF;
+            color: white;
+            box-shadow:rgba(146, 146, 146, 0.35) 0px 1px 12px;
+        }
+    }
+}
+
+.created-Folders:after {
+    content: '\02795';
+    font-size: 13px;
+    color: white;
+    margin-left: 5px;
+    float: right;
+}
+.created-workspaces:after {
+    content: '\02795';
+    font-size: 13px;
+    color: white;
+    margin-left: 5px;
+    float: right;
+}
+
+.active:after{
+    content: "\2796";
+}
+

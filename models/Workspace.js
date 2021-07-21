@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const WorkspaceSchema = new Schema({
-        // creator: { type: Schema.Types.ObjectId, ref: 'users'},
-        
+        creator: { type: Schema.Types.ObjectId, ref: 'users'},
         title: String,
         comments: [{
             body: String

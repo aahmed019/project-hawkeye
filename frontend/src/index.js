@@ -5,12 +5,16 @@ import configureStore from './store/store';
 import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
-import { addComment, addTweet, fetchWorkspaces, postWorkspace, removeComment, removeTweet, updateComment } from './util/workspace_api_util';
-import { fetchTweets } from './util/twitter_api_util';
 import './stylesheets/origin.scss';
 import './stylesheets/html5reset-1.6.1.scss';
 import './stylesheets/nav-style.scss';
 import './stylesheets/auth-style.scss';
+import './stylesheets/main-index.scss';
+import './stylesheets/workspace.scss';
+import './stylesheets/main-index.scss';
+import './stylesheets/sidebar.scss';
+import './stylesheets/tweet-search.scss';
+import { postFolder, postWorkspace } from './util/workspace_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
@@ -34,17 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         store = configureStore({});
     }
-    window.store = store
-
-    window.pworkspace = postWorkspace
-    window.gworkspace = fetchWorkspaces
-    window.a = addTweet
-    window.d = removeTweet
-
-    window.addComment = addComment
-    window.removeComment = removeComment
-    window.updateComment = updateComment
     const root = document.getElementById('root');
+    window.addWorkSpace = postWorkspace
+    window.addFolder = postFolder
 
     ReactDOM.render(<Root store={store} />, root);
     // ReactDOM.render(<h1>Hello</h1>, root);

@@ -11,7 +11,19 @@ const mDTP = dispatch => ({
 });
 
 class Workspace extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
+  render() {
+    return (
+      <div className="workspace-container">
+        <div className="main-workspace">
+          
+        </div>
+      </div>
+    )
+  }
 }
 
-export default connect()
+export default connect(mSTP, mDTP)(Workspace)

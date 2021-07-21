@@ -3,7 +3,9 @@ import './main.scss'
 import { Link } from 'react-router-dom'
 
 class MainPage extends React.Component {
-
+    componentDidMount() {
+        document.body.classList.remove('hide-scroll');
+    }
     render() {
         return (
         <div className='splash-container'>
@@ -118,7 +120,7 @@ class MainPage extends React.Component {
                         </div>
                     </div>
                 </div>
-            </div>
+        </div>
         );
     }
 }

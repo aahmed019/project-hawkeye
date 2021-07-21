@@ -1,0 +1,17 @@
+$purple: #7856FF;
+$black: #1f1f24;
+$white: #fff;
+$lightgray: rgb(238, 230, 230);
+.workspace-container {
+  position: relative;
+  padding: 80px;
+  padding-top: 140px;
+  display: flex;
+  justify-content: center;
+  .main-workspace {
+    width: 700px;
+    height: 600px;
+    background-color: $lightgray;
+    border-radius: 10px;
+  }
+}
