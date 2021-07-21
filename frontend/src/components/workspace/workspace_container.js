@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { deleteWorkspace, fetchWorkspaces, postFolder, postWorkspace } from '../../actions/workspace_actions';
+import { deleteWorkspace, fetchWorkspaces, postFolder, postWorkspace, deleteFolder } from '../../actions/workspace_actions';
 import WorkspaceIndex from './workspace_index';
 
 const mapStateToProps = state => {
@@ -13,7 +13,8 @@ const mapDispatchToProps = dispatch => {
     fetch: () => dispatch(fetchWorkspaces()),
     createWorkspace: title => dispatch(postWorkspace(title)),
     deleteWorkspace: id => dispatch(deleteWorkspace(id)),
-    createFolder: (workspaceId, name) => dispatch(postFolder(workspaceId, name))
+    createFolder: (workspaceId, name) => dispatch(postFolder(workspaceId, name)),
+    deleteFolder: (workspaceId, name, idx) => dispatch(deleteFolder(workspaceId, name, idx))
   }
 }
 

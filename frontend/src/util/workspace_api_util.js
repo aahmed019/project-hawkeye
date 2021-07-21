@@ -33,6 +33,11 @@ export const postFolder = (workspaceId, name) => {
     );
 };
 
-export const removeFromWorkspace = () => {
-    return axios.delete('/api/workspaces/remove')
+export const deleteFolder = (workspaceId, name) => {
+    return axios.delete('/api/workspaces/deletefolder', {
+            data: {
+                workspaceId,
+                name
+            }
+    })
 };

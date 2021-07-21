@@ -1,7 +1,8 @@
 import { 
   RECEIVE_WORKSPACE, 
   RECEIVE_WORKSPACES, 
-  REMOVE_WORKSPACE
+  REMOVE_WORKSPACE,
+  REMOVE_FOLDER
 } from "../actions/workspace_actions";
 
 export default function(oldState = {}, action){
@@ -22,6 +23,10 @@ export default function(oldState = {}, action){
 
     case REMOVE_WORKSPACE:
       delete newState[action.id]
+      return newState;
+
+    case REMOVE_FOLDER:
+      newState[action.id].folders.splice(action.idx, 1);
       return newState;
 
     default:

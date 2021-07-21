@@ -34,15 +34,25 @@ class WorkspaceIndex extends React.Component{
       this.props.deleteWorkspace(workspaceId);
     }
   }
+  
+  handleDeleteFolder(workspaceId, name, idx){
+    return e => {
+      e.preventDefault();
+      this.props.deleteFolder(workspaceId, name, idx);
+    }
+  }
 
   update(field){
     return e => this.setState({ [field]: e.target.value })
   }
 
   render(){
-    const folderList = folders => (folders.length === 0 ? null : 
-      folders.map(folder => (
-        <li>{folder.name}</li>
+    const folderList = (folders, workspaceId) => (folders.length === 0 ? null : 
+      folders.map((folder, idx) => (
+        <li>
+          <div>{folder.name}</div>
+          <div><button onClick={this.handleDeleteFolder(workspaceId, folder.name, idx)}>Delete {folder.name}</button></div>
+        </li>
       )))
 
     const workspaceList = this.props.workspaces.length === 0 ? null : 
@@ -63,7 +73,7 @@ class WorkspaceIndex extends React.Component{
             </li>
             <li>
               <ul>
-                {folderList(workspace.folders)}
+                {folderList(workspace.folders, workspace._id)}
               </ul>
             </li>
             <li>

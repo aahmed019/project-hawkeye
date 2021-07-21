@@ -43,7 +43,6 @@ router.delete('/', passport.authenticate('jwt', {session: false}), (req, res) =>
 
             User.findByIdAndUpdate(req.user._id,
                 { "$pull": { "workspaces": results._id }},
-                { "new": true, "upsert": true },
                 function (updateError, _) {
                     if (updateError) throw updateError;
                     res.json(results);
@@ -53,8 +52,6 @@ router.delete('/', passport.authenticate('jwt', {session: false}), (req, res) =>
 });
 
 router.post('/addfolder', (req, res) => {
-    console.log(req.body.params)
-
     Workspace.findByIdAndUpdate(req.body.params.workspaceId,
         { "$push": { "folders": {
             name: req.body.params.name,
@@ -66,22 +63,19 @@ router.post('/addfolder', (req, res) => {
             res.json(results);
         }
     );
-
 });
 
-router.delete('/remove', (req, res) => {
-
-    Workspace.findByIdAndUpdate("60f777bb638ce546d91012c3",
-        { "$pull": { "folders.0.tweets": {
-            source: 'test4-source',
+router.delete('/deletefolder', (req, res) => {
+    Workspace.findByIdAndUpdate(req.body.workspaceId,
+        { "$pull": { "folders": {
+            name: req.body.name
         } } },
-        { "new": true, "upsert": true },
-        function (err, managerparent) {
+        function (err, results) {
             if (err) throw err;
-            res.json(managerparent);
+            console.log(results);
+            res.json(results);
         }
     );
-
 });
 
 module.exports = router;

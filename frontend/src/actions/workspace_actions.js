@@ -4,6 +4,7 @@ import { receiveErrors } from './session_actions';
 export const RECEIVE_WORKSPACES = "RECEIVE_WORKSPACES";
 export const RECEIVE_WORKSPACE = "RECEIVE_WORKSPACE";
 export const REMOVE_WORKSPACE = "REMOVE_WORKSPACE";
+export const REMOVE_FOLDER = "REMOVE_FOLDER";
 
 const receiveWorkspaces = workspaces => ({
   type: RECEIVE_WORKSPACES,
@@ -18,6 +19,12 @@ const receiveWorkspace = workspace => ({
 const removeWorkspace = id => ({
   type: REMOVE_WORKSPACE,
   id
+})
+
+const removeFolder = (id, idx) => ({
+  type: REMOVE_FOLDER,
+  id,
+  idx
 })
 
 export const fetchWorkspaces = () => dispatch => {
@@ -38,8 +45,14 @@ export const deleteWorkspace = id => dispatch => {
   }, err => dispatch(receiveErrors(err.response.data)));
 };
 
-export const postFolder = (workspaceId, title) => dispatch => {
-  WorkspaceAPIUtil.postFolder(workspaceId, title).then(res => {
+export const postFolder = (workspaceId, name) => dispatch => {
+  WorkspaceAPIUtil.postFolder(workspaceId, name).then(res => {
     dispatch(receiveWorkspace(res.data));
+  }, err => dispatch(receiveErrors(err.response.data)));
+}
+
+export const deleteFolder = (workspaceId, name, idx) => dispatch => {
+  WorkspaceAPIUtil.deleteFolder(workspaceId, name).then(res => {
+    dispatch(removeFolder(workspaceId, idx));
   }, err => dispatch(receiveErrors(err.response.data)));
 }
