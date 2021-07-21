@@ -9,7 +9,10 @@ const UserSchema = new Schema({
         password: {
             type: String,
             required: true
-        }
+        },
+        workspaces: [{
+            type: Schema.Types.ObjectId, ref: 'workspaces'
+        }]
     }, 
     {
         timestamps: true

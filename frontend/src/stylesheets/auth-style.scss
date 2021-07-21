@@ -15,6 +15,14 @@ $lightgray: rgb(235, 231, 231);
     height: 100%;
   }
 }
+
+.auth-header{
+    text-align: center;
+    h1{
+        font-size: 60px;
+    }
+}
+
 .auth-form { 
   background-color: #F8F9FC;
   // background: linear-gradient(45deg, #a70b90 10%, $purple 55%, $darkblue 100%);
@@ -35,6 +43,7 @@ $lightgray: rgb(235, 231, 231);
       border-radius: 5px;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   }
+  
   h1 {
     font-weight: 300;
     font-size: 25px;
