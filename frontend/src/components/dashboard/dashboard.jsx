@@ -1,4 +1,5 @@
 import React from 'react';
+import WorkspaceIndexItem from './workspace_index_item';
 
 class DashBoard extends React.Component {
 
@@ -11,7 +12,7 @@ class DashBoard extends React.Component {
     }
 
     this.toggleDropdown = this.toggleDropdown.bind(this)
-    this.toggleDropdownTwo = this.toggleDropdownTwo.bind(this)
+    // this.toggleDropdownTwo = this.toggleDropdownTwo.bind(this)
   }
 
   componentDidMount(){
@@ -25,34 +26,21 @@ class DashBoard extends React.Component {
     this.setState({openCreateDropDown: !this.state.openCreateDropDown});
   }
 
-  toggleDropdownTwo(e){
-    e.preventDefault();
-    let button2 =  document.querySelector(".created-Folders")
-    button2.classList.toggle('active')
-    this.setState({openWorkspaceDropDown : !this.state.openWorkspaceDropDown})
-  }
-
-
-
   render() {
-    const folderList = folders => folders.map(folder => (
-      <div>
-          {this.state.openWorkspaceDropDown ? (
-          <div className='content'><div className='Folder'>{folder.name}</div></div>) 
-          : ''}
-      </div>
-    ));
-
+    
     const workspaceList = this.props.workspaces.map(workspace => (
-      <div>
-        {this.state.openCreateDropDown ? (
-          <div className='content'>
-            <button className='created-Folders' onClick={(e)=>this.toggleDropdownTwo(e)} >{workspace.title}</button>
-            {folderList(workspace.folders)}
-          </div>
-        ) 
-        : ''}
-      </div>
+        <div>
+            { this.state.openCreateDropDown ? (
+              <div className='content'>
+                {/* <button className='created-Folders' onClick={(e)=>this.toggleDropdownTwo(e)} >{workspace.title}</button> */}
+                <WorkspaceIndexItem title = {workspace.title} folders = {workspace.folders}/>
+                
+              </div>
+            ) 
+            : ''} 
+
+        </div>
+          
     ));
 
 
