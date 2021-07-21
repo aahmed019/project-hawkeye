@@ -22,13 +22,29 @@ class TweetIndex extends React.Component{
   
   handleSubmit(e){
     e.preventDefault();
-    this.props.fetchTweets(this.state.username, this.state.filter);
+    let loading = document.querySelector('.loading-screen');
+    let ph = document.querySelector('.placeholder');
+    ph !== null ? ph.classList.add('hide-comp') : console.log('hi');
+    loading.classList.remove('hide-comp');
+    this.props.fetchTweets(this.state.username, this.state.filter).then( () => {
+      loading.classList.add('hide-comp');
+    });
   }
 
   render(){
     // CREATE TWEET ITEM 
     // TWEETS APPEARING NICE
     // 
+    const loading = (
+      <div className='loading-screen hide-comp'>
+        <h1>Loading...</h1>
+      </div>
+    )
+    const placeHolder = (
+      <div className='placeholder'>
+        <h1>Search now to get results</h1>
+      </div>
+    )
     const tweets = this.props.tweets.map((tweet, idx) => (
       <li className='tweet' key={`tweet-${idx}`}>
         <ul>
@@ -74,8 +90,10 @@ class TweetIndex extends React.Component{
         </div>
 
         <ul className='tweets-feed-container'>
+          {loading}
+          {tweets.length >= 1 ? tweets : placeHolder}
           {/* {tweets} */}
-          <li className='tweet'>
+          {/* <li className='tweet'>
             <ul>
               <li className='tweet-head'>
                 <li className='tweet-img'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Joe_Biden_presidential_portrait.jpg/1200px-Joe_Biden_presidential_portrait.jpg' /></li>
@@ -314,7 +332,7 @@ class TweetIndex extends React.Component{
                 </a>
               </li>
             </ul>
-          </li>
+          </li> */}
         </ul>
       </div>
     );
