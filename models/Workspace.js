@@ -14,7 +14,7 @@ const WorkspaceSchema = new Schema({
                 username: String,
                 profile_pic: String,
                 user_url: String,
-                body: String,
+                text: String,
                 date: Date,
                 source: String,
             }]

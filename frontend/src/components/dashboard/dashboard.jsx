@@ -18,6 +18,19 @@ class DashBoard extends React.Component {
     this.props.fetch();
   }
 
+  handleAddToFolder(workspaceId, folderName, idx){
+    return e => {
+      if(this.props.dragging && this.props.tweet){
+        let folder = {
+          name: folderName,
+          idx
+        }
+
+        this.props.addTweetToFolder(workspaceId, folder, this.props.tweet);
+      }
+    }
+  }
+
   toggleDropdown(e){
     e.preventDefault();
     let button =  document.querySelector(".created-workspaces")
@@ -32,14 +45,18 @@ class DashBoard extends React.Component {
     this.setState({openWorkspaceDropDown : !this.state.openWorkspaceDropDown})
   }
 
-
-
   render() {
-    const folderList = folders => folders.map(folder => (
+    const folderList = workspace => workspace.folders.map((folder, idx) => (
       <div>
           {this.state.openWorkspaceDropDown ? (
-          <div className='content'><div className='Folder'>{folder.name}</div></div>) 
-          : ''}
+          <div className='content'>
+            <div className='Folder'>
+              <a onClick={this.handleAddToFolder(workspace._id, folder.name, idx)} >
+                {folder.name}
+              </a>
+            </div>
+          </div>
+          ) : ''}
       </div>
     ));
 
@@ -48,7 +65,7 @@ class DashBoard extends React.Component {
         {this.state.openCreateDropDown ? (
           <div className='content'>
             <button className='created-Folders' onClick={(e)=>this.toggleDropdownTwo(e)} >{workspace.title}</button>
-            {folderList(workspace.folders)}
+            {folderList(workspace)}
           </div>
         ) 
         : ''}

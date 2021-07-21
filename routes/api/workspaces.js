@@ -81,22 +81,22 @@ router.delete('/deletefolder', (req, res) => {
 /* Ali routes */
 
 router.post('/add-tweet', (req, res) => {
+    console.log(req.body.params);
 
-    Workspace.findByIdAndUpdate(req.body.workspace_id,
-        { "$push": { [`folders.${req.body.folder_id}.tweets`]: {
-            username: req.body.tweet.username,
-            profile_pic: req.body.tweet.profile_pic,
-            user_url: req.body.tweet.user_url,
-            body: req.body.tweet.body,
-            source: req.body.tweet.source,
+    Workspace.findByIdAndUpdate(req.body.params.workspaceId,
+        { "$push": { [`folders.${req.body.params.folder.idx}.tweets`]: {
+            profile_pic: req.body.params.tweet.profile_pic,
+            source: req.body.params.tweet.source,
+            text: req.body.params.tweet.text,
+            user_url: req.body.params.tweet.user_url,
+            username: req.body.params.tweet.username
         } } },
         { "new": true, "upsert": true },
-        function (err, managerparent) {
+        function (err, results) {
             if (err) throw err;
-            res.json(managerparent);
+            res.json(results);
         }
     );
-
 });
 
 router.delete('/remove-tweet', (req, res) => {
