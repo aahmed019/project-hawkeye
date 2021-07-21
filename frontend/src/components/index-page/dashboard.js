@@ -6,15 +6,22 @@ class DashBoard extends React.Component {
     super(props);
 
     this.state = {
-      open : false 
+      openCreateDropDown : false ,
+      openWorkspaceDropDown : false
     }
 
     this.toggleDropdown = this.toggleDropdown.bind(this)
+    this.toggleDropdownTwo = this.toggleDropdownTwo.bind(this)
   }
 
   toggleDropdown(e){
     e.preventDefault();
-    this.setState({open: !this.state.open})
+    this.setState({openCreateDropDown: !this.state.openCreateDropDown});
+  }
+
+  toggleDropdownTwo(e){
+    e.preventDefault();
+    this.setState({openWorkspaceDropDown : !this.state.openWorkspaceDropDown})
   }
 
 
@@ -24,12 +31,21 @@ class DashBoard extends React.Component {
         <div className='main-index-sidebar'>
           <div className='workspace-header'>Dashboard</div>
           <div className='dropdown-sidebar'>
-            <button className='created-workspaces'>CREATED BY YOU</button>
-
+            <button onClick={(e)=>this.toggleDropdown(e)} className='created-workspaces'>CREATED BY YOU</button>
+            <div>
+                {this.state.openCreateDropDown ? (<div className='content'>
+                    <button className='created-Folders' onClick={(e)=>this.toggleDropdownTwo(e)} >WORKSPACE</button>
+                        <div>
+                            {this.state.openWorkspaceDropDown ? (
+                            <div className='content'><div>Folder</div></div>) 
+                            : ''}
+                        </div>
+                </div>) 
+                : ''}
+            </div>
           </div>
           <div className='create-container'>
-            <button onClick={this.toggleDropdown} className='create-workspace'>Create a Workspace</button>
-            <p className='content'>Hi</p>
+            <button className='create-workspace'>Create a Workspace</button>
           </div>
         </div>
     )
