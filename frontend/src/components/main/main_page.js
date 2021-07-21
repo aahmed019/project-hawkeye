@@ -1,5 +1,4 @@
 import React from 'react';
-import TweetContainer from '../tweets/tweet_container';
 import './main.scss'
 import { Link } from 'react-router-dom'
 
@@ -119,7 +118,6 @@ class MainPage extends React.Component {
                         </div>
                     </div>
                 </div>
-        </div>
         );
     }
 }
