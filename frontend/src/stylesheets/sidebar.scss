@@ -19,7 +19,7 @@
     width: 100%;
     cursor: pointer;
     border: none;
-    text-align: left;
+    text-align: center;
     outline: none;
     font-size: 13px;
     border-radius: 5px;
@@ -31,18 +31,6 @@
     }
 }
 
-.created-workspaces:after{
-    content: '\02795';
-    font-size: 13px;
-    color: white;
-    float: end;
-    margin-left: 5px;
-}
-
-.active:after {
-    content: "\2796";
-}
-
 .content{
     cursor: pointer;
     border-radius: 0 0 5px 5px;
@@ -50,6 +38,24 @@
     overflow: hidden;
     transition: max-height 2s ease-out;
     background-color: #f1f1f1;
+}
+
+.Folder{
+    height: 20px;;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 13px;
+    border-radius: 5px;
+    align-items: center;
+    display: flex;
+    margin-left: 20px;
+    
+    &:hover{
+        color: #7856FF;
+    }
 }
 
 .created-Folders{
@@ -67,18 +73,6 @@
     &:hover{
         color: #7856FF;
     }
-}
-
-.created-Folders:after{
-    content: '\02795';
-    font-size: 13px;
-    color: white;
-    float: end;
-    margin-left: 5px;
-}
-
-.active:after {
-    content: "\2796";
 }
 
 .create-container{
@@ -106,6 +100,27 @@
         }
     }
 }
+
+.created-Folders:after {
+  content: '\02795';
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+.created-workspaces:after {
+  content: '\02795';
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after{
+    content: "\2796";
+}
+
+
 
 
 

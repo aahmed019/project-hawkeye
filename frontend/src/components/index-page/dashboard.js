@@ -16,17 +16,23 @@ class DashBoard extends React.Component {
 
   toggleDropdown(e){
     e.preventDefault();
+    let button =  document.querySelector(".created-workspaces")
+    button.classList.toggle('active')
     this.setState({openCreateDropDown: !this.state.openCreateDropDown});
+    
   }
 
   toggleDropdownTwo(e){
     e.preventDefault();
+    let button2 =  document.querySelector(".created-Folders")
+    button2.classList.toggle('active')
     this.setState({openWorkspaceDropDown : !this.state.openWorkspaceDropDown})
   }
 
 
 
   render() {
+
     return (
         <div className='main-index-sidebar'>
           <div className='workspace-header'>Dashboard</div>
@@ -37,7 +43,7 @@ class DashBoard extends React.Component {
                     <button className='created-Folders' onClick={(e)=>this.toggleDropdownTwo(e)} >WORKSPACE</button>
                         <div>
                             {this.state.openWorkspaceDropDown ? (
-                            <div className='content'><div>Folder</div></div>) 
+                            <div className='content'><div className='Folder'>CREATE FOLDER</div></div>) 
                             : ''}
                         </div>
                 </div>) 
