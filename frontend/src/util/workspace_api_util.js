@@ -15,3 +15,7 @@ export const postWorkspace = (data) =>{
 export const addToWorkspace = () => {
     return axios.post('/api/workspaces/add')
 };
+
+export const removeFromWorkspace = () => {
+    return axios.delete('/api/workspaces/remove')
+};

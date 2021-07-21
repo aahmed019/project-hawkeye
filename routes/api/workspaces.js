@@ -18,13 +18,17 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    // console.log(req.body.params.data)
-    const {title, tweets} = req.body.params.data
+    console.log(req.body.params.data)
+    const {title} = req.body.params.data
+    const {name, tweets} = req.body.params.data.folders
     // console.log(title)
     // console.log(tweets)
     const newWorkspace = new Workspace({
         title: title,
-        tweets: tweets
+        folders:[{
+            name: name,
+            tweets: tweets
+        }]
     });
     newWorkspace.save().then(payload => res.json(payload))
     
@@ -32,19 +36,33 @@ router.post('/', (req, res) => {
 
 router.post('/add', (req, res) => {
 
-    Workspace.findByIdAndUpdate("60f706f6c1e2732279bddc29",
-        { "$push": { "tweets": {
+    Workspace.findByIdAndUpdate("60f777bb638ce546d91012c3",
+        { "$push": { "folders.0.tweets": {
             username: 'test4-username',
             profile_pic: 'test4-pic',
             user_url: 'test4-userUrl',
             body: 'test4-body',
-            date: Date.now(),
             source: 'test4-source',
         } } },
         { "new": true, "upsert": true },
         function (err, managerparent) {
             if (err) throw err;
-            console.log(managerparent);
+            res.json(managerparent);
+        }
+    );
+
+});
+
+router.delete('/remove', (req, res) => {
+
+    Workspace.findByIdAndUpdate("60f777bb638ce546d91012c3",
+        { "$pull": { "folders.0.tweets": {
+            source: 'test4-source',
+        } } },
+        { "new": true, "upsert": true },
+        function (err, managerparent) {
+            if (err) throw err;
+            res.json(managerparent);
         }
     );
 

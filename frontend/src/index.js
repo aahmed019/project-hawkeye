@@ -8,7 +8,7 @@ import { logout } from './actions/session_actions';
 import './stylesheets/html5reset-1.6.1.scss';
 import './stylesheets/nav-style.scss';
 import './stylesheets/auth-style.scss';
-import { addToWorkspace, fetchWorkspaces, postWorkspace } from './util/workspace_api_util';
+import { addToWorkspace, fetchWorkspaces, postWorkspace, removeFromWorkspace } from './util/workspace_api_util';
 document.addEventListener('DOMContentLoaded', () => {
     let store;
 
@@ -35,7 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.pworkspace = postWorkspace
     window.gworkspace = fetchWorkspaces
-    window.test = addToWorkspace
+    window.a = addToWorkspace
+    window.d = removeFromWorkspace
     const root = document.getElementById('root');
 
     ReactDOM.render(<Root store={store} />, root);
