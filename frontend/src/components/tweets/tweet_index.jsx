@@ -6,12 +6,15 @@ class TweetIndex extends React.Component{
   componentDidMount() {
     document.body.classList.add('hide-scroll');
   }
-  
+  componentDidUpdate() {
+
+  }
   constructor(props){
     super(props);
     this.state = {
       username: '',
-      filter: ''
+      filter: '',
+      selected: false
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -34,10 +37,15 @@ class TweetIndex extends React.Component{
   }
 
   handleDrag(tweet){
-    return e => this.props.startDragging(tweet);
+    return e => {
+      debugger;
+      // e.target.value.classList.add('selected')
+      this.props.startDragging(tweet);
+    }
   }
-
+  
   render(){
+    
     const loading = (
       <div className='loading-screen hide-comp'>
         <h1>Loading...</h1>
@@ -50,7 +58,7 @@ class TweetIndex extends React.Component{
     )
     const tweets = this.props.tweets.map((tweet, idx) => (
     <Draggable>
-      <li className='tweet' key={`tweet-${idx}`}>
+      <li className='tweet' id={idx} key={`tweet-${idx}`}>
         <ul>
           <li className='tweet-head'>
             <li className='tweet-img'><img src={tweet.profile_pic} /></li>
