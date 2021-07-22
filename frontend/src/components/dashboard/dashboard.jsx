@@ -19,6 +19,19 @@ class DashBoard extends React.Component {
     this.props.fetch();
   }
 
+  handleAddToFolder(workspaceId, folderName, idx){
+    return e => {
+      if(this.props.dragging && this.props.tweet){
+        let folder = {
+          name: folderName,
+          idx
+        }
+
+        this.props.addTweetToFolder(workspaceId, folder, this.props.tweet);
+      }
+    }
+  }
+
   toggleDropdown(e){
     e.preventDefault();
     let button =  document.querySelector(".created-workspaces")
@@ -40,7 +53,6 @@ class DashBoard extends React.Component {
             : ''} 
 
         </div>
-          
     ));
 
 

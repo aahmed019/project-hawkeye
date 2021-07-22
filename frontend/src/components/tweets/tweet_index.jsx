@@ -33,10 +33,11 @@ class TweetIndex extends React.Component{
     });
   }
 
+  handleDrag(tweet){
+    return e => this.props.startDragging(tweet);
+  }
+
   render(){
-    // CREATE TWEET ITEM 
-    // TWEETS APPEARING NICE
-    // 
     const loading = (
       <div className='loading-screen hide-comp'>
         <h1>Loading...</h1>
@@ -61,6 +62,9 @@ class TweetIndex extends React.Component{
             <a href={tweet.source}>
               {tweet.text}
             </a>
+          </li>
+          <li>
+            <button onClick={this.handleDrag(tweet)}>Drag tweet</button>
           </li>
         </ul>
       </li>
@@ -96,247 +100,6 @@ class TweetIndex extends React.Component{
         <ul className='tweets-feed-container'>
           {loading}
           {tweets.length >= 1 ? tweets : placeHolder}
-          {/* {tweets} */}
-          {/* <li className='tweet'>
-            <ul>
-              <li className='tweet-head'>
-                <li className='tweet-img'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Joe_Biden_presidential_portrait.jpg/1200px-Joe_Biden_presidential_portrait.jpg' /></li>
-                <a className='tweet-link' href=''>
-                  @POTUS
-                </a>
-              </li>
-              <li className='tweet-body'>
-                <a href=''>
-                i have very big news, the biggest of news!
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li className='tweet'>
-            <ul>
-              <li className='tweet-head'>
-                <li className='tweet-img'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Joe_Biden_presidential_portrait.jpg/1200px-Joe_Biden_presidential_portrait.jpg' /></li>
-                <a className='tweet-link' href=''>
-                  @POTUS
-                </a>
-              </li>
-              <li className='tweet-body'>
-                <a href=''>
-                i have very big news, the biggest of news!
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li className='tweet'>
-            <ul>
-              <li className='tweet-head'>
-                <li className='tweet-img'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Joe_Biden_presidential_portrait.jpg/1200px-Joe_Biden_presidential_portrait.jpg' /></li>
-                <a className='tweet-link' href=''>
-                  @POTUS
-                </a>
-              </li>
-              <li className='tweet-body'>
-                <a href=''>
-                i have very big news, the biggest of news!
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li className='tweet'>
-            <ul>
-              <li className='tweet-head'>
-                <li className='tweet-img'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Joe_Biden_presidential_portrait.jpg/1200px-Joe_Biden_presidential_portrait.jpg' /></li>
-                <a className='tweet-link' href=''>
-                  @POTUS
-                </a>
-              </li>
-              <li className='tweet-body'>
-                <a href=''>
-                i have very big news, the biggest of news!
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li className='tweet'>
-            <ul>
-              <li className='tweet-head'>
-                <li className='tweet-img'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Joe_Biden_presidential_portrait.jpg/1200px-Joe_Biden_presidential_portrait.jpg' /></li>
-                <a className='tweet-link' href=''>
-                  @POTUS
-                </a>
-              </li>
-              <li className='tweet-body'>
-                <a href=''>
-                i have very big news, the biggest of news!
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li className='tweet'>
-            <ul>
-              <li className='tweet-head'>
-                <li className='tweet-img'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Joe_Biden_presidential_portrait.jpg/1200px-Joe_Biden_presidential_portrait.jpg' /></li>
-                <a className='tweet-link' href=''>
-                  @POTUS
-                </a>
-              </li>
-              <li className='tweet-body'>
-                <a href=''>
-                i have very big news, the biggest of news!
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li className='tweet'>
-            <ul>
-              <li className='tweet-head'>
-                <li className='tweet-img'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Joe_Biden_presidential_portrait.jpg/1200px-Joe_Biden_presidential_portrait.jpg' /></li>
-                <a className='tweet-link' href=''>
-                  @POTUS
-                </a>
-              </li>
-              <li className='tweet-body'>
-                <a href=''>
-                i have very big news, the biggest of news!
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li className='tweet'>
-            <ul>
-              <li className='tweet-head'>
-                <li className='tweet-img'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Joe_Biden_presidential_portrait.jpg/1200px-Joe_Biden_presidential_portrait.jpg' /></li>
-                <a className='tweet-link' href=''>
-                  @POTUS
-                </a>
-              </li>
-              <li className='tweet-body'>
-                <a href=''>
-                i have very big news, the biggest of news!
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li className='tweet'>
-            <ul>
-              <li className='tweet-head'>
-                <li className='tweet-img'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Joe_Biden_presidential_portrait.jpg/1200px-Joe_Biden_presidential_portrait.jpg' /></li>
-                <a className='tweet-link' href=''>
-                  @POTUS
-                </a>
-              </li>
-              <li className='tweet-body'>
-                <a href=''>
-                i have very big news, the biggest of news!
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li className='tweet'>
-            <ul>
-              <li className='tweet-head'>
-                <li className='tweet-img'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Joe_Biden_presidential_portrait.jpg/1200px-Joe_Biden_presidential_portrait.jpg' /></li>
-                <a className='tweet-link' href=''>
-                  @POTUS
-                </a>
-              </li>
-              <li className='tweet-body'>
-                <a href=''>
-                i have very big news, the biggest of news!
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li className='tweet'>
-            <ul>
-              <li className='tweet-head'>
-                <li className='tweet-img'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Joe_Biden_presidential_portrait.jpg/1200px-Joe_Biden_presidential_portrait.jpg' /></li>
-                <a className='tweet-link' href=''>
-                  @POTUS
-                </a>
-              </li>
-              <li className='tweet-body'>
-                <a href=''>
-                i have very big news, the biggest of news!
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li className='tweet'>
-            <ul>
-              <li className='tweet-head'>
-                <li className='tweet-img'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Joe_Biden_presidential_portrait.jpg/1200px-Joe_Biden_presidential_portrait.jpg' /></li>
-                <a className='tweet-link' href=''>
-                  @POTUS
-                </a>
-              </li>
-              <li className='tweet-body'>
-                <a href=''>
-                i have very big news, the biggest of news!
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li className='tweet'>
-            <ul>
-              <li className='tweet-head'>
-                <li className='tweet-img'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Joe_Biden_presidential_portrait.jpg/1200px-Joe_Biden_presidential_portrait.jpg' /></li>
-                <a className='tweet-link' href=''>
-                  @POTUS
-                </a>
-              </li>
-              <li className='tweet-body'>
-                <a href=''>
-                i have very big news, the biggest of news!
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li className='tweet'>
-            <ul>
-              <li className='tweet-head'>
-                <li className='tweet-img'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Joe_Biden_presidential_portrait.jpg/1200px-Joe_Biden_presidential_portrait.jpg' /></li>
-                <a className='tweet-link' href=''>
-                  @POTUS
-                </a>
-              </li>
-              <li className='tweet-body'>
-                <a href=''>
-                i have very big news, the biggest of news!
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li className='tweet'>
-            <ul>
-              <li className='tweet-head'>
-                <li className='tweet-img'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Joe_Biden_presidential_portrait.jpg/1200px-Joe_Biden_presidential_portrait.jpg' /></li>
-                <a className='tweet-link' href=''>
-                  @POTUS
-                </a>
-              </li>
-              <li className='tweet-body'>
-                <a href=''>
-                i have very big news, the biggest of news!
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li className='tweet'>
-            <ul>
-              <li className='tweet-head'>
-                <li className='tweet-img'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Joe_Biden_presidential_portrait.jpg/1200px-Joe_Biden_presidential_portrait.jpg' /></li>
-                <a className='tweet-link' href=''>
-                  @POTUS
-                </a>
-              </li>
-              <li className='tweet-body'>
-                <a href=''>
-                i have very big news, the biggest of news!
-                </a>
-              </li>
-            </ul>
-          </li> */}
         </ul>
       </div>
     );
