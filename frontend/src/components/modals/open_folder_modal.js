@@ -31,7 +31,7 @@ class CreateWorkspaceModal extends React.Component {
             <span className='close-button'><button onClick={() => this.props.closeModal()}>&#x2715;</button></span>
             <div className='folder-container'>
               <div className='left-tweet'>
-                LEFT TWEETS
+
               </div>
               <div className='right-comments'>
                 <Comments/>
