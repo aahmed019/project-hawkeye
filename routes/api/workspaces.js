@@ -78,8 +78,6 @@ router.delete('/deletefolder', (req, res) => {
     );
 });
 
-/* Ali routes */
-
 router.post('/add-tweet', (req, res) => {
     console.log(req.body.params);
 
@@ -100,15 +98,17 @@ router.post('/add-tweet', (req, res) => {
 });
 
 router.delete('/remove-tweet', (req, res) => {
-    Workspace.findByIdAndUpdate("req.body.workspace_id",
-        { "$pull": { [`folders.${req.body.folder_id}.tweets`]: {
-            source: req.body.tweet.source,
-        } } },
-        function (err, managerparent) {
-            if (err) throw err;
-            res.json(managerparent);
-        }
-    );
+  console.log(req.body);
+
+  Workspace.findByIdAndUpdate(req.body.workspaceId,
+      { "$pull": { [`folders.${req.body.folder_idx}.tweets`]: {
+          source: req.body.tweet_source,
+      } } },
+      function (err, results) {
+          if (err) throw err;
+          res.json(results);
+      }
+  );
 });
 
 router.post('/add-comment', (req, res) => {
