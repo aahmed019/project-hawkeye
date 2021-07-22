@@ -22,11 +22,13 @@ export default function(oldState = {}, action){
       return newState;
 
     case REMOVE_WORKSPACE:
-      delete newState[action.id]
+      delete newState[action.id];
       return newState;
 
     case REMOVE_FOLDER:
-      newState[action.id].folders.splice(action.idx, 1);
+      let copy = [...newState[action.id].folders]
+      copy.splice(action.idx, 1);
+      newState[action.id].folders = copy;
       return newState;
 
     default:
