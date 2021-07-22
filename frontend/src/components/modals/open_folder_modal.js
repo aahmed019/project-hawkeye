@@ -45,7 +45,7 @@ class CreateWorkspaceModal extends React.Component {
     return (
       <div className='modal-folder'>
         <div className='modal-folder-child'>
-          <span className='close-button'><button onClick={() => this.props.closeModal()}>&#x2715;</button></span>
+          <span className='close-button1'><button onClick={() => this.props.closeModal()}>&#x2715;</button></span>
           <div className='modal-form-folder'>
             <div className='folder-container'>
               <div className='left-tweet'>

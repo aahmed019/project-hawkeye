@@ -60,6 +60,21 @@
     }
 }
 
+.close-button1 {
+    position: absolute;
+    right: 0;
+    button {
+      right: 0;
+      margin-right: 10px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: bold;
+      color: #747474;
+    }
+  }
+
 
 
  .tweet {

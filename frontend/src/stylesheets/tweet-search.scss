@@ -8,16 +8,19 @@ $lightgray: rgb(238, 230, 230);
   // background-color: $black;
   background: $black;
  .search-form {
-    background-color: $black;
+    background-color: $white;
+    // color: black;
     position: fixed;
     top: 60px;
     right: 0;
     // float: right;
     width: 20%;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.8), 0 4px 12px rgba(0,0,0, 0.36), inset 0 0 0 0.5px rgba(237, 237, 237, 0.36);
-    z-index: 2;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    // box-shadow: 0 0 2px rgba(0, 0, 0, 0.8), 0 4px 12px rgba(0,0,0, 0.36), inset 0 0 0 0.5px rgba(237, 237, 237, 0.36);
+    z-index: 5;
+    // border-bottom-left-radius: 10px;
+    // border-bottom-right-radius: 10px;
+    // border-bottom: 1px solid black;
+    
   }
   .tweets-container {
     // margin-top: 160px;
@@ -40,13 +43,13 @@ $lightgray: rgb(238, 230, 230);
         box-sizing: content-box;
         h1 {
         font-weight: 400;
-        color: white;
+        color: black;
         margin-bottom: 5px;
       }
         input {
           box-sizing: border-box;
           width: 100%;
-          border: none;
+          border: 1px solid #e8e5e5;
           background-color: $white;
           border-radius: 10px;
           height: 30px;
@@ -58,13 +61,13 @@ $lightgray: rgb(238, 230, 230);
         }
       }
       .button-container {
-        margin-left: 15px;
+        // margin-left: 15px;
         width: 30%;
         display: flex;
         align-content: center;
         justify-content: center;
         button {
-          width: 100%;
+          // width: 100%;
           background-color: $white;
           height: 30px;
           align-self: center;

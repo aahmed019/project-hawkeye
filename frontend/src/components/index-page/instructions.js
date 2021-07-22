@@ -1,23 +1,36 @@
 
 
 export const Instructions = () => (
-   <div>
-            <h1>Instructions</h1>
-          <div>
+   <div className='instructions-wrapper'>
+     <div className='instructions-header'>
+        <h1>Get Started</h1>
+     </div>
+        <div className='instructions-body'>
+          <div className='step-1'>
+            <h1>Step 1</h1>
             <p>
-            Searching and filtering Tweets
-
-            Use twitter usernames and filter words to find tweets containing the words you want to appear in the tweet. 
-            Clicking on individual tweets will redirect you to one's actual tweet once the results are loaded. 
+              Enter a Twitter username. Enter an optional key-word filter. Search.
             </p>
-
+          </div>
+          <div className='step-2'>
+            <h1>Step 2</h1>
             <p>
-            Creating workspaces and Folders
-
-            Workspaces can be customized on the side. 
-            Creating a workspace allows you to create custom folders for saving your tweet results. 
+              Hit 'Create Workspace' to create a container to save your tweets. 
+              Give it a title.
             </p>
-        </div>
+          </div>
+          <div className='step-3'>
+            <h1>Step 3</h1>
+            
+            <p>Create folders to organize your tweets.</p>
+            <p>To add a tweet to a folder, click on it, then click the
+              respective folder you wish to add it to. Click a folder to view it's
+              contents. </p>
+          </div>
+          
+          
+          
+      </div>
     </div>
 );
 

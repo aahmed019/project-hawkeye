@@ -1,0 +1,57 @@
+$purple: #7856FF;
+$black: #1f1f24;
+$white: #f6f6f6;
+$lightgray: rgb(238, 230, 230);
+$dark-purple: #7f62f2;
+.modal-child.ws {
+  background: transparent;
+}
+.modal-form.ws {
+  color: white;
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  display: flex;
+  // padding: 10px;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  background-color: $black;
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+  h2 {
+    font-weight: 300;
+    font-size: 15px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  input {
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    margin-bottom: 15px;
+    padding: 5px 8px;
+    &:focus-visible {
+      outline: none;
+    }
+  }
+  .create-btn {
+    border: none;
+    background-color: $purple;
+    color: white;
+    width: 50%;
+    height: 20px;
+    border-radius: 10px;
+    &:hover {
+      cursor: pointer;
+      background-color: $dark-purple;
+    }
+  }
+}
