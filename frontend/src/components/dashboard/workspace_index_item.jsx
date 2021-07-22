@@ -21,6 +21,7 @@ class WorkspaceIndexItem extends React.Component {
             id: this.props.title + `${Math.random(0, 5)}`
         }
         this.toggleDropdownTwo = this.toggleDropdownTwo.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
         
     toggleDropdownTwo(e){
@@ -30,16 +31,25 @@ class WorkspaceIndexItem extends React.Component {
         this.setState({open : !this.state.open})
     }
 
-      
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.closeModal();
+    }
+
 
     render(){
+
     const folderList = folders => folders.map(folder => (
         <div className='content'>
-            <div className='Folder'>
+            <div className='Folder' onClick={() => this.props.openModal()}>
                 {folder.name}
             </div>
         </div>
     ));
+
+    if (this.props.modal !== 'createReport'){
+        return null;
+    }
 
     return (
             <div>

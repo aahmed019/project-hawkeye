@@ -10,8 +10,11 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import Workspace from './workspace/workspace';
 import MainIndex from './index-page/main-index';
+import CreateWorkspaceModal from './modals/create_workspace_modal';
+
 const App = () => (
     <div className='app'>
+        <CreateWorkspaceModal />
         <Switch>
             <AuthRoute exact path="/" component={NavBarContainer} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />

@@ -15,6 +15,9 @@ const mDTP = dispatch => ({
 
 class CreateWorkspaceModal extends React.Component {
 
+  componentWillUnmount() {
+    this.props.closeModal();
+  }
   constructor(props) {
     super(props);
 
@@ -35,7 +38,8 @@ class CreateWorkspaceModal extends React.Component {
     
   }
   render() {
-    if (!this.props.modal === 'createWorkspace') {
+    // debugger;
+    if (this.props.modal !== 'create_workspace') {
       return null;
     }
 
