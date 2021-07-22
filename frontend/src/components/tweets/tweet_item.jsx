@@ -4,20 +4,15 @@ import Draggable from 'react-draggable';
 class TweetItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      selected: false
-    }
   }
    handleDrag(tweet){
     return e => {
       // debugger;
       // e.target.value.classList.add('selected')
-      if (this.state.selected) {
+      if (this.props.selected) {
         this.props.stopDragging();
-        this.setState({selected: false});
       } else {
         this.props.startDragging(tweet);
-        this.setState({selected: true});
       }
       
       // this.props.startDragging(tweet);
@@ -28,7 +23,7 @@ class TweetItem extends React.Component {
     const {tweet, idx} = this.props;
     return (
       
-      <li className={`tweet ${this.state.selected ? 'selected':''}`} id={idx} key={`tweet-${idx}`}>
+      <li className={`tweet ${this.props.selected ? 'selected':''}`} id={idx} key={`tweet-${idx}`}>
         <ul>
           <li className='tweet-head'>
             <li className='tweet-img'><img src={tweet.profile_pic} /></li>

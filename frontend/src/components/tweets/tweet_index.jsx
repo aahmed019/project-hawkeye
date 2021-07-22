@@ -1,6 +1,6 @@
 import React from 'react';
 import Draggable from 'react-draggable';
-import TweetItem from './tweet_item';
+import TweetItemContainer from './tweet_item_container';
 class TweetIndex extends React.Component{
   
   componentDidMount() {
@@ -50,7 +50,7 @@ class TweetIndex extends React.Component{
       </div>
     )
       const tweets = this.props.tweets.map((tweet, idx) => (
-        <TweetItem tweet={tweet} idx={idx} startDragging={this.props.startDragging} stopDragging={this.props.stopDragging} />
+        <TweetItemContainer tweet={tweet} idx={idx} startDragging={this.props.startDragging} stopDragging={this.props.stopDragging} />
       ))
    
 
