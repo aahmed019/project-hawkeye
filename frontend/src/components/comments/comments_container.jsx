@@ -1,12 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import { addCommentToWorkspace, removeCommentInWorkspace, updateCommentInWorkspace } from '../../actions/workspace_actions';
+import CommentsIndexItem from './comments_index_item';
 
 class Comments extends React.Component{
     constructor(props){
         super(props)
         this.state = {
             text: '',
+            edit: false
         }
         this.handleSubmit = this.handleSubmit.bind(this)
     }
@@ -25,14 +27,12 @@ class Comments extends React.Component{
         if(!this.props.comments) return null
 
         const comments = this.props.comments.map((comment, i) => {
-            return(
-                <div key = {i}>
-                    {comment.body}
-                    <button 
-                    onClick={() => this.props.removeComment(this.props.workspace_id, comment.body, i)}
-                    >delete</button>
-                </div>
-            )
+            return <div key = {i}>
+                <CommentsIndexItem comment ={comment} idx = {i} workspace_id={this.props.workspace_id} 
+                removeComment = {this.props.removeComment}
+                updateComment = {this.props.updateComment}
+                />
+            </div>
         })
 
         return (
@@ -57,7 +57,6 @@ class Comments extends React.Component{
 }
 
 const mapStateToProps = ({entities}, ownProps) => {
-    debugger
     return {
         comments: entities.workspaces[ownProps.workspace_id].comments,
     }
@@ -68,7 +67,7 @@ const mapDispatchToProps = dispatch => {
   return {
     addComment: (workspace_id, comment) => dispatch(addCommentToWorkspace(workspace_id, comment)),
     updateComment: (workspace_id, comment) =>  dispatch(updateCommentInWorkspace(workspace_id, comment)),
-    removeComment: (workspace_id, comment) =>  dispatch(removeCommentInWorkspace(workspace_id, comment))
+    removeComment: (workspace_id, comment, idx) =>  dispatch(removeCommentInWorkspace(workspace_id, comment, idx))
   }
 }
 

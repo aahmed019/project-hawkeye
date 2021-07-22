@@ -29,11 +29,18 @@ const removeFolder = (id, idx) => ({
   idx
 })
 
-const removeComment = (id, idx) => ({
-    type: REMOVE_COMMENT,
-    id,
-    idx
-  })
+const removeComment = (id, idx) => {
+    return {
+        type: REMOVE_COMMENT,
+        id,
+        idx
+    }
+}
+// ({
+    // type: REMOVE_COMMENT,
+    // id,
+    // idx
+//   })
 
 export const fetchWorkspaces = () => dispatch => {
   WorkspaceAPIUtil.fetchWorkspaces().then(res => {
@@ -86,7 +93,7 @@ export const updateCommentInWorkspace = (workspaceId, comment) => dispatch => {
 
 export const removeCommentInWorkspace = (workspaceId, comment, idx) => dispatch => {
     WorkspaceAPIUtil.removeComment(workspaceId, comment).then(res => {
-        dispatch(removeComment(workspaceId, idx));
+        dispatch(removeComment(workspaceId, idx))
     }, err => dispatch(receiveErrors(err.response.data)));
 }
 
