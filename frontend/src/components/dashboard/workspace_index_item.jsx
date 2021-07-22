@@ -16,6 +16,8 @@ class WorkspaceIndexItem extends React.Component {
         this.setState({open : !this.state.open})
       }
 
+      
+
       render(){
         const folderList = folders => folders.map(folder => (
             <div className='content'>
