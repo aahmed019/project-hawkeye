@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
-
+import { postWorkspace } from '../../actions/workspace_actions';
 const mSTP = state => ({
 
   modal: state.entities.modal,
@@ -9,7 +9,7 @@ const mSTP = state => ({
 });
 
 const mDTP = dispatch => ({
-
+  postWorkspace: (title) => dispatch(postWorkspace(title)),
   closeModal: () => dispatch(closeModal()),
 });
 
@@ -22,20 +22,20 @@ class CreateWorkspaceModal extends React.Component {
     super(props);
 
     this.state = {
-      
+      title: ''
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleInput(e) {
     //e.preventDefault();
-    
+    this.setState({title: e.target.value})
   }
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.postWorkspace(this.state.title);
     this.props.closeModal();
-    
   }
   render() {
     // debugger;
@@ -54,7 +54,7 @@ class CreateWorkspaceModal extends React.Component {
             <div className='form-container'>
               <form>
                 
-                <input type='text' placeholder='some text'></input>
+                <input type='text' placeholder='Workspace Title' onChange={this.handleInput}></input>
                 <button type='submit' onClick={this.handleSubmit}>Submit</button>
 
               </form>
