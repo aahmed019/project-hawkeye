@@ -1,5 +1,5 @@
 import React from 'react';
-import WorkspaceIndexItem  from './workspace_index_item';
+import WorkspaceIndexItemContainer from './workspace_index_item_container';
 
 class DashBoard extends React.Component {
 
@@ -12,24 +12,10 @@ class DashBoard extends React.Component {
     }
 
     this.toggleDropdown = this.toggleDropdown.bind(this)
-    // this.toggleDropdownTwo = this.toggleDropdownTwo.bind(this)
   }
 
   componentDidMount(){
     this.props.fetch();
-  }
-
-  handleAddToFolder(workspaceId, folderName, idx){
-    return e => {
-      if(this.props.dragging && this.props.tweet){
-        let folder = {
-          name: folderName,
-          idx
-        }
-
-        this.props.addTweetToFolder(workspaceId, folder, this.props.tweet);
-      }
-    }
   }
 
   toggleDropdown(e){
@@ -45,9 +31,7 @@ class DashBoard extends React.Component {
         <div>
             { this.state.openCreateDropDown ? (
               <div className='content'>
-                {/* <button className='created-Folders' onClick={(e)=>this.toggleDropdownTwo(e)} >{workspace.title}</button> */}
-                <WorkspaceIndexItem title = {workspace.title} id={workspace._id} folders = {workspace.folders}/>
-                
+                <WorkspaceIndexItemContainer title = {workspace.title} id={workspace._id} folders = {workspace.folders}/>
               </div>
             ) 
             : ''} 
