@@ -1,5 +1,5 @@
 import React from 'react';
-import Draggable from 'react-draggable'
+
 
 class TweetIndex extends React.Component{
   
@@ -38,7 +38,6 @@ class TweetIndex extends React.Component{
 
   handleDrag(tweet){
     return e => {
-      debugger;
       // e.target.value.classList.add('selected')
       this.props.startDragging(tweet);
     }
@@ -57,7 +56,7 @@ class TweetIndex extends React.Component{
       </div>
     )
     const tweets = this.props.tweets.map((tweet, idx) => (
-    <Draggable>
+    
       <li className='tweet' id={idx} key={`tweet-${idx}`}>
         <ul>
           <li className='tweet-head'>
@@ -76,7 +75,7 @@ class TweetIndex extends React.Component{
           </li>
         </ul>
       </li>
-      </Draggable>
+      
     ))
 
     return(

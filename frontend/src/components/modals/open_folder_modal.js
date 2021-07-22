@@ -36,6 +36,8 @@ class CreateWorkspaceModal extends React.Component {
 
   render() {
     if (!this.props.modal || this.props.modal.modalType !== 'open_folder') return null;
+    console.log(this.props)
+    const {id, folder} = this.props.modal
     const tweets = this.props.modal.folder.tweets
     const hello = tweets.map((tweet, idx) => (
       <li className='tweet' key={`tweet-${idx}`}>
@@ -70,7 +72,7 @@ class CreateWorkspaceModal extends React.Component {
                       {hello}
                     </div>
                     <div className='right-comments'>
-                        {/* <CommentsContainer workspace_id ={id} folder = {folder}/> */}
+                        <CommentsContainer workspace_id ={id} folder = {folder}/>
                     </div>
                 </div>
             </div>
