@@ -19,9 +19,21 @@ $button-font-size: 15px;
 
 .auth-header{
     text-align: center;
+    margin: 15px;
     h1{
-        font-size: 60px;
+      font-size: 60px;
+      color: #7856FF;
+      text-shadow: 1px 1.5px #704f4f;
+      // text-shadow: 2px 2px #7856FF;
     }
+}
+
+.auth-header-signup{
+  text-align: center;
+
+  h1{
+    font-size: 50px;
+  }
 }
 
 .auth-form { 

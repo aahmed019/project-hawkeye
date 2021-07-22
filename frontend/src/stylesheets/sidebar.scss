@@ -51,6 +51,7 @@
     font-size: 13px;
     border-radius: 5px;
     margin-left: 20px;
+    margin-top: 5px;
     
     &:hover{
         color: #7856FF;
@@ -64,7 +65,7 @@
     border: none;
     text-align: left;
     outline: none;
-    font-size: 13px;
+    font-size: 15px;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
@@ -126,6 +127,28 @@
 }
 
 .trash-can{
-  padding: 6px 6px 1px 0;
   font-size: 12px;
+  padding: 6px 6px 1px 0;
+
+  &:hover > svg{
+    color: #7856FF;
+  }
+}
+
+.new-folder-input{
+  background-color: transparent;
+  border: none;
+  margin-left: 19px;
+  outline: none;
+}
+
+.new-folder-form{
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+.folder-row{
+  align-items: center;
+  display: flex;
 }

@@ -64,7 +64,7 @@ class TweetIndex extends React.Component{
             </a>
           </li>
           <li>
-            <button onClick={this.handleDrag(tweet)}>Drag tweet</button>
+            <button className='drag-tweet' onClick={this.handleDrag(tweet)}>Drag tweet</button>
           </li>
         </ul>
       </li>

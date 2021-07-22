@@ -57,7 +57,7 @@ class SignupForm extends React.Component {
             
             <div>
                 <div className="auth-header">
-                <Link to='/'><h1>Project Hawkeye</h1></Link>
+                <Link className="auth-header-signup" to='/'><h1>Project Hawkeye</h1></Link>
                 </div>
             
                 <div className="signup-form-container auth-form">
