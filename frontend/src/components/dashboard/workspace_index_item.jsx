@@ -1,4 +1,17 @@
 import React from 'react'
+import { connect } from 'react-redux';
+import { closeModal, openModal } from '../../actions/modal_actions';
+
+const mSTP = state => ({
+  modal: state.entities.modal,
+  currentUser: state.session.user
+});
+
+const mDTP = dispatch => ({
+  openModal: () => dispatch(openModal()),
+  closeModal: () => dispatch(closeModal()),
+});
+
 
 class WorkspaceIndexItem extends React.Component {
     constructor(props){
@@ -6,36 +19,38 @@ class WorkspaceIndexItem extends React.Component {
         this.state = {
             open : false,
             id: this.props.title + `${Math.random(0, 5)}`
-          }
+        }
         this.toggleDropdownTwo = this.toggleDropdownTwo.bind(this)
     }
-        toggleDropdownTwo(e){
+        
+    toggleDropdownTwo(e){
         e.preventDefault();
         let button2 =  document.getElementById(this.state.id)
         button2.classList.toggle('active')
         this.setState({open : !this.state.open})
-      }
+    }
 
       
 
-      render(){
-        const folderList = folders => folders.map(folder => (
-            <div className='content'>
-                <div className='Folder' onClick={() => console.log(folder.name)}>
-                    {folder.name}
-                </div>
+    render(){
+    const folderList = folders => folders.map(folder => (
+        <div className='content'>
+            <div className='Folder'>
+                {folder.name}
             </div>
-        ));
-        return (
+        </div>
+    ));
+
+    return (
             <div>
                 <button id = {this.state.id} className='created-Folders' onClick={(e)=> this.toggleDropdownTwo(e)}>{this.props.title}</button>
                 {this.state.open ? folderList(this.props.folders) : ''} 
             </div>
         )
-      }
+    }
     
     
 
 }
 
-export default WorkspaceIndexItem
+export default connect(mSTP, mDTP)(WorkspaceIndexItem);
