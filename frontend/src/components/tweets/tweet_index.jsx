@@ -1,4 +1,5 @@
 import React from 'react';
+import Draggable from 'react-draggable'
 
 class TweetIndex extends React.Component{
   
@@ -24,6 +25,7 @@ class TweetIndex extends React.Component{
     e.preventDefault();
     let loading = document.querySelector('.loading-screen');
     let ph = document.querySelector('.placeholder');
+    let tweets = document.querySelector('.tweet-container')
     ph !== null ? ph.classList.add('hide-comp') : console.log('hi');
     loading.classList.remove('hide-comp');
     this.props.fetchTweets(this.state.username, this.state.filter).then( () => {
@@ -47,6 +49,7 @@ class TweetIndex extends React.Component{
       </div>
     )
     const tweets = this.props.tweets.map((tweet, idx) => (
+    <Draggable>
       <li className='tweet' key={`tweet-${idx}`}>
         <ul>
           <li className='tweet-head'>
@@ -65,6 +68,7 @@ class TweetIndex extends React.Component{
           </li>
         </ul>
       </li>
+      </Draggable>
     ))
 
     return(
