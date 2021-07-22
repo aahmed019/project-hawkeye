@@ -76,8 +76,6 @@ class WorkspaceIndexItem extends React.Component {
       </div>
     )) : null;
 
-    // debugger;
-
     return (
       <div key={`workspace-${this.props.id}`}>
         <div className="workspace-row">
