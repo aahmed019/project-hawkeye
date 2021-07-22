@@ -54,7 +54,7 @@ class LoginForm extends React.Component {
         return (
             <div className="auth-container">
                 <div className="auth-header">
-                <Link to='/'><h1>Project Hawkeye</h1></Link>
+                <Link className="auth-header-signup" to='/'><h1>Project Hawkeye</h1></Link>
                 </div>
                 <div className='login-form-container auth-form'>
                 
@@ -78,10 +78,13 @@ class LoginForm extends React.Component {
                     />
                     
                     <input className='submit-btn' type="submit" value="Log in" />
-                    {this.renderErrors()}
-                <span>Don't have an account? <Link to='/signup'>Sign Up</Link></span>
                 </div>
                 </form>
+                <div className='bottom-auth-container'>
+                    <button className='demo-btn'onClick={() => this.props.login({email: 'demo@demo.com', password:'test123'})}>Demo Login</button>
+                    {this.renderErrors()}
+                    <span className='auth-span'>Don't have an account? <Link to='/signup'>Sign Up</Link></span>
+                </div>
 
                 </div>
             </div>

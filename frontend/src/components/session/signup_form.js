@@ -57,7 +57,7 @@ class SignupForm extends React.Component {
             
             <div>
                 <div className="auth-header">
-                <Link to='/'><h1>Project Hawkeye</h1></Link>
+                <Link className="auth-header-signup" to='/'><h1>Project Hawkeye</h1></Link>
                 </div>
             
                 <div className="signup-form-container auth-form">
@@ -86,7 +86,7 @@ class SignupForm extends React.Component {
                         
                         <input className='submit-btn' type="submit" value="Sign Up" />
                         {this.renderErrors()}
-                    <span>Already have an account? <Link to='/login'>Log in</Link></span>
+                    <span className='auth-span'>Already have an account? <Link to='/login'>Log in</Link></span>
                     </div>
                     </form>
                     </div>
