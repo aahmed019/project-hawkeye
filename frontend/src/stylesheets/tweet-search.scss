@@ -27,6 +27,7 @@ $lightgray: rgb(238, 230, 230);
     align-items: center;
     min-height: 100vh;
     // overflow-y: scroll;
+    z-index: 1000;
     form {
       padding: 10px;
       display: flex;

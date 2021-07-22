@@ -2,9 +2,9 @@ export const OPEN_MODAL = 'OPEN_MODAL';
 export const CLOSE_MODAL = 'CLOSE_MODAL';
 
 
-export const openModal = modalType => ({
+export const openModal = (modalType, id, folder) => ({
   type: OPEN_MODAL,
-  modalType
+  data: {id, folder, modalType}
 })
 
 export const closeModal= () => ({
