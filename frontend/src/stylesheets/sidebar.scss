@@ -108,6 +108,7 @@
     margin-left: 5px;
     float: right;
 }
+
 .created-workspaces:after {
     content: '\02795';
     font-size: 13px;
@@ -120,3 +121,11 @@
     content: "\2796";
 }
 
+.workspace-row{
+  display: flex;
+}
+
+.trash-can{
+  padding: 1px 6px 1px 0;
+  font-size: 13px;
+}
