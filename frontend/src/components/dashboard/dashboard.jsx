@@ -1,5 +1,4 @@
 import React from 'react';
-
 class DashBoard extends React.Component {
 
   constructor(props) {
@@ -65,7 +64,7 @@ class DashBoard extends React.Component {
             {workspaceList}
           </div>
           <div className='create-container'>
-            <button className='create-workspace'>Create a Workspace</button>
+            <button onClick={e => this.props.openModal('create_workspace')}className='create-workspace'>Create a Workspace</button>
           </div>
         </div>
     )

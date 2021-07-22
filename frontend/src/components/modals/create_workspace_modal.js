@@ -35,7 +35,8 @@ class CreateWorkspaceModal extends React.Component {
     
   }
   render() {
-    if (!this.props.modal === 'createWorkspace') {
+    // debugger;
+    if (this.props.modal !== 'create_workspace') {
       return null;
     }
 
