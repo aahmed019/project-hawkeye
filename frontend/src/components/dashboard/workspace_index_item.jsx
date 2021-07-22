@@ -61,7 +61,7 @@ class WorkspaceIndexItem extends React.Component {
   }
 
   render(){
-    const folderList = folders => folders.map((folder, idx) => (
+    const folderList = folders => folders ? folders.map((folder, idx) => (
       <div className='content folder-row' key={`workspace-${this.props.id}-folder-${idx}`}>
         <div 
           className='Folder' 
@@ -74,7 +74,7 @@ class WorkspaceIndexItem extends React.Component {
               onClick={() => this.props.deleteFolder(this.props.id, folder.name, idx)}/>
           </div>
       </div>
-    ));
+    )) : null;
 
     // debugger;
 
