@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchTweets } from '../../actions/tweet_actions';
-import { startDragging } from './../../actions/drag_actions';
+import { startDragging, stopDragging } from './../../actions/drag_actions';
 import TweetIndex from './tweet_index';
 
 const mapStateToProps = state => {
@@ -12,7 +12,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchTweets: (username, filter) => dispatch(fetchTweets(username, filter)),
-    startDragging: tweet => dispatch(startDragging(tweet))
+    startDragging: tweet => dispatch(startDragging(tweet)),
+    stopDragging: () => dispatch(stopDragging())
   }
 }
 
