@@ -1,11 +1,13 @@
 /* eslint-disable import/no-anonymous-default-export */
 
 import { 
+
     RECEIVE_WORKSPACE, 
     RECEIVE_WORKSPACES, 
     REMOVE_WORKSPACE,
     REMOVE_FOLDER,
-    REMOVE_COMMENT
+    REMOVE_COMMENT,
+    REMOVE_TWEET_FROM_FOLDER
 } from "../actions/workspace_actions";
 
 export default function(oldState = {}, action){
@@ -40,7 +42,14 @@ export default function(oldState = {}, action){
             newState[action.id].comments = commentCopy;
             return newState;
 
+        case REMOVE_TWEET_FROM_FOLDER:
+            let newFolders = [...newState[action.workspaceId].folders];
+            newFolders[action.folder_idx].tweets.splice(action.tweetIdx, 1);
+            newState[action.workspaceId].folders = newFolders;
+            return newState;
+
         default:
-        return oldState;
-    };
+          return oldState;
+  };
+
 };

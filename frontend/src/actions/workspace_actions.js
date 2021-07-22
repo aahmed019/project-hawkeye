@@ -6,6 +6,7 @@ export const RECEIVE_WORKSPACES = "RECEIVE_WORKSPACES";
 export const RECEIVE_WORKSPACE = "RECEIVE_WORKSPACE";
 export const REMOVE_WORKSPACE = "REMOVE_WORKSPACE";
 export const REMOVE_FOLDER = "REMOVE_FOLDER";
+export const REMOVE_TWEET_FROM_FOLDER = "REMOVE_TWEET_FROM_FOLDER";
 export const REMOVE_COMMENT = "REMOVE_COMMENT";
 
 const receiveWorkspaces = workspaces => ({
@@ -29,6 +30,13 @@ const removeFolder = (id, idx) => ({
   idx
 })
 
+const removeTweetFromFolder = (workspaceId, folder_idx, tweetIdx) => ({
+  type: REMOVE_TWEET_FROM_FOLDER,
+  workspaceId,
+  folder_idx,
+  tweetIdx
+})
+
 const removeComment = (id, idx) => {
     return {
         type: REMOVE_COMMENT,
@@ -36,11 +44,6 @@ const removeComment = (id, idx) => {
         idx
     }
 }
-// ({
-    // type: REMOVE_COMMENT,
-    // id,
-    // idx
-//   })
 
 export const fetchWorkspaces = () => dispatch => {
   WorkspaceAPIUtil.fetchWorkspaces().then(res => {
@@ -77,6 +80,11 @@ export const addTweetToFolder = (workspaceId, folder, tweet) => dispatch => {
     dispatch(stopDragging());
     dispatch(receiveWorkspace(res.data));
   }, err => dispatch(receiveErrors(err.response.data)));
+}
+
+
+export const deleteTweetFromFolder = (workspaceId, folder_idx, tweet) => dispatch => {
+  WorkspaceAPIUtil.removeTweet(workspaceId, folder_idx, tweet.source).then(res => dispatch(removeTweetFromFolder(workspaceId, folder_idx, tweet.idx)), err => dispatch(receiveErrors(err.response.data)));
 }
 
 export const addCommentToWorkspace = (workspaceId, comment) => dispatch => {
