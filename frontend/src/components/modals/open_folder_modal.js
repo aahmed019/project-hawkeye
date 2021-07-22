@@ -22,8 +22,8 @@ class CreateWorkspaceModal extends React.Component {
     render() {
         if (!this.props.modal || this.props.modal.modalType !== 'open_folder') return null;
 
-        const tweets = this.props.modal.folders
-        tweets.map((tweet,idx) => (
+        const {tweets} = this.props.modal.folder
+        const hello = tweets.map((tweet,idx) => (
           <li className='tweet' key={`tweet-${idx}`}>
              <ul>
               <li className='tweet-head'>
@@ -37,24 +37,22 @@ class CreateWorkspaceModal extends React.Component {
                   {tweet.text}
                 </a>
               </li>
-              <li>
-                <button onClick={this.handleDrag(tweet)}>Drag tweet</button>
-              </li>
             </ul>
         </li>
         ))
+
         return (
         <div className='modal-folder'>
             <div className='modal-folder-child'>
-            <div className='modal-form-folder'>
                 <span className='close-button'><button onClick={() => this.props.closeModal()}>&#x2715;</button></span>
-                <div className='folder-container'>
-                <div className='left-tweet'>
-                    LEFT TWEETS
-                </div>
-                <div className='right-comments'>
-                    <CommentsContainer workspace_id ={id} folder = {folder}/>
-                </div>
+                <div className='modal-form-folder'>
+                  <div className='folder-container'>
+                    <div className='left-tweet'>
+                      {hello}
+                    </div>
+                    <div className='right-comments'>
+                        {/* <CommentsContainer workspace_id ={id} folder = {folder}/> */}
+                    </div>
                 </div>
             </div>
             </div>
