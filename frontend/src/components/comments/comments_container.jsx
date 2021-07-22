@@ -25,7 +25,6 @@ class Comments extends React.Component{
 
     render(){
         if(!this.props.comments) return null
-
         const comments = this.props.comments.map((comment, i) => {
             return <div key = {i}>
                 <CommentsIndexItem comment ={comment} idx = {i} workspace_id={this.props.workspace_id} 

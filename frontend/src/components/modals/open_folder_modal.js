@@ -20,7 +20,6 @@ class CreateWorkspaceModal extends React.Component {
     }
 
     render() {
-        console.log(this.props)
         if (!this.props.modal || this.props.modal.modalType !== 'open_folder') return null;
 
         const {id, folder} = this.props.modal 
