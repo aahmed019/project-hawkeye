@@ -21,20 +21,24 @@ export default function(oldState = {}, action){
         return newState;
 
         case RECEIVE_WORKSPACE:
-        newState[action.workspace._id] = action.workspace;
-        return newState;
+            newState[action.workspace._id] = action.workspace;
+            return newState;
 
         case REMOVE_WORKSPACE:
-        delete newState[action.id]
-        return newState;
+            delete newState[action.id]
+            return newState;
 
         case REMOVE_FOLDER:
-        newState[action.id].folders.splice(action.idx, 1);
-        return newState;
+            let copy = [...newState[action.id].folders]
+            copy.splice(action.idx, 1);
+            newState[action.id].folders = copy;
+            return newState;
 
         case REMOVE_COMMENT:
-            newState[action.id].comments.splice(action.idx, 1);
-            return newState
+            let commentCopy = [...newState[action.id].comments]
+            commentCopy.splice(action.idx, 1);
+            newState[action.id].comments = commentCopy;
+            return newState;
 
         default:
         return oldState;
