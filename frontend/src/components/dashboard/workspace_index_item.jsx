@@ -8,9 +8,11 @@ class WorkspaceIndexItem extends React.Component {
     this.state = {
         open : false,
         id: this.props.title + `${Math.random(0, 5)}`,
-        activeIndex: []
+        newFolderName: ''
     }
     this.handleWorkspaceClick = this.handleWorkspaceClick.bind(this);
+    this.createNewFolder = this.createNewFolder.bind(this);
+    this.updateNewFolderName = this.updateNewFolderName.bind(this);
   }
       
   handleWorkspaceClick(e){
@@ -48,19 +50,36 @@ class WorkspaceIndexItem extends React.Component {
     };
   }
 
+  createNewFolder(e){
+    e.preventDefault();
+    this.props.createFolder(this.props.id, this.state.newFolderName);
+    this.setState({ newFolderName: '' });
+  }
+
+  updateNewFolderName(e){
+    this.setState({ newFolderName: e.target.value });
+  }
+
   render(){
     const folderList = folders => folders.map((folder, idx) => (
-      <div className='content'>
+      <div className='content folder-row' key={`workspace-${this.props.id}-folder-${idx}`}>
         <div 
           className='Folder' 
           onClick={this.handleFolderClick(this.props.id, folder, idx)}>
             {folder.name}
         </div>
+        <div className="trash-can">
+            <FontAwesomeIcon 
+              icon={faTrashAlt} 
+              onClick={() => this.props.deleteFolder(this.props.id, folder.name, idx)}/>
+          </div>
       </div>
     ));
 
+    // debugger;
+
     return (
-      <div>
+      <div key={`workspace-${this.props.id}`}>
         <div className="workspace-row">
           <button 
             id = {this.state.id} 
@@ -70,11 +89,31 @@ class WorkspaceIndexItem extends React.Component {
             {this.props.title}
           </button>
           <div className="trash-can">
-            <FontAwesomeIcon icon={faTrashAlt} />
+            <FontAwesomeIcon 
+              icon={faTrashAlt} 
+              onClick={() => this.props.deleteWorkspace(this.props.id)}/>
           </div>
         </div>
 
-        {this.state.open ? folderList(this.props.folders) : ''} 
+        {this.state.open ? (
+          <>
+            {folderList(this.props.folders)}
+            <div>
+              <form 
+                onSubmit={this.createNewFolder}
+                className="new-folder-form">
+                <input 
+                  className="new-folder-input"
+                  type="text"
+                  placeholder="New Folder" 
+                  onChange={this.updateNewFolderName}
+                  value={this.state.newFolderName}/>
+              </form>
+            </div>
+          </>
+        ) : ''} 
+
+        
       </div>
     )
   }

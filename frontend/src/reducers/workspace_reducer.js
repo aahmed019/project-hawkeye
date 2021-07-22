@@ -22,7 +22,7 @@ export default function(oldState = {}, action){
       return newState;
 
     case REMOVE_WORKSPACE:
-      delete newState[action.id]
+      delete newState[action.id];
       return newState;
 
     case REMOVE_FOLDER:
