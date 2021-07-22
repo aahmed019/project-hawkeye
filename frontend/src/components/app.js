@@ -16,14 +16,14 @@ const App = () => (
     <div className='app'>
         <CreateWorkspaceModal />
         <OpenFolderModal />
+        
+        <AuthRoute exact path="/" component={NavBarContainer} />
         <Switch>
-            <AuthRoute exact path="/" component={NavBarContainer} />
+            <AuthRoute exact path="/" component={MainPage} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
         </Switch>
-            <AuthRoute exact path="/" component={MainPage} />
-            <ProtectedRoute path="/" component={MainIndex} />
-        
+        <ProtectedRoute exact path="/" component={MainIndex} />
     </div>
 );
 export default App;
