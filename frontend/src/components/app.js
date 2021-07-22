@@ -13,19 +13,15 @@ import MainIndex from './index-page/main-index';
 const App = () => (
     <div className='app'>
         <Switch>
+            <AuthRoute exact path="/" component={NavBarContainer} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
-            <Route component={defaultContainer} />
+        </Switch>
+        <Switch>
+            <AuthRoute exact path="/" component={MainPage} />
+            <ProtectedRoute path="/" component={MainIndex} />
         </Switch>
     </div>
 );
-// ON LOGIN: REDIRECT TO WORKSPACE PAGE
-const defaultContainer = () => (
-    <>
-        <AuthRoute exact path="/" component={NavBarContainer} />
-        <AuthRoute path="/" component={MainPage} />
-        <ProtectedRoute path="/" component={MainIndex} />
-        
-    </>
-)
+
 export default App;

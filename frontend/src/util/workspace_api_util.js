@@ -42,8 +42,16 @@ export const deleteFolder = (workspaceId, name) => {
     });
 };
 
-export const addTweet = () => {
-    return axios.post('/api/workspaces/add-tweet')
+export const addTweet = (workspaceId, folder, tweet) => {
+    return axios.post('/api/workspaces/add-tweet',
+        {
+            params: {
+                workspaceId,
+                folder,
+                tweet
+            }
+        }
+    )
 };
 
 export const removeTweet = () => {

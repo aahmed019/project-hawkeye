@@ -1,4 +1,5 @@
 import * as WorkspaceAPIUtil from './../util/workspace_api_util';
+import { stopDragging } from './drag_actions';
 import { receiveErrors } from './session_actions';
 
 export const RECEIVE_WORKSPACES = "RECEIVE_WORKSPACES";
@@ -54,5 +55,12 @@ export const postFolder = (workspaceId, name) => dispatch => {
 export const deleteFolder = (workspaceId, name, idx) => dispatch => {
   WorkspaceAPIUtil.deleteFolder(workspaceId, name).then(res => {
     dispatch(removeFolder(workspaceId, idx));
+  }, err => dispatch(receiveErrors(err.response.data)));
+}
+
+export const addTweetToFolder = (workspaceId, folder, tweet) => dispatch => {
+  WorkspaceAPIUtil.addTweet(workspaceId, folder, tweet).then(res => {
+    dispatch(stopDragging());
+    dispatch(receiveWorkspace(res.data));
   }, err => dispatch(receiveErrors(err.response.data)));
 }
