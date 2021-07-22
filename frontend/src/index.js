@@ -14,6 +14,8 @@ import './stylesheets/workspace.scss';
 import './stylesheets/main-index.scss';
 import './stylesheets/sidebar.scss';
 import './stylesheets/tweet-search.scss';
+import './stylesheets/modal.scss';
+
 import { postFolder, postWorkspace } from './util/workspace_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {

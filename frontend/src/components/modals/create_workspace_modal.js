@@ -15,6 +15,9 @@ const mDTP = dispatch => ({
 
 class CreateWorkspaceModal extends React.Component {
 
+  componentWillUnmount() {
+    this.props.closeModal();
+  }
   constructor(props) {
     super(props);
 
