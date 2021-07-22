@@ -25,9 +25,14 @@
   justify-content: center;
   width: 390px;
   
-
-    
+  form {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
+    
+}
  
 
   .close-button {
@@ -46,12 +51,7 @@
       color: #747474;
     }
   }
-  form {
-    padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+
   
 
 .modal-errors {
