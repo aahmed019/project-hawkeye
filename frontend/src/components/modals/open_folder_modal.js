@@ -14,34 +14,32 @@ const mDTP = dispatch => ({
 
 class CreateWorkspaceModal extends React.Component {
 
-  componentWillUnmount() {
-    this.props.closeModal();
-  }
-  constructor(props) {
-    super(props);
-  }
+    
+    componentWillUnmount() {
+        this.props.closeModal();
+    }
 
-  render() {
-    if (!this.props.modal || this.props.modal.modalType !== 'open_folder') return null;
+    render() {
+        if (!this.props.modal || this.props.modal.modalType !== 'open_folder') return null;
 
-    return (
-      <div className='modal-folder'>
-        <div className='modal-folder-child'>
-          <div className='modal-form-folder'>
-            <span className='close-button'><button onClick={() => this.props.closeModal()}>&#x2715;</button></span>
-            <div className='folder-container'>
-              <div className='left-tweet'>
-                LEFT TWEETS
-              </div>
-              <div className='right-comments'>
-                <Comments/>
-              </div>
+        return (
+        <div className='modal-folder'>
+            <div className='modal-folder-child'>
+            <div className='modal-form-folder'>
+                <span className='close-button'><button onClick={() => this.props.closeModal()}>&#x2715;</button></span>
+                <div className='folder-container'>
+                <div className='left-tweet'>
+                    LEFT TWEETS
+                </div>
+                <div className='right-comments'>
+                    <Comments/>
+                </div>
+                </div>
             </div>
-          </div>
+            </div>
         </div>
-      </div>
-    )
-  }
+        )
+    }
 }
 
 export default connect(mSTP, mDTP)(CreateWorkspaceModal);
