@@ -95,7 +95,20 @@ $lightgray: rgb(238, 230, 230);
     // margin-top: 160px;
     padding: 15px;
     .tweet.selected {
-      box-shadow:rgba(160, 27, 196, 0.8) 10px 10px 10px 10px;
+      -webkit-box-shadow: 0 0 20px $purple;
+      -moz-box-shadow: 0 0 20px $purple;
+      box-shadow: 0 0 20px $purple;
+      button {
+        // visibility: hidden;
+      }
+     
+      // button:after {
+      //   content: 'Deselect';
+      //   // visible: 
+      //   display: block;
+      //   position: absolute;
+      //   top: 2px;
+      // }
     }
     .tweet {
       animation: all 4s ease-in;

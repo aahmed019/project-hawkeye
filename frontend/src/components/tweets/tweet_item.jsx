@@ -17,7 +17,7 @@ class TweetItem extends React.Component {
         this.setState({selected: false});
       } else {
         this.props.startDragging(tweet);
-        this.setState({selected: true})
+        this.setState({selected: true});
       }
       
       // this.props.startDragging(tweet);
@@ -42,7 +42,7 @@ class TweetItem extends React.Component {
             </a>
           </li>
           <li>
-            <button onClick={this.handleDrag(tweet)}>Drag tweet</button>
+            <button className ='select-btn'onClick={this.handleDrag(tweet)}>Select</button>
           </li>
         </ul>
       </li>
