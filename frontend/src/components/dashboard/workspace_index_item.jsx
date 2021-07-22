@@ -41,7 +41,7 @@ class WorkspaceIndexItem extends React.Component {
 
     const folderList = folders => folders.map(folder => (
         <div className='content'>
-            <div className='Folder' onClick={() => this.props.openModal()}>
+            <div className='Folder'>
                 {folder.name}
             </div>
         </div>
