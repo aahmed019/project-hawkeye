@@ -8,6 +8,7 @@ $lightgray: rgb(238, 230, 230);
   // background-color: $black;
   background: $black;
  .search-form {
+
     background-color: $white;
     // color: black;
     position: fixed;
@@ -42,42 +43,45 @@ $lightgray: rgb(238, 230, 230);
         width: 70%;
         box-sizing: content-box;
         h1 {
-        font-weight: 400;
+        font-weight: 300;
+        font-size: 14px;
         color: black;
         margin-bottom: 5px;
       }
         input {
           box-sizing: border-box;
           width: 100%;
-          border: 1px solid #e8e5e5;
+          border: 2px solid #e8e5e5;
           background-color: $white;
           border-radius: 10px;
           height: 30px;
           margin-bottom: 10px;
           padding: 5px 8px;
           &:focus-visible {
+            color: #2c2c2e;
             outline: none;
           }
         }
       }
       .button-container {
         // margin-left: 15px;
-        width: 30%;
+        width: 50%;
         display: flex;
         align-content: center;
         justify-content: center;
         button {
-          // width: 100%;
-          background-color: $white;
+          width: 100%;
+          color: white;
+          background-color: $purple;
           height: 30px;
           align-self: center;
           border: none;
           border-radius: 10px;
-          font-size: 14px;
-          font-weight: 400;
+          font-size: 16px;
+          font-weight: 100;
           &:hover {
             cursor: pointer;
-            background-color: $purple;
+            background-color: $dark-purple;
             color: white;
             
           }
@@ -90,7 +94,9 @@ $lightgray: rgb(238, 230, 230);
   .tweets-feed-container {
     // margin-top: 160px;
     padding: 15px;
-    
+    .tweet.selected {
+      box-shadow:rgba(160, 27, 196, 0.8) 0px 1px 8px;
+    }
     .tweet {
       animation: all 4s ease-in;
       padding: 10px 15px;
@@ -102,7 +108,7 @@ $lightgray: rgb(238, 230, 230);
       margin: 13px auto;
       &:hover{
             transform: translateY(-2px);
-            box-shadow:rgba(255, 255, 255, 0.8) 0px 1px 8px;
+            // box-shadow:rgba(255, 255, 255, 0.8) 0px 1px 8px;
             transition: 0.3s ease-out;
       }
       .tweet-head {

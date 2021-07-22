@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
 import { deleteTweetFromFolder } from './../../actions/workspace_actions';
-import Comments from '../comments/comments';
+import CommentsContainer from '../comments/comments_container';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -59,27 +59,25 @@ class CreateWorkspaceModal extends React.Component {
         </ul>
       </li>
     ))
-    
-    return (
-      <div className='modal-folder'>
-        <div className='modal-folder-child'>
-          <span className='close-button'><button onClick={() => this.props.closeModal()}>&#x2715;</button></span>
-          <div className='modal-form-folder'>
-            <div className='folder-container'>
-              <div className='left-tweet'>
-                <div className='tweet-container'>
-                  {hello}  
+
+        return (
+        <div className='modal-folder'>
+            <div className='modal-folder-child'>
+                <span className='close-button'><button onClick={() => this.props.closeModal()}>&#x2715;</button></span>
+                <div className='modal-form-folder'>
+                  <div className='folder-container'>
+                    <div className='left-tweet'>
+                      {hello}
+                    </div>
+                    <div className='right-comments'>
+                        {/* <CommentsContainer workspace_id ={id} folder = {folder}/> */}
+                    </div>
                 </div>
-              </div>
-              <div className='right-comments'>
-                <Comments/>
-              </div>
             </div>
-          </div>
+            </div>
         </div>
-      </div>
-    )
-  }
+        )
+    }
 }
 
 export default connect(mSTP, mDTP)(CreateWorkspaceModal);

@@ -25,7 +25,6 @@ class NavBar extends React.Component {
                 active: false
             })
         } else {
-            //  debugger;
             this.setState({
                 active: true
             })

@@ -32,15 +32,13 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                margin-top: 2%;
 
                 .left-tweet{
                     width: 70%;
                     height: 100%;  
-                    border-radius: 22px; 
+                    // border-radius: 22px; 
                     background-color: #1f1f24;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
                     overflow: scroll;
                     
                     .tweet-container{
@@ -53,12 +51,27 @@
                     border: white 1px solid;
                     width: 35%;
                     height: 100%; 
-                    margin-top: 2.5%;  
+                    margin-left: 2%;
                 }
             }
         }
     }
 }
+
+.close-button1 {
+    position: absolute;
+    right: 0;
+    button {
+      right: 0;
+      margin-right: 10px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: bold;
+      color: #747474;
+    }
+  }
 
 
 

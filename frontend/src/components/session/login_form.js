@@ -54,7 +54,7 @@ class LoginForm extends React.Component {
         return (
             <div className="auth-container">
                 <div className="auth-header">
-                <Link to='/'><h1>Project Hawkeye</h1></Link>
+                <Link className="auth-header-signup" to='/'><h1>Project Hawkeye</h1></Link>
                 </div>
                 <div className='login-form-container auth-form'>
                 
