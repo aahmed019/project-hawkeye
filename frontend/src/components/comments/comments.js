@@ -8,7 +8,7 @@ class Comments extends React.Component{
     render(){
         return (
             <div>
-                Hello
+               RIGHT COMMENTS
             </div>
         )
     }

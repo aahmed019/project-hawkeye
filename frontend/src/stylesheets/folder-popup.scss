@@ -1,0 +1,47 @@
+.modal-folder{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 10;
+    border-radius: 8px;
+}
+
+.modal-folder-child {
+    box-shadow: 0 2px 4px rgba( 0, 0, 0, .1), 0 8px 16px rgba( 0, 0, 0, 0.1);
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    height: 700px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-form-folder{
+    width: 90%
+}
+
+.folder-container{
+    width: 100%;
+    height: 650px;
+    display: flex;
+}
+
+.left-tweet{
+    border: purple 1px solid;
+    width: 65%;
+    height: 100%;   
+}
+
+.right-comments{
+    border: red 1px solid;
+    width: 35%;
+    height: 100%;      
+}
