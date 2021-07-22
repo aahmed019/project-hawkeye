@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
-import Comments from '../comments/comments';
+import CommentsContainer from '../comments/comments_container';
 
 const mSTP = state => ({
   modal: state.entities.modal,
@@ -20,8 +20,11 @@ class CreateWorkspaceModal extends React.Component {
     }
 
     render() {
+        console.log(this.props)
         if (!this.props.modal || this.props.modal.modalType !== 'open_folder') return null;
 
+        const {id, folder} = this.props.modal 
+        console.log(folder)
         return (
         <div className='modal-folder'>
             <div className='modal-folder-child'>
@@ -32,7 +35,7 @@ class CreateWorkspaceModal extends React.Component {
                     LEFT TWEETS
                 </div>
                 <div className='right-comments'>
-                    <Comments/>
+                    <CommentsContainer workspace_id ={id} folder = {folder}/>
                 </div>
                 </div>
             </div>
