@@ -21,7 +21,7 @@ class WorkspaceIndexItem extends React.Component {
       render(){
         const folderList = folders => folders.map(folder => (
             <div className='content'>
-                <div className='Folder'>
+                <div className='Folder' onClick={() => console.log(folder.name)}>
                     {folder.name}
                 </div>
             </div>
