@@ -1,10 +1,33 @@
 .instructions {
-    background-color: #f6f6f6;
-
+    // background-color: #f6f6f6;
+    background-color: #2c2c2e;
+    z-index: -1;
+    color: white;
+    .instructions-wrapper {
+        // background-color: #2c2c2e;
+        z-index: 1;
+        padding: 20px;  
+        .instructions-header {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid white;
+        }
+        .instructions-body {
+            display: flex;
+            flex-direction: column;
+            div {
+                h1 {
+                    margin-bottom: 10px;
+                }
+                margin-bottom: 35px;
+            }
+        }
+    }
     h1{
         text-align: center;
-        color: black;
+        // color: black;
         font-size: 25px;
-        padding: 20px;  
+        
     }
 }
