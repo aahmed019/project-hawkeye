@@ -22,8 +22,27 @@ class CreateWorkspaceModal extends React.Component {
     render() {
         if (!this.props.modal || this.props.modal.modalType !== 'open_folder') return null;
 
-        const {id, folder} = this.props.modal 
-        console.log(folder)
+        const tweets = this.props.modal.folders
+        tweets.map((tweet,idx) => (
+          <li className='tweet' key={`tweet-${idx}`}>
+             <ul>
+              <li className='tweet-head'>
+                <li className='tweet-img'><img src={tweet.profile_pic} /></li>
+                <a className='tweet-link'href={tweet.user_url}>
+                  {tweet.username}
+                </a>
+              </li>
+              <li className='tweet-body'>
+                <a href={tweet.source}>
+                  {tweet.text}
+                </a>
+              </li>
+              <li>
+                <button onClick={this.handleDrag(tweet)}>Drag tweet</button>
+              </li>
+            </ul>
+        </li>
+        ))
         return (
         <div className='modal-folder'>
             <div className='modal-folder-child'>
