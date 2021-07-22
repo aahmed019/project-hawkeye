@@ -4,7 +4,7 @@ export default function(state = null, action){
   Object.freeze(state);
   switch(action.type) {
     case OPEN_MODAL:
-      return action.modalType;
+      return action.data;
     case CLOSE_MODAL:
       return null;
     default:

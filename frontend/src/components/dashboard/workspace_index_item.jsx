@@ -8,7 +8,7 @@ const mSTP = state => ({
 });
 
 const mDTP = dispatch => ({
-  openModal: () => dispatch(openModal()),
+  openModal: (modalType, id, folder) => dispatch(openModal(modalType, id, folder)),
   closeModal: () => dispatch(closeModal()),
 });
 
@@ -38,18 +38,13 @@ class WorkspaceIndexItem extends React.Component {
 
 
     render(){
-
     const folderList = folders => folders.map(folder => (
         <div className='content'>
-            <div className='Folder'>
+            <div className='Folder' onClick={() => (this.props.openModal('open_folder', this.props.id, folder))}>
                 {folder.name}
             </div>
         </div>
     ));
-
-    if (this.props.modal !== 'createReport'){
-        return null;
-    }
 
     return (
             <div>

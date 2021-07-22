@@ -27,13 +27,13 @@ class DashBoard extends React.Component {
   }
 
   render() {
-    
+
     const workspaceList = this.props.workspaces.map(workspace => (
         <div>
             { this.state.openCreateDropDown ? (
               <div className='content'>
                 {/* <button className='created-Folders' onClick={(e)=>this.toggleDropdownTwo(e)} >{workspace.title}</button> */}
-                <WorkspaceIndexItem title = {workspace.title} folders = {workspace.folders}/>
+                <WorkspaceIndexItem title = {workspace.title} id={workspace._id} folders = {workspace.folders}/>
                 
               </div>
             ) 
