@@ -4,7 +4,7 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(80, 79, 79, 0.8);
   z-index: 10;
   
 }
@@ -31,11 +31,13 @@
  
 
   .close-button {
-    
+    position: absolute;
+    right: 0;
+    top: 0;
     button {
-      position: absolute;
+      // position: absolute;
       right: 0;
-      margin: 10px;
+      // margin: 10px;
       border: none;
       background: transparent;
       cursor: pointer;

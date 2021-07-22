@@ -86,7 +86,7 @@ class SignupForm extends React.Component {
                         
                         <input className='submit-btn' type="submit" value="Sign Up" />
                         {this.renderErrors()}
-                    <span>Already have an account? <Link to='/login'>Log in</Link></span>
+                    <span className='auth-span'>Already have an account? <Link to='/login'>Log in</Link></span>
                     </div>
                     </form>
                     </div>
