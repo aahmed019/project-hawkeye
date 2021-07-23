@@ -1,6 +1,8 @@
 import React from 'react';
-import Draggable from 'react-draggable';
+// import Draggable from 'react-draggable';
 import TweetItem from './tweet_item';
+
+
 class TweetIndex extends React.Component{
   
   componentDidMount() {
@@ -35,7 +37,12 @@ class TweetIndex extends React.Component{
     });
   }
 
- 
+  // handleDrag(tweet){
+  //   return e => {
+  //     // e.target.value.classList.add('selected')
+  //     this.props.startDragging(tweet);
+  //   }
+  // }
   
   render(){
     

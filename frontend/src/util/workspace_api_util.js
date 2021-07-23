@@ -54,8 +54,14 @@ export const addTweet = (workspaceId, folder, tweet) => {
     )
 };
 
-export const removeTweet = () => {
-    return axios.delete('/api/workspaces/remove-tweet')
+export const removeTweet = (workspaceId, folder_idx, tweet_source) => {
+  return axios.delete('/api/workspaces/remove-tweet', {
+    data:{
+            workspaceId,
+            folder_idx,
+            tweet_source
+        }
+  })
 };
 
 export const addComment = (workspace_id, comment) => {

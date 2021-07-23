@@ -1,0 +1,120 @@
+
+.commentInput{
+    margin: 0px;
+    width: 100%;
+    height: 150px;
+    box-sizing: border-box;
+}
+
+textarea{
+    resize: none;
+    border-radius: 8px;
+}
+
+.add-comment{
+    height: 40px;
+    width: 100%;
+    border-radius: 8px;
+
+    &:hover{
+        background-color: #7856FF;
+        color: white
+    }
+}
+
+.comment-body{
+    color: white;
+    word-wrap:break-word;
+}
+
+.button-container{
+    display: flex;
+    min-height: 30px;
+    flex-direction: row;
+    float: right;
+    height: auto;
+    .deleteComment{
+        cursor: pointer;
+        color: rgb(198, 198, 198);
+        font-size: 16px;
+        margin-left: 5px;
+    }
+    
+}
+
+.comment-body-container{
+    width: 90%;
+    min-height: 10px;
+    display: flex;
+    flex-direction: column;
+    // margin-bottom: 10px;
+    justify-content: center;
+    border-bottom: 1px solid white;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+.editComment{
+    cursor: pointer;
+    color: rgb(198, 198, 198);
+    font-size: 14px;
+}
+
+.edit-body{
+    border: none;
+    height: 20px;
+    width: auto;
+}
+
+.comment-container{
+    overflow: scroll;
+    height: inherit;
+    flex-direction: column;
+    margin-bottom: 5px;
+
+    form{
+        padding: 5px;
+    }
+}
+
+.all-comments{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-cancel-form{
+    display: flex;
+    min-height: 30px;
+    flex-direction: row;
+    float: right;
+    cursor: pointer;
+    color: rgb(198, 198, 198);
+    font-size: 14px;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+
+    input{
+          box-sizing: border-box;
+          width: 80%;
+          border: 2px solid #e8e5e5;
+          background-color: $white;
+          border-radius: 10px;
+          height: 30px;
+          padding: 5px 8px;
+          &:focus-visible {
+            color: #2c2c2e;
+            outline: none;
+          }
+    }
+
+    .cancelComment{
+        font-size: 16px;
+    }
+
+
+}

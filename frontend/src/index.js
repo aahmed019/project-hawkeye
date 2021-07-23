@@ -7,7 +7,7 @@ import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 import './stylesheets/origin.scss';
 
-import { postFolder, postWorkspace } from './util/workspace_api_util';
+import { postFolder, postWorkspace, updateComment } from './util/workspace_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
     window.addWorkSpace = postWorkspace;
     window.addFolder = postFolder;
+    window.update = updateComment
 
     ReactDOM.render(<Root store={store} />, root);
     // ReactDOM.render(<h1>Hello</h1>, root);
