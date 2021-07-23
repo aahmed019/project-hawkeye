@@ -57,7 +57,11 @@ class NavBar extends React.Component {
             <div className={this.state.active && !this.props.loggedIn ? 'nav-container hasScrolled' : 'nav-container'}>
                 <div className='logo-head-text'>
                 <Link to='/' >
-                <img src='https://cdn.discordapp.com/attachments/865354697799237634/868159153263235092/hawk_med.png'></img>
+                {!this.props.loggedIn ? 
+                    <img src='https://cdn.discordapp.com/attachments/865354697799237634/868159153263235092/hawk_med.png' alt ='logo'/>
+                    :
+                    ''
+                }
                 <h1>Project Hawkeye</h1></Link>
                 </div>
                 <ul className='nav-menu'>
