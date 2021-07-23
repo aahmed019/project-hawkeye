@@ -22,26 +22,30 @@ export default class CommentsIndexItem extends React.Component {
 
     render(){
         return(
-            <div>
+            <div className='comments-container'>
                 {this.state.edit ?
-                <form onSubmit={this.handleSubmit}>
-                    <input type="text" defaultValue = {this.props.comment.body} 
+                <form className='edit-cancel-form' onSubmit={this.handleSubmit}>
+                    <input className='edit-body' type="text" defaultValue = {this.props.comment.body} 
                     onChange = {this.handleInput('text')}/>
-                    <button 
+                    <div onClick={this.handleSubmit} className='editComment'>✔</div>
+                    <div className='cancelComment'
                     onClick={() => {this.setState({edit: !this.state.edit})}}
-                    >exit</button>
-                    <button>Submit</button>
+                    >&times;</div>
                 </form>
-                : 
-                <div >
-                    {this.props.comment.body}
-                    <button 
-                    onClick={() => {this.props.removeComment(this.props.workspace_id, this.props.comment.body, this.props.idx)}}
-                    >delete</button>
+                :
+                <div>
+                    <div className='button-container'>
+                        <div className='editComment'
+                        onClick={() => {this.setState({edit: !this.state.edit})}}
+                        >edit</div>
 
-                    <button 
-                    onClick={() => {this.setState({edit: !this.state.edit})}}
-                    >update</button>
+                        <div className='deleteComment'
+                        onClick={() => {this.props.removeComment(this.props.workspace_id, this.props.comment.body, this.props.idx)}}
+                        >&times;</div>
+                    </div>
+                    <div className='comment-body'>
+                        {this.props.comment.body}
+                    </div>
                 </div>
             }
             </div>

@@ -26,7 +26,7 @@ class Comments extends React.Component{
     render(){
         if(!this.props.comments) return null
         const comments = this.props.comments.map((comment, i) => {
-            return <div key = {i}>
+            return <div className='comment-body-container' key = {i}>
                 <CommentsIndexItem comment ={comment} idx = {i} workspace_id={this.props.workspace_id} 
                 removeComment = {this.props.removeComment}
                 updateComment = {this.props.updateComment}
@@ -35,7 +35,7 @@ class Comments extends React.Component{
         })
 
         return (
-            <div>
+            <div className='comment-container'>
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <textarea type="text" className="commentInput"
@@ -43,13 +43,13 @@ class Comments extends React.Component{
                         placeholder="type out your comment here..."
                         onChange = {this.handleInput('text')}
                         />
-
-                        <br />
-                        <br />
-                        <button>Add comment</button>
+                        <br/>
+                        <button className='add-comment'>Comment</button>
                     </div>
                 </form>
-                {comments}
+                <div className='all-comments'>
+                    {comments}
+                </div>
             </div>
         )
     }
