@@ -95,8 +95,35 @@ $lightgray: rgb(238, 230, 230);
     // margin-top: 160px;
     padding: 15px;
     .tweet.selected {
-      box-shadow:rgba(160, 27, 196, 0.8) 0px 1px 8px;
+      -webkit-box-shadow: 0 0 20px $purple;
+      -moz-box-shadow: 0 0 20px $purple;
+      box-shadow: 0 0 20px $purple;
+      
+     
+      // button:after {
+      //   content: 'Deselect';
+      //   // visible: 
+      //   display: block;
+      //   position: absolute;
+      //   top: 2px;
+      // }
     }
+    button {
+        // visibility: hidden;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        background-color: $purple;
+        width: 60px;
+        height: 20px;
+        text-align: center;
+        padding: 0 4px;
+        box-sizing: border-box;
+        &:hover {
+          cursor: pointer;
+          background-color: $dark-purple;
+        }
+      }
     .tweet {
       animation: all 4s ease-in;
       padding: 10px 15px;
@@ -112,16 +139,22 @@ $lightgray: rgb(238, 230, 230);
             transition: 0.3s ease-out;
       }
       .tweet-head {
-        margin-bottom: 12px;
+        // padding-top: 10px;
+        margin-bottom: 7px;
+        display: flex;
+        align-items: center;
         img {
-          width: 25px;
-          height: 25px;
+          width: 40px;
+          height: 40px;
           border-radius: 100px;
 
         }
         a {
-          font-weight: 100;
-          font-size: 11px;
+          font-weight: 200;
+          font-size: 16px;
+          margin-left: 8px;
+          // padding-bottom: 5px;
+          line-height: 12px;
         }
       }
       .tweet-body {

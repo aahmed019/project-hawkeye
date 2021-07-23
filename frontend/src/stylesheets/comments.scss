@@ -24,6 +24,7 @@ textarea{
 
 .comment-body{
     color: white;
+    word-wrap:break-word;
 }
 
 .button-container{
@@ -31,7 +32,7 @@ textarea{
     min-height: 30px;
     flex-direction: row;
     float: right;
-
+    height: auto;
     .deleteComment{
         cursor: pointer;
         color: rgb(198, 198, 198);
@@ -43,9 +44,14 @@ textarea{
 
 .comment-body-container{
     width: 90%;
-    height: auto;
+    min-height: 10px;
     display: flex;
     flex-direction: column;
+    // margin-bottom: 10px;
+    justify-content: center;
+    border-bottom: 1px solid white;
+    padding: 10px 0;
+    box-sizing: border-box;
 }
 
 .editComment{

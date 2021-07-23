@@ -1,4 +1,6 @@
 import React from 'react';
+// import Draggable from 'react-draggable';
+import TweetItem from './tweet_item';
 
 
 class TweetIndex extends React.Component{
@@ -13,8 +15,7 @@ class TweetIndex extends React.Component{
     super(props);
     this.state = {
       username: '',
-      filter: '',
-      selected: false
+      filter: ''
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,12 +37,12 @@ class TweetIndex extends React.Component{
     });
   }
 
-  handleDrag(tweet){
-    return e => {
-      // e.target.value.classList.add('selected')
-      this.props.startDragging(tweet);
-    }
-  }
+  // handleDrag(tweet){
+  //   return e => {
+  //     // e.target.value.classList.add('selected')
+  //     this.props.startDragging(tweet);
+  //   }
+  // }
   
   render(){
     
@@ -55,28 +56,10 @@ class TweetIndex extends React.Component{
         <h1>Search now to get results</h1>
       </div>
     )
-    const tweets = this.props.tweets.map((tweet, idx) => (
-    
-      <li className='tweet' id={idx} key={`tweet-${idx}`}>
-        <ul>
-          <li className='tweet-head'>
-            <li className='tweet-img'><img src={tweet.profile_pic} /></li>
-            <a className='tweet-link'href={tweet.user_url}>
-              {tweet.username}
-            </a>
-          </li>
-          <li className='tweet-body'>
-            <a href={tweet.source}>
-              {tweet.text}
-            </a>
-          </li>
-          <li>∑
-            <button className='drag-tweet' onClick={this.handleDrag(tweet)}>Drag tweet</button>
-          </li>
-        </ul>
-      </li>
-      
-    ))
+      const tweets = this.props.tweets.map((tweet, idx) => (
+        <TweetItem tweet={tweet} idx={idx} startDragging={this.props.startDragging} stopDragging={this.props.stopDragging} />
+      ))
+   
 
     return(
       <div className='tweets-container'>
