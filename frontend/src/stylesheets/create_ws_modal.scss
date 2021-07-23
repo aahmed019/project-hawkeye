@@ -5,9 +5,30 @@ $lightgray: rgb(238, 230, 230);
 $dark-purple: #7f62f2;
 .modal-child.ws {
   background: transparent;
+  transform: translateY(0px);
+  animation: slideup 200ms ease-in;
+  position: absolute;
+  // bottom: 0;
+  left: 40%;
+  // bottom: 10%;
+  top: none;
+}
+@keyframes slideup {
+  0% {
+    transform: translateY(350px);
+  }
+
+  50% {
+    // transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 .modal-form.ws {
-  color: white;
+   color: white;
+   position: relative;
   width: 250px;
   height: auto;
   border-radius: 10px;
@@ -17,6 +38,7 @@ $dark-purple: #7f62f2;
   flex-direction: column;
   align-items: center;
   background-color: $black;
+
   .form-container {
     display: flex;
     flex-direction: column;
