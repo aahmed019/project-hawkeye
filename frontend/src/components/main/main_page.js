@@ -74,9 +74,9 @@ class MainPage extends React.Component {
                                 </div>
                                     <p>Ali Ahmed</p>
                                     <div className='footer-links'>
-                                        <Link redirect='https://www.linkedin.com/in/ali-ahmed-697693174/'>LinkedIn</Link>
-                                        <Link>Github</Link>
-                                        <Link>Personal Website</Link>
+                                        <a href='https://www.linkedin.com/in/ali-ahmed-697693174/' target="_blank" rel="noreferrer">LinkedIn</a>
+                                        <a href='https://github.com/aahmed019' target="_blank" rel="noreferrer">Github</a>
+                                        {/* <a href='https://www.linkedin.com/in/ali-ahmed-697693174/' target="_blank" rel="noreferrer">Personal Website</a> */}
                                     </div>
                                 </div>   
                             <div className='names'>
@@ -87,9 +87,9 @@ class MainPage extends React.Component {
                                 </div>
                                     <p>Jack Liu</p>
                                     <div className='footer-links'>
-                                        <Link>LinkedIn</Link>
-                                        <Link>Github</Link>
-                                        <Link>Personal Website</Link>
+                                        <a href='https://www.linkedin.com/in/jack-l-338a09141/' target="_blank" rel="noreferrer">LinkedIn</a>
+                                        <a href='https://github.com/jacktfliu' target="_blank" rel="noreferrer">Github</a>
+                                        {/* <a href='https://www.linkedin.com/in/ali-ahmed-697693174/' target="_blank" rel="noreferrer">Personal Website</a> */}
                                     </div>
                                 </div>   
                             <div className='names'>
@@ -100,9 +100,9 @@ class MainPage extends React.Component {
                                 </div>
                                     <p>Sohrob Ibrahimi</p>
                                     <div className='footer-links'>
-                                        <Link>LinkedIn</Link>
-                                        <Link>Github</Link>
-                                        <Link>Personal Website</Link>
+                                        <a href='https://www.linkedin.com/in/isohrob/' target="_blank" rel="noreferrer">LinkedIn</a>
+                                        <a href='https://github.com/GT458' target="_blank" rel="noreferrer">Github</a>
+                                        {/* <a href='https://www.linkedin.com/in/ali-ahmed-697693174/' target="_blank" rel="noreferrer">Personal Website</a> */}
                                     </div>
                                 </div>
                             <div className='names'>
@@ -113,9 +113,9 @@ class MainPage extends React.Component {
                                 </div>
                                     <p>Vincent Ahn</p>
                                     <div className='footer-links'>
-                                        <Link>LinkedIn</Link>
-                                        <Link>Github</Link>
-                                        <Link>Personal Website</Link>
+                                        <a href='https://www.linkedin.com/in/junminvincentahn/' target="_blank" rel="noreferrer">LinkedIn</a>
+                                        <a href='https://github.com/vincentahn' target="_blank" rel="noreferrer">Github</a>
+                                        {/* <a href='https://www.linkedin.com/in/ali-ahmed-697693174/' target="_blank" rel="noreferrer">Personal Website</a> */}
                                     </div>
                                 </div>
                         </div>

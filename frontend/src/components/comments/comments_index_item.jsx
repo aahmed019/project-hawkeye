@@ -33,7 +33,7 @@ export default class CommentsIndexItem extends React.Component {
                     >&times;</div>
                 </form>
                 :
-                <div>
+                <div className='comments-holder'>
                     <div className='button-container'>
                         <div className='editComment'
                         onClick={() => {this.setState({edit: !this.state.edit})}}
