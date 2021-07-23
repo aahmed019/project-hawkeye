@@ -108,7 +108,8 @@ class WorkspaceIndexItem extends React.Component {
                   type="text"
                   placeholder="New Folder" 
                   onChange={this.updateNewFolderName}
-                  value={this.state.newFolderName}/>
+                  value={this.state.newFolderName}
+                  maxLength='10'/>
               </form>
             </div>
           </>

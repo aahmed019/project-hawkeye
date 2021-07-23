@@ -53,7 +53,7 @@ class CreateWorkspaceModal extends React.Component {
               </div>
               <form>
                 
-                <input type='text' placeholder='Workspace Title' onChange={this.handleInput}></input>
+                <input type='text' placeholder='Workspace Title' onChange={this.handleInput} maxLength="25"/>
                 <button type='submit' className='create-btn' onClick={this.handleSubmit}>Submit</button>
 
               </form>
