@@ -8,6 +8,8 @@ export const modalErrorsReducer = (state = [], action) => {
       return action.errors;
     case RECEIVE_CURRENT_USER:
       return [];
+    case RECEIVE_USER_LOGOUT:
+      return [];
     default:
       return state;
   }

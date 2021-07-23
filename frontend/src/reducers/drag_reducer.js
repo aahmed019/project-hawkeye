@@ -1,4 +1,5 @@
 import { BEGIN_DRAGGING, STOP_DRAGGING } from "../actions/drag_actions";
+import { RECEIVE_USER_LOGOUT } from "../actions/session_actions";
 
 const _default = {
   status: 'static',
@@ -19,6 +20,9 @@ export default function(oldState = _default, action){
       newState.status = 'static';
       newState.tweet = undefined;
       return newState;
+
+    case RECEIVE_USER_LOGOUT:
+      return _default;
 
     default:
       return oldState;
