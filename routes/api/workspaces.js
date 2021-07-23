@@ -29,7 +29,6 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
                 { "new": true, "upsert": true },
                 function (err, results) {
                     if (err) throw err;
-                    console.log(newWorkSpace);
                     res.json(newWorkSpace);
                 }
             );
@@ -72,15 +71,12 @@ router.delete('/deletefolder', (req, res) => {
         } } },
         function (err, results) {
             if (err) throw err;
-            console.log(results);
             res.json(results);
         }
     );
 });
 
 router.post('/add-tweet', (req, res) => {
-    console.log(req.body.params);
-
     Workspace.findByIdAndUpdate(req.body.params.workspaceId,
         { "$push": { [`folders.${req.body.params.folder.idx}.tweets`]: {
             profile_pic: req.body.params.tweet.profile_pic,
@@ -98,8 +94,6 @@ router.post('/add-tweet', (req, res) => {
 });
 
 router.delete('/remove-tweet', (req, res) => {
-  console.log(req.body);
-
   Workspace.findByIdAndUpdate(req.body.workspaceId,
       { "$pull": { [`folders.${req.body.folder_idx}.tweets`]: {
           source: req.body.tweet_source,
@@ -139,7 +133,6 @@ router.delete('/remove-comment', (req, res) => {
 });
 
 router.patch('/update-comment', (req, res) => {
-    // console.log(req.body)
     Workspace.findByIdAndUpdate(req.body.workspace_id,
         { "$set": { [`comments.${req.body.comment.comment_id}`] : {
             body: req.body.comment.comment_body,

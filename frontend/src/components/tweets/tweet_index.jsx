@@ -28,23 +28,14 @@ class TweetIndex extends React.Component{
     e.preventDefault();
     let loading = document.querySelector('.loading-screen');
     let ph = document.querySelector('.placeholder');
-    // let tweets = document.querySelector('.tweet-container')
-    ph !== null ? ph.classList.add('hide-comp') : console.log('hi');
+    if(ph !== null) ph.classList.add('hide-comp');
     loading.classList.remove('hide-comp');
     this.props.fetchTweets(this.state.username, this.state.filter).then( () => {
       loading.classList.add('hide-comp');
     });
   }
-
-  // handleDrag(tweet){
-  //   return e => {
-  //     // e.target.value.classList.add('selected')
-  //     this.props.startDragging(tweet);
-  //   }
-  // }
   
   render(){
-    
     const loading = (
       <div className='loading-screen hide-comp'>
         <h1>Loading...</h1>

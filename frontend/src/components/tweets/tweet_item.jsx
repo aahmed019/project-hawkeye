@@ -7,15 +7,11 @@ class TweetItem extends React.Component {
   }
    handleDrag(tweet){
     return e => {
-      // debugger;
-      // e.target.value.classList.add('selected')
       if (this.props.selected) {
         this.props.stopDragging();
       } else {
         this.props.startDragging(tweet);
       }
-      
-      // this.props.startDragging(tweet);
     }
   }
 
