@@ -46,8 +46,6 @@ class WorkspaceIndexItem extends React.Component {
         this.props.addTweetToFolder(workspaceId, folderData, this.props.tweet)
       }else{
         folder['idx'] = idx;
-        console.log(folder);
-
         this.props.openModal('open_folder', workspaceId, folder);
       };
     };
@@ -108,7 +106,8 @@ class WorkspaceIndexItem extends React.Component {
                   type="text"
                   placeholder="New Folder" 
                   onChange={this.updateNewFolderName}
-                  value={this.state.newFolderName}/>
+                  value={this.state.newFolderName}
+                  maxLength='10'/>
               </form>
             </div>
           </>

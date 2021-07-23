@@ -51,17 +51,18 @@ class MainPage extends React.Component {
                                 <p><span>Simple</span> way to save searches</p>
                                 <br/>
                                 <h1>
-                                Results can be saved into workspaces. Workspaces can be public or private.
+                                Results can be saved into workspaces. 
+                                Workspaces are customized by you.
                                 </h1>
                             </div>
                         </div>
                         <div className='splash3'>
                             <div className='bottom-container-word3'>
-                                <p><span>Easy</span> way to share results</p>
+                                <p><span>Easy</span> way to access saved documents</p>
                             <br/>
                             <h1>
-                                Public and Private workspaces can be shared with others.
-                                Private workspaces will need a key to access it. 
+                                Every workspace has customized folders.
+                                Every Folder can be access through your dashboard
                             </h1>
                             </div>
                             <div className='bottom-container-pic3'>
@@ -81,9 +82,9 @@ class MainPage extends React.Component {
                                 </div>
                                     <p>Ali Ahmed</p>
                                     <div className='footer-links'>
-                                        <Link redirect='https://www.linkedin.com/in/ali-ahmed-697693174/'>LinkedIn</Link>
-                                        <Link>Github</Link>
-                                        <Link>Personal Website</Link>
+                                        <a href='https://www.linkedin.com/in/ali-ahmed-697693174/' target="_blank" rel="noreferrer">LinkedIn</a>
+                                        <a href='https://github.com/aahmed019' target="_blank" rel="noreferrer">Github</a>
+                                        {/* <a href='https://www.linkedin.com/in/ali-ahmed-697693174/' target="_blank" rel="noreferrer">Personal Website</a> */}
                                     </div>
                                 </div>   
                             <div className='names'>
@@ -94,9 +95,9 @@ class MainPage extends React.Component {
                                 </div>
                                     <p>Jack Liu</p>
                                     <div className='footer-links'>
-                                        <Link>LinkedIn</Link>
-                                        <Link>Github</Link>
-                                        <Link>Personal Website</Link>
+                                        <a href='https://www.linkedin.com/in/jack-l-338a09141/' target="_blank" rel="noreferrer">LinkedIn</a>
+                                        <a href='https://github.com/jacktfliu' target="_blank" rel="noreferrer">Github</a>
+                                        {/* <a href='https://www.linkedin.com/in/ali-ahmed-697693174/' target="_blank" rel="noreferrer">Personal Website</a> */}
                                     </div>
                                 </div>   
                             <div className='names'>
@@ -107,9 +108,9 @@ class MainPage extends React.Component {
                                 </div>
                                     <p>Sohrob Ibrahimi</p>
                                     <div className='footer-links'>
-                                        <Link>LinkedIn</Link>
-                                        <Link>Github</Link>
-                                        <Link>Personal Website</Link>
+                                        <a href='https://www.linkedin.com/in/isohrob/' target="_blank" rel="noreferrer">LinkedIn</a>
+                                        <a href='https://github.com/GT458' target="_blank" rel="noreferrer">Github</a>
+                                        {/* <a href='https://www.linkedin.com/in/ali-ahmed-697693174/' target="_blank" rel="noreferrer">Personal Website</a> */}
                                     </div>
                                 </div>
                             <div className='names'>
@@ -120,9 +121,9 @@ class MainPage extends React.Component {
                                 </div>
                                     <p>Vincent Ahn</p>
                                     <div className='footer-links'>
-                                        <Link>LinkedIn</Link>
-                                        <Link>Github</Link>
-                                        <Link>Personal Website</Link>
+                                        <a href='https://www.linkedin.com/in/junminvincentahn/' target="_blank" rel="noreferrer">LinkedIn</a>
+                                        <a href='https://github.com/vincentahn' target="_blank" rel="noreferrer">Github</a>
+                                        {/* <a href='https://www.linkedin.com/in/ali-ahmed-697693174/' target="_blank" rel="noreferrer">Personal Website</a> */}
                                     </div>
                                 </div>
                         </div>
