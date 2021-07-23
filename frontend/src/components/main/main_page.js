@@ -19,8 +19,8 @@ class MainPage extends React.Component {
                     <div className='splash-pic-container'>
                         {/* <HawkLogo /> */}
                         <div className='splash-pic'>
-                             <img className='left-logo' src='/images/hawk_med.png'></img>
-                            <img className='base-logo' src='/images/hawk_med.png'></img>
+                             <img className='left-logo' src='https://cdn.discordapp.com/attachments/865354697799237634/868159153263235092/hawk_med.png'></img>
+                            <img className='base-logo' src='https://cdn.discordapp.com/attachments/865354697799237634/868159153263235092/hawk_med.png'></img>
 
                         </div>
                         <div className='right-text'>
