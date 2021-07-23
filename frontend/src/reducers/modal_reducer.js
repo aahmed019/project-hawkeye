@@ -11,7 +11,6 @@ export default function(state = null, action){
     case CLOSE_MODAL:
       return null;
     case REMOVE_TWEET_FROM_FOLDER:
-      debugger;
       if(!(state && state.folder)) return state;
       let newTweets = [...newState.folder.tweets];
       newTweets.splice(action.tweetIdx, 1);

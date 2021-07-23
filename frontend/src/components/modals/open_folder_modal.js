@@ -36,7 +36,6 @@ class CreateWorkspaceModal extends React.Component {
 
   render() {
     if (!this.props.modal || this.props.modal.modalType !== 'open_folder') return null;
-    console.log(this.props)
     const {id, folder} = this.props.modal
     const tweets = this.props.modal.folder.tweets
     const hello = tweets.map((tweet, idx) => (
