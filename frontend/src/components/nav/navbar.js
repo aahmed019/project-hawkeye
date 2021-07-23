@@ -54,7 +54,7 @@ class NavBar extends React.Component {
 
     render() {
         return (
-            <div className={this.state.active ? 'nav-container hasScrolled' : 'nav-container'}>
+            <div className={this.state.active && !this.props.loggedIn ? 'nav-container hasScrolled' : 'nav-container'}>
                 
                 <h1><Link to='/' >Project Hawkeye</Link></h1>
                 <ul className='nav-menu'>
