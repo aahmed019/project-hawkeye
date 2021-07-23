@@ -18,6 +18,21 @@ $distance: 8px;
 $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
 
 .nav-container {
+  .logo-head-text {
+    display: flex;
+    // justify-content: row;
+    h1 {
+      margin-left: 110px;
+    }
+  }
+  img {
+    top: -20px;
+    left: 12%;
+    position: fixed;
+    width: 160px;
+    height: 160px;
+    filter: invert(100%);
+  }
   width: 70vw;
   border-radius: 10px;
   padding: 20px;
