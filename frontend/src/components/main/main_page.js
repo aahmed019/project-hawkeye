@@ -1,7 +1,6 @@
 import React from 'react';
 import './main.scss'
 import { Link } from 'react-router-dom'
-import HawkLogo from './hawk_svg.svg'
 class MainPage extends React.Component {
     componentDidMount() {
         document.body.classList.remove('hide-scroll');
