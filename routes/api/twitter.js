@@ -62,8 +62,9 @@ router.get('/', (req, res) => {
         try {
             // Make request
             const response = await getUsers();
-            console.log(response);
+            if(response.errors) return res.status(400).json(errors)
             let tweets = await getTweets(response.data[0].id);
+            if(tweets.meta.result_count === 0) return res.status(400).json(errors)
             let word = req.query.filter;
             let results = {};
             let max_results = 10;
