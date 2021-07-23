@@ -43,17 +43,18 @@ class MainPage extends React.Component {
                                 <p><span>Simple</span> way to save searches</p>
                                 <br/>
                                 <h1>
-                                Results can be saved into workspaces. Workspaces can be public or private.
+                                Results can be saved into workspaces. 
+                                Workspaces are customized by you.
                                 </h1>
                             </div>
                         </div>
                         <div className='splash3'>
                             <div className='bottom-container-word3'>
-                                <p><span>Easy</span> way to share results</p>
+                                <p><span>Easy</span> way to access saved documents</p>
                             <br/>
                             <h1>
-                                Public and Private workspaces can be shared with others.
-                                Private workspaces will need a key to access it. 
+                                Every workspace has customized folders.
+                                Every Folder can be access through your dashboard
                             </h1>
                             </div>
                             <div className='bottom-container-pic3'>
