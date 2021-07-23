@@ -1,7 +1,7 @@
 import React from 'react';
 import './main.scss'
 import { Link } from 'react-router-dom'
-
+import HawkLogo from './hawk_svg.svg'
 class MainPage extends React.Component {
     componentDidMount() {
         document.body.classList.remove('hide-scroll');
@@ -12,12 +12,20 @@ class MainPage extends React.Component {
             <div className='splash-box'>
                 <div className='splash-header'>
                     <h1 className='header'>Project Hawkeye</h1>
-                    <p className='p'>A bird's eye view on Twitter</p>
+                    {/* <p className='p'>A bird's eye view on Twitter</p> */}
                     <Link to='/signup' ><button className='splash-sign-up'>Sign Up</button></Link>
                 </div>
                 <div className='pic-box'>
                     <div className='splash-pic-container'>
-                        <div className='splash-pic'></div>
+                        {/* <HawkLogo /> */}
+                        <div className='splash-pic'>
+                             <img className='left-logo' src='/images/hawk_med.png'></img>
+                            <img className='base-logo' src='/images/hawk_med.png'></img>
+
+                        </div>
+                        <div className='right-text'>
+                            <p>Oversight at your fingertips</p>
+                        </div>
                     </div>
                 </div>
                 <div className='splash-bottom-box'>
