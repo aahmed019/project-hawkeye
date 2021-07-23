@@ -1,5 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 
+import { RECEIVE_USER_LOGOUT } from "../actions/session_actions";
 import { 
 
     RECEIVE_WORKSPACE, 
@@ -47,6 +48,9 @@ export default function(oldState = {}, action){
             newFolders[action.folder_idx].tweets.splice(action.tweetIdx, 1);
             newState[action.workspaceId].folders = newFolders;
             return newState;
+
+        case RECEIVE_USER_LOGOUT:
+            return {};
 
         default:
           return oldState;

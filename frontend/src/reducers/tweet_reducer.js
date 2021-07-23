@@ -1,3 +1,4 @@
+import { RECEIVE_USER_LOGOUT } from "../actions/session_actions";
 import { 
   RECEIVE_TWEETS 
 } from "../actions/tweet_actions";
@@ -13,7 +14,8 @@ export default function(oldState = {}, action){
         cleanState[tweet.id] = tweet;
       });
       return cleanState;
-
+    case RECEIVE_USER_LOGOUT:
+      return {};
     default:
       return oldState;
   }
