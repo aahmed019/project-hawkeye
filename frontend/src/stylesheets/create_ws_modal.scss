@@ -77,3 +77,20 @@ $dark-purple: #7f62f2;
     }
   }
 }
+
+.ws{
+  .close-button{
+    top: 5px;
+    right: 5px;
+    padding: 0;
+    margin: 0;
+
+    button{
+      margin: 0;
+
+      &:hover{
+        color: $lightgray;
+      }
+    }
+  }
+}
