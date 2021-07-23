@@ -53,25 +53,93 @@
     width: 100%;
     justify-content: center;
     display: flex;
+    .splash-pic-container{
+        height: 90%;
+        width: 90%;
+        margin-bottom: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        // justify-content: center;
+        .splash-pic{
+            // height: 600px;
+            // width: 100%;
+            border-radius: 16px;
+            // background-color: white;
+            height: 300px;
+            display: flex;
+            align-items:center;
+            justify-content: center;
+            border: none;
+            object-fit:cover;
+            img {
+                width: 800px;
+                height: 800px;
+            }
+            .base-logo {
+                // height: 400px;
+                // width: 500px;
+                filter: invert(100%);
+            }
+            .left-logo {
+                // height: 400px;
+                // width: 500px;
+                position: absolute;
+                z-index: 2;
+                // object-fit: contain;
+                
+                // filter: invert(100%);
+                filter: invert(100%);
+                @keyframes scle {
+                    0% {
+                        transform: scale(1);
+                        // transform: translatey(0px);
+                        filter:blur(0) invert(100%);
+                    }
+
+                    50% { 
+                        filter: blur(0) invert(100%);
+                        // transform: translatey(-10px);
+                        // transform: scale(1.5);
+                    }
+                    100% {
+                        filter:blur(3px) invert(100%);
+                        transform: scale(1.5);
+                        opacity: 0;
+                        // transform: translatey(0px);
+                    }
+                }
+                
+                // transform: translateY(0px);
+                animation: scle 2s ease-in-out infinite;
+                
+                
+            }
+            
+        }
+        .right-text {
+                p {
+                    padding-top: 60px;
+                    color: white;
+                    font-size: 30px;
+                    font-weight: 300;
+                }
+            }
+    }
 }
 
-.splash-pic-container{
-    height: 90%;
-    width: 90%;
-    margin-bottom: 80px;
-}
 
-.splash-pic{
-    height: 550px;
-    width: 100%;
-    border-radius: 16px;
-    background-color: white;
-    border: none;
-    margin-top: 50px;
-    background: url('Banner.png');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
+// .splash-pic{
+//     height: 550px;
+//     width: 100%;
+//     border-radius: 16px;
+//     background-color: white;
+//     border: none;
+//     margin-top: 50px;
+//     background: url('Banner.png');
+//     background-repeat: no-repeat;
+//     background-size: 100% 100%;
+// }
 
 .splash-bottom-box{
     height: 1000px;
