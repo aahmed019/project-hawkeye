@@ -42,6 +42,7 @@ class Comments extends React.Component{
                         value ={this.state.text}
                         placeholder="type out your comment here..."
                         onChange = {this.handleInput('text')}
+                        maxLength="250"
                         />
                         <br/>
                         <button className='add-comment'>Comment</button>

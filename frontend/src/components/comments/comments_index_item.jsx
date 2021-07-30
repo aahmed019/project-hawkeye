@@ -26,7 +26,8 @@ export default class CommentsIndexItem extends React.Component {
                 {this.state.edit ?
                 <form className='edit-cancel-form' onSubmit={this.handleSubmit}>
                     <input className='edit-body' type="text" defaultValue = {this.props.comment.body} 
-                    onChange = {this.handleInput('text')}/>
+                    onChange = {this.handleInput('text')}
+                    maxLength="250"/>
                     <div onClick={this.handleSubmit} className='editComment'>✔</div>
                     <div className='cancelComment'
                     onClick={() => {this.setState({edit: !this.state.edit})}}
@@ -34,6 +35,11 @@ export default class CommentsIndexItem extends React.Component {
                 </form>
                 :
                 <div className='comments-holder'>
+                    <div className='comment-body'>
+                        <div>
+                          {this.props.comment.body}
+                        </div>
+                    </div>
                     <div className='button-container'>
                         <div className='editComment'
                         onClick={() => {this.setState({edit: !this.state.edit})}}
@@ -42,9 +48,6 @@ export default class CommentsIndexItem extends React.Component {
                         <div className='deleteComment'
                         onClick={() => {this.props.removeComment(this.props.workspace_id, this.props.comment.body, this.props.idx)}}
                         >&times;</div>
-                    </div>
-                    <div className='comment-body'>
-                        {this.props.comment.body}
                     </div>
                 </div>
             }
