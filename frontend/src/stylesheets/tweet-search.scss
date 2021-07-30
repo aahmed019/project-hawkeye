@@ -38,6 +38,7 @@ $lightgray: rgb(238, 230, 230);
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
+      margin-top: 10px;
       
       .inputs-container {
         width: 70%;
@@ -54,7 +55,7 @@ $lightgray: rgb(238, 230, 230);
           border: 2px solid #e8e5e5;
           background-color: $white;
           border-radius: 10px;
-          height: 30px;
+          height: 40px;
           margin-bottom: 10px;
           padding: 5px 8px;
           &:focus-visible {
@@ -65,25 +66,27 @@ $lightgray: rgb(238, 230, 230);
       }
       .button-container {
         // margin-left: 15px;
-        width: 50%;
+        width: 70%;
         display: flex;
         align-content: center;
         justify-content: center;
         button {
           width: 100%;
-          color: white;
-          background-color: $purple;
-          height: 30px;
+          color: black;
+          background-color: white;
+          height: 40px;
           align-self: center;
           border: none;
           border-radius: 10px;
           font-size: 16px;
           font-weight: 100;
+          margin-top: 8px;
+          box-shadow: rgba(146, 146, 146, 0.50) 0px 1px 12px;
           &:hover {
             cursor: pointer;
-            background-color: $dark-purple;
+            background-color: #7856FF;
             color: white;
-            
+            box-shadow:rgba(146, 146, 146, 0.5) 0px 1px 12px;
           }
         }
       }

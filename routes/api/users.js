@@ -9,13 +9,6 @@ const jwt = require('jsonwebtoken');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
-router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
-    res.json({
-        id: req.user.id,
-        email: req.user.email
-    });
-})
-
 router.post("/register", (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
 

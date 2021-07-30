@@ -57,7 +57,7 @@ router.get('/', (req, res) => {
     }
     
     (async () => {
-        const { errors, isValid } = await validateTwitterInput(req.query);
+        const { errors, isValid } = validateTwitterInput(req.query);
         if(!isValid) return res.status(400).json(errors);
         try {
             // Make request
