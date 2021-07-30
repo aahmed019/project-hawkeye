@@ -68,7 +68,8 @@ class WorkspaceIndex extends React.Component{
                 <input 
                   type="text"
                   value={this.state.folderName}
-                  onChange={this.update('folderName')} />
+                  onChange={this.update('folderName')}
+                  />
               </form>
             </li>
             <li>
