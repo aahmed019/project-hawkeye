@@ -42,18 +42,18 @@ class CreateWorkspaceModal extends React.Component {
     if (!this.props.modal || this.props.modal.modalType !== 'create_workspace') return null;
 
     return (
-      <div className='modal'>
+      <div className='modal ws-background'>
         <div className='modal-child ws'>
           <div className='modal-form ws'>
             <span className='close-button'><button onClick={() => this.props.closeModal()}>&#x2715;</button></span>
             
             <div className='form-container'>
               <div className='modal-header'>
-                <h2>Create Workspace</h2>
+                {/* <h2></h2> */}
               </div>
               <form>
                 
-                <input type='text' placeholder='Workspace Title' onChange={this.handleInput} maxLength="25"/>
+                <input type='text' placeholder='Workspace Title' onChange={this.handleInput} maxLength="25" />
                 <button type='submit' className='create-btn' onClick={this.handleSubmit}>Submit</button>
 
               </form>
