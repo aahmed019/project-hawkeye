@@ -12,7 +12,9 @@ $lightgray: rgb(238, 230, 230);
   background-color: $black;
   
 }
-
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
 .main-index-container {
   margin-top: 60px;
   width: 100%;
@@ -67,6 +69,7 @@ $lightgray: rgb(238, 230, 230);
   // border: 1px solid red;
   box-sizing: border-box;
 }
+
 ::-webkit-scrollbar {
   background: $black;
   width: 5px;
