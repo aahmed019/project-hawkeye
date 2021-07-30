@@ -3,33 +3,55 @@ $black: #1f1f24;
 $white: #f6f6f6;
 $lightgray: rgb(238, 230, 230);
 $dark-purple: #7f62f2;
+.ws-background {
+  
+  animation:  fade-in 300ms ease-in;
+}
+@keyframes fade-in {
+  0% {
+    background: rgba(80, 79, 79, 0);
+  }
+  50% {
+    background: rgba(80, 79, 79, 0.4);
+  }
+  100% {
+    background: rgba(80, 79, 79, 0.8);
+  }
+}
 .modal-child.ws {
   background: transparent;
   transform: translateY(0px);
-  animation: slideup 200ms ease-in;
-  position: absolute;
+  animation: slideup 300ms ease-in-out;
+  position: fixed;
+  margin-top: -100px;
+  margin-left: -200px;
+  left: 50%;
+  top: 50%;
   // bottom: 0;
-  left: 43.5%;
+  // left: 50%;
   // bottom: 10%;
+ 
 }
 @keyframes slideup {
   0% {
+    // left: 50%;
     transform: translateY(350px);
   }
 
-  50% {
-    // transform: translateY(0px);
+  60% {
+    transform: translateY(-40px);
   }
 
   100% {
     transform: translateY(0px);
+    // left: 40%;
   }
 }
 .modal-form.ws {
    color: white;
    position: relative;
-  width: 250px;
-  height: auto;
+  width: 400px;
+  height: 200px;
   border-radius: 10px;
   display: flex;
   // padding: 10px;
@@ -51,29 +73,42 @@ $dark-purple: #7f62f2;
   form {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   }
   input {
-    border-radius: 10px;
-    border: 1px solid lightgray;
+    // border-radius: 10px;
+    border: none;
+    border-bottom: 1px solid gray;
     margin-bottom: 15px;
+    padding-bottom: 0px;
+    background-color: transparent;
+    color: white;
+    width: 300px;
+    // height: 120px;
+    font-size: 40px;
+    box-sizing: border-box;
     padding: 5px 8px;
     &:focus-visible {
       outline: none;
+    }
+    &:focus::placeholder{
+      color: transparent;
     }
   }
   .create-btn {
     border: none;
     background-color: $purple;
     color: white;
-    width: 50%;
-    height: 20px;
+    width: 80%;
+    height: 40px;
+    font-size: 20px;
     border-radius: 10px;
     &:hover {
       cursor: pointer;
       background-color: $dark-purple;
     }
+    
   }
 }
 

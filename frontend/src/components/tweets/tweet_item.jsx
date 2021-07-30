@@ -18,7 +18,7 @@ class TweetItem extends React.Component {
 
   handleOriginalTweet(url){
     return e => {
-      window.location.href = url;
+      window.open(url);
     }
   }
 
