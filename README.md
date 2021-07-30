@@ -23,8 +23,22 @@ Users can have private workspaces for limited usage (password protected) or publ
 * Twitter API
 
 # Technologies and Challenges
-## Backend (Mongo, Express)
+## Mongo, Express
 
 MongoDB holds all our user information and when a user is logged in, the data for their workspaces, 
 folders and comments are all pulled from Mongo and sent to the frontend. When the user is logged in, 
-they are redirected to a workspace page where they can access all their data and add more to it. 
+they are redirected to a workspace page where they can access all their data and add more to it.
+
+![homepage](https://user-images.githubusercontent.com/42854126/127718240-d1265bd5-7503-4385-a80d-a766e923125c.gif)
+
+## React/Redux and the Twitter API
+
+The Twitter API was simple to use but required some additional custom algorithms to better suit our
+application. For a specific users, the tweets could not be filtered by the Twitter API so we created
+an algorithm to filter for specific keywords.
+
+When a user would search for tweets, the response from the Twitter API would be saved into the global state.
+When a user selects a specific tweet, the tweet is held in state and then moved into a selected folder inside a workspace.
+
+![workingdemo](https://user-images.githubusercontent.com/42854126/127718436-b4582bb2-9642-405a-9b1a-bc6ac64378d3.gif)
+
