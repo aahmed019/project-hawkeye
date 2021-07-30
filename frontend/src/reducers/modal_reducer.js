@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { OPEN_MODAL, CLOSE_MODAL } from "../actions/modal_actions";
 import { RECEIVE_USER_LOGOUT } from "../actions/session_actions";
 import { REMOVE_TWEET_FROM_FOLDER } from "../actions/workspace_actions";

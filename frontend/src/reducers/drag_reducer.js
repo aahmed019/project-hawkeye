@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { BEGIN_DRAGGING, STOP_DRAGGING } from "../actions/drag_actions";
 import { RECEIVE_USER_LOGOUT } from "../actions/session_actions";
 
