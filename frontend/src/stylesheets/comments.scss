@@ -22,14 +22,10 @@ textarea{
     }
 }
 
-.comment-body{
-    color: white;
-    word-wrap:break-word;
-}
-
 .button-container{
+    align-items: center;
     display: flex;
-    min-height: 30px;
+    // min-height: 30px;
     flex-direction: row;
     float: right;
     height: auto;
@@ -60,20 +56,14 @@ textarea{
     font-size: 14px;
 }
 
-.edit-body{
-    border: none;
-    height: 20px;
-    width: auto;
-}
-
 .comment-container{
     overflow: scroll;
     height: inherit;
     flex-direction: column;
     margin-bottom: 5px;
 
-    form{
-        padding: 5px;
+    > form{
+        padding: 12px 5px 5px;
     }
 }
 
@@ -86,34 +76,89 @@ textarea{
     align-items: center;
 }
 
-.edit-cancel-form{
+.comments-holder{
+    align-items: center;
     display: flex;
-    min-height: 30px;
-    flex-direction: row;
-    float: right;
-    cursor: pointer;
     color: rgb(198, 198, 198);
     font-size: 14px;
     width: 100%;
-    justify-content: space-around;
-    align-items: center;
 
-    input{
+  .comment-body{
+          align-items: center;
           box-sizing: border-box;
-          width: 80%;
-          border: 2px solid #e8e5e5;
-          background-color: $white;
-          border-radius: 10px;
-          height: 30px;
-          padding: 5px 8px;
-          &:focus-visible {
-            color: #2c2c2e;
+          background-color: transparent;
+          color: $white;
+          display: flex;
+          font-family: 'Roboto', sans-serif;
+          font-size: 16px;
+          min-height: 30px;
+          padding: 0 0 0 2px;
+          max-width: 90%;
+          width: 100%;
+
+          > div{
+            box-sizing: border-box;
+            padding-right: 5px;
+            max-width: 100%;
+
+            // width: inherit;
+            overflow-wrap: break-word;
+          }
+  }
+
+}
+
+.edit-cancel-form{
+    align-items: center;
+    display: flex;
+    color: rgb(198, 198, 198);
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+
+    // min-height: 30px;
+    // flex-direction: row;
+    // float: right;
+    // justify-content: space-around;}
+
+    .edit-body{
+          border: none;
+          box-sizing: border-box;
+          background-color: rgba(150, 150, 150, 0.1);
+          border-radius: 20px;
+          color: $white;
+          font-family: 'Roboto', sans-serif;
+          font-size: 16px;
+          min-height: 30px;
+          padding: 0 5px 0 2px;
+          width: 100%;
+          
+          // height: 20px;
+          // width: auto;
+          // width: 80%;
+          // border: 2px solid #e8e5e5;
+          // background-color: $white;
+          // border-radius: 10px;
+          // height: 30px;
+          // padding: 5px 8px;
+          // &:focus-visible {
+          //   color: #2c2c2e;
+          //   outline: none;
+          // }
+
+          &:focus{
+            border: none;
             outline: none;
           }
     }
 
+    .editComment{
+      margin-left: 10px;
+    }
+
     .cancelComment{
         font-size: 16px;
+        margin-left: 5px;
     }
 
 
