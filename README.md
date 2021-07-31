@@ -3,7 +3,7 @@
 </p>
 
 
-[Live Demo](https://project-hawkeye.herokuapp.com/)
+[Live Site](https://project-hawkeye.herokuapp.com/)
 
 # Background and Overview
 It's not uncommon for recruiters to look at an individual's social media account in order to determine whether they are a good fit for the position.
