@@ -43,12 +43,6 @@ export default function(oldState = {}, action){
             newState[action.id].comments = commentCopy;
             return newState;
 
-        case REMOVE_TWEET_FROM_FOLDER:
-            let newFolders = [...newState[action.workspaceId].folders];
-            newFolders[action.folder_idx].tweets.splice(action.tweetIdx, 1);
-            newState[action.workspaceId].folders = newFolders;
-            return newState;
-
         case RECEIVE_USER_LOGOUT:
             return {};
 
