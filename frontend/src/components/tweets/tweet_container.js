@@ -5,7 +5,8 @@ import TweetIndex from './tweet_index';
 
 const mapStateToProps = state => {
   return {
-    tweets: Object.values(state.entities.tweets)
+    tweets: Object.values(state.entities.tweets),
+    errors: state.errors.tweets
   };
 }
 
