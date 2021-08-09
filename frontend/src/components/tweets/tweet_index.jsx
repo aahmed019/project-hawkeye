@@ -36,6 +36,8 @@ class TweetIndex extends React.Component{
   }
   
   render(){
+    console.log(this.props.errors);
+
     const loading = (
       <div className='loading-screen hide-comp'>
         <h1>Loading...</h1>
@@ -46,9 +48,16 @@ class TweetIndex extends React.Component{
         <h1>Search now to get results</h1>
       </div>
     )
-      const tweets = this.props.tweets.map((tweet, idx) => (
-        <TweetItemContainer tweet={tweet} idx={idx} startDragging={this.props.startDragging} stopDragging={this.props.stopDragging} />
+    const errors = this.props.errors.length > 0 ? (
+      this.props.errors.map(error => (
+        <div className="tweet-error">
+          <h1>{error}</h1>
+        </div>
       ))
+    ) : null;
+    const tweets = this.props.tweets.map((tweet, idx) => (
+      <TweetItemContainer tweet={tweet} idx={idx} startDragging={this.props.startDragging} stopDragging={this.props.stopDragging} />
+    ))
    
 
     return(
@@ -78,6 +87,7 @@ class TweetIndex extends React.Component{
         </div>
 
         <ul className='tweets-feed-container'>
+          {errors}
           {loading}
           {tweets.length >= 1 ? tweets : placeHolder}
         </ul>
