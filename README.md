@@ -3,8 +3,6 @@
 </p>
 
 
-[Live Site](https://project-hawkeye.herokuapp.com/)
-
 # Background and Overview
 It's not uncommon for recruiters to look at an individual's social media account in order to determine whether they are a good fit for the position.
 People may use Twitter to look for previous tweets from the person in question. You filter these tweets and want to save the collection
